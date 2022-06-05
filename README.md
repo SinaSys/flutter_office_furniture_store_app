@@ -7,9 +7,9 @@ Office Furniture Store app is a design implementation of [Office Furniture Store
 
 ## Screenshots
 
-   List Screen            |   Detail Screen           |  Cart Screen
--------------------------:|:-------------------------:|:-------------------------:
-![](https://github.com/SinaSys/flutter_office_furniture_store_app/blob/master/screenshots/office_furniture_list_screen.png?raw=true)|![](https://github.com/SinaSys/flutter_office_furniture_store_app/blob/master/screenshots/office_furniture_detail_screen.png?raw=true)|![](https://github.com/SinaSys/flutter_office_furniture_store_app/blob/master/screenshots/cart_screen.png?raw=true)
+Preview                    |   List screen             |   Detail Screen           |  Cart Screen
+:-------------------------:|:-------------------------:|:-------------------------:|:-------------------------:
+![](https://github.com/SinaSys/flutter_office_furniture_store_app/blob/master/screenshots/preview.gif?raw=true)|![](https://github.com/SinaSys/flutter_office_furniture_store_app/blob/master/screenshots/office_furniture_list_screen.png?raw=true)|![](https://github.com/SinaSys/flutter_office_furniture_store_app/blob/master/screenshots/office_furniture_detail_screen.png?raw=true)|![](https://github.com/SinaSys/flutter_office_furniture_store_app/blob/master/screenshots/cart_screen.png?raw=true)
 
 
 ## Directory Structure
