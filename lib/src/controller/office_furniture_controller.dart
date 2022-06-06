@@ -44,9 +44,11 @@ class OfficeFurnitureController extends GetxController {
   }
 
   addToCart(Furniture furniture) {
-    cartFurniture.add(furniture);
-    cartFurniture.assignAll(cartFurniture.distinctBy((item) => item));
-    calculateTotalPrice();
+    if(furniture.quantity>0){
+      cartFurniture.add(furniture);
+      cartFurniture.assignAll(cartFurniture.distinctBy((item) => item));
+      calculateTotalPrice();
+    }
   }
 
   calculateTotalPrice() {
