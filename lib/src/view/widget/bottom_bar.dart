@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import '../../../core/app_color.dart';
 import '../../../core/app_style.dart';
 
 class BottomBar extends StatelessWidget {
@@ -33,16 +32,12 @@ class BottomBar extends StatelessWidget {
                         color: Colors.black45, fontWeight: FontWeight.bold)),
               ),
               const SizedBox(height: 5),
-              FittedBox(child: Text(priceValue, style: h2Style))
+              FittedBox(
+                child: Text(priceValue, style: h2Style),
+              )
             ],
           ),
           ElevatedButton(
-            style: ElevatedButton.styleFrom(
-                primary: AppColor.lightBlack,
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 40, vertical: 15),
-                shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(10))),
             onPressed: onTap,
             child: Text(buttonLabel),
           )
