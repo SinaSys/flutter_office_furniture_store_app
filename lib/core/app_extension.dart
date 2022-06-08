@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import '../src/view/widget/fade_in_animation.dart';
 
 extension StringExtension on String {
@@ -15,6 +14,7 @@ extension StringExtension on String {
     return double.parse(replaceAll("\$", ""));
   }
 }
+
 
 extension IterableExtension<T> on Iterable<T> {
   Iterable<T> distinctBy(Object Function(T e) getCompareValue) {
