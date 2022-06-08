@@ -44,6 +44,7 @@ Preview                    |   List screen             |   Detail Screen        
      │    |   |──counter_button.dart
      │    |   |──empty_widget.dart
      │    |   |──furniture_list_view.dart
+     │    |   |──fade_in_animation.dart
      |    |   └──rating_bar.dart
      └────📂controller
           └──office_furniture_controller.dart
@@ -60,6 +61,7 @@ Package Name        |
 |[smooth_page_indicator](https://pub.dev/packages/smooth_page_indicator)
 |[flutter_rating_bar](https://pub.dev/packages/flutter_rating_bar)
 |[font_awesome_flutter](https://pub.dev/packages/font_awesome_flutter)
+|[simple_animations](https://pub.dev/packages/simple_animations)
 
 
 ## Created & Maintained By

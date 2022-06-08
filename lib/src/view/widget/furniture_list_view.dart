@@ -23,7 +23,7 @@ class FurnitureListView extends StatelessWidget {
         const SizedBox(width: 10),
         Text(furniture.score.toString(), style: h4Style),
       ],
-    );
+    ).fadeAnimation(1.0);
   }
 
   Widget _furnitureImage(String image) {
@@ -34,7 +34,7 @@ class FurnitureListView extends StatelessWidget {
         width: 150,
         height: 150,
       ),
-    );
+    ).fadeAnimation(0.4);
   }
 
   Widget _listViewItem(Furniture furniture) {
@@ -44,7 +44,7 @@ class FurnitureListView extends StatelessWidget {
             children: [
               _furnitureImage(furniture.images[0]),
               const SizedBox(height: 10),
-              Text(furniture.title.addOverFlow, style: h4Style),
+              Text(furniture.title.addOverFlow, style: h4Style).fadeAnimation(0.8),
               _furnitureScore(furniture),
             ],
           )
@@ -58,7 +58,7 @@ class FurnitureListView extends StatelessWidget {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text(furniture.title, style: h4Style),
+                      Text(furniture.title, style: h4Style).fadeAnimation(0.8),
                       const SizedBox(height: 5),
                       _furnitureScore(furniture),
                       const SizedBox(height: 5),
@@ -67,7 +67,7 @@ class FurnitureListView extends StatelessWidget {
                         style: h5Style.copyWith(fontSize: 12),
                         maxLines: 2,
                         overflow: TextOverflow.ellipsis,
-                      )
+                      ).fadeAnimation(1.4)
                     ],
                   ),
                 ),

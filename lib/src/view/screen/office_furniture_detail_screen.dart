@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
 import 'package:office_furniture_store/core/app_color.dart';
+import 'package:office_furniture_store/core/app_extension.dart';
 import 'package:office_furniture_store/core/app_style.dart';
 import 'package:office_furniture_store/src/controller/office_furniture_controller.dart';
 import 'package:office_furniture_store/src/view/widget/counter_button.dart';
@@ -80,7 +81,7 @@ class OfficeFurnitureDetailScreen extends StatelessWidget {
           )
         ],
       ),
-    );
+    ).fadeAnimation(1.3);
   }
 
   Widget furnitureImageSlider(double height) {
@@ -122,7 +123,7 @@ class OfficeFurnitureDetailScreen extends StatelessWidget {
             ),
           ),
         ],
-      ),
+      ).fadeAnimation(0.2),
     );
   }
 
@@ -143,17 +144,17 @@ class OfficeFurnitureDetailScreen extends StatelessWidget {
                 child: StarRatingBar(
                   score: furniture.score,
                   itemSize: 25,
-                ),
+                ).fadeAnimation(0.4),
               ),
-              const Padding(
-                padding: EdgeInsets.only(top: 20, bottom: 10),
+               Padding(
+                padding: const EdgeInsets.only(top: 20, bottom: 10),
                 child:
-                    Text("Synopsis", style: h2Style, textAlign: TextAlign.end),
+                    const Text("Synopsis", style: h2Style, textAlign: TextAlign.end).fadeAnimation(0.6),
               ),
               Text(furniture.description,
                   maxLines: 5,
                   overflow: TextOverflow.ellipsis,
-                  style: const TextStyle(color: Colors.black45)),
+                  style: const TextStyle(color: Colors.black45)).fadeAnimation(0.8),
               const SizedBox(height: 20),
               Row(
                 children: [
@@ -170,7 +171,7 @@ class OfficeFurnitureDetailScreen extends StatelessWidget {
                     },
                   ))
                 ],
-              )
+              ).fadeAnimation(1.0)
             ],
           ),
         ),

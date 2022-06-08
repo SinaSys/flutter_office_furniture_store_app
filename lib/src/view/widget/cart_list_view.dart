@@ -71,7 +71,7 @@ class CartListView extends StatelessWidget {
                 ),
               )
             ],
-          ),
+          ).fadeAnimation(0.4*index),
         );
       },
       separatorBuilder: (BuildContext context, int index) {

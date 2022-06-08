@@ -38,7 +38,7 @@ dependencies:
   smooth_page_indicator: ^1.0.0+2
   flutter_rating_bar: ^4.0.0
   font_awesome_flutter: ^10.1.0
-
+  simple_animations: ^4.0.1
 
 
 dev_dependencies:
