@@ -36,8 +36,8 @@ class OfficeFurnitureController extends GetxController {
 
   void decreaseItem(Furniture furniture) {
     furniture.quantity = furniture.quantity-- < 1 ? 0 : furniture.quantity--;
-    update();
     calculateTotalPrice();
+    update();
     if(furniture.quantity<1) {
       cartFurniture.removeWhere((element) => element==furniture);
     }
@@ -60,6 +60,7 @@ class OfficeFurnitureController extends GetxController {
 
   void clearCart(){
     cartFurniture.clear();
+    totalPrice.value = 0;
    update();
   }
 
