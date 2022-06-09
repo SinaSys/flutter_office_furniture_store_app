@@ -52,14 +52,13 @@ class OfficeFurnitureListScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
-    Future<Widget?> _navigate(Furniture furniture) {
+    Future<Widget?> _navigate(Furniture furniture, int index) {
       return Navigator.push(
         context,
-        MaterialPageRoute(
-          builder: (_) {
-            return OfficeFurnitureDetailScreen(furniture: furniture);
-          },
+        PageRouteBuilder(
+          transitionDuration: const Duration(seconds: 1),
+          pageBuilder: (_, __, ___) =>
+              OfficeFurnitureDetailScreen(furniture: furniture, index: index),
         ),
       );
     }

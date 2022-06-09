@@ -6,7 +6,7 @@ import '../../model/furniture.dart';
 
 class FurnitureListView extends StatelessWidget {
   final bool isHorizontal;
-  final Function(Furniture furniture)? onTap;
+  final Function(Furniture furniture,int index)? onTap;
   final List<Furniture> furnitureList;
 
   const FurnitureListView(
@@ -37,12 +37,14 @@ class FurnitureListView extends StatelessWidget {
     ).fadeAnimation(0.4);
   }
 
-  Widget _listViewItem(Furniture furniture) {
+  Widget _listViewItem(Furniture furniture,int index) {
     Widget widget;
     widget = isHorizontal == true
         ? Column(
             children: [
-              _furnitureImage(furniture.images[0]),
+              Hero(
+                tag: index,
+                  child: _furnitureImage(furniture.images[0])),
               const SizedBox(height: 10),
               Text(furniture.title.addOverFlow, style: h4Style).fadeAnimation(0.8),
               _furnitureScore(furniture),
@@ -76,7 +78,7 @@ class FurnitureListView extends StatelessWidget {
           );
 
     return GestureDetector(
-      onTap: () => onTap?.call(furniture) ,
+      onTap: () => onTap?.call(furniture,index) ,
       child: widget,
     );
   }
@@ -91,7 +93,7 @@ class FurnitureListView extends StatelessWidget {
               itemCount: furnitureList.length,
               itemBuilder: (_, index) {
                 Furniture furniture = furnitureList[index];
-                return _listViewItem(furniture);
+                return _listViewItem(furniture,index);
               },
               separatorBuilder: (BuildContext context, int index) {
                 return const Padding(
@@ -108,7 +110,7 @@ class FurnitureListView extends StatelessWidget {
                 Furniture furniture = furnitureList.reversed.toList()[index];
                 return Padding(
                   padding: const EdgeInsets.only(bottom: 15, top: 10),
-                  child: _listViewItem(furniture),
+                  child: _listViewItem(furniture,index),
                 );
               },
             ),

@@ -15,8 +15,9 @@ import 'home_screen.dart';
 
 class OfficeFurnitureDetailScreen extends StatelessWidget {
   final Furniture furniture;
+  final int index;
 
-  const OfficeFurnitureDetailScreen({Key? key, required this.furniture})
+  const OfficeFurnitureDetailScreen({Key? key, required this.furniture,required this.index})
       : super(key: key);
 
   PreferredSizeWidget _appBar(BuildContext context) {
@@ -99,9 +100,12 @@ class OfficeFurnitureDetailScreen extends StatelessWidget {
                 padding: const EdgeInsets.only(left: 15),
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(20),
-                  child: Image.asset(
-                    furniture.images[index],
-                    fit: BoxFit.fill,
+                  child: Hero(
+                    tag: index,
+                    child: Image.asset(
+                      furniture.images[index],
+                      fit: BoxFit.fill,
+                    ),
                   ),
                 ),
               );
@@ -123,7 +127,8 @@ class OfficeFurnitureDetailScreen extends StatelessWidget {
             ),
           ),
         ],
-      ).fadeAnimation(0.2),
+     // ).fadeAnimation(0.2),
+      ),
     );
   }
 
