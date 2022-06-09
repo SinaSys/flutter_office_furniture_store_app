@@ -58,4 +58,9 @@ class OfficeFurnitureController extends GetxController {
     }
   }
 
+  void clearCart(){
+    cartFurniture.clear();
+   update();
+  }
+
 }
