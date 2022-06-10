@@ -12,6 +12,24 @@ Preview                    |   List screen             |   Detail Screen        
 ![](https://github.com/SinaSys/flutter_office_furniture_store_app/blob/master/screenshots/preview.gif?raw=true)|![](https://github.com/SinaSys/flutter_office_furniture_store_app/blob/master/screenshots/office_furniture_list_screen.png?raw=true)|![](https://github.com/SinaSys/flutter_office_furniture_store_app/blob/master/screenshots/office_furniture_detail_screen.png?raw=true)|![](https://github.com/SinaSys/flutter_office_furniture_store_app/blob/master/screenshots/cart_screen.png?raw=true)
 
 
+
+
+## 🚀 Features :
+```
+• Display items on list item screen
+• Display detail of each item on detail screen
+• Hero animation for images when navigate fron list screen to detail screen
+• Fade animation for list views
+• Select quantity and color for each item
+• Display item images using carousel slider
+• Add desired item to favorite screen
+• Add or delete item to cart
+• Clear all itms from cart screen
+• Automatically delete single item from cart by set its value to zero
+• Real-time calculation of total price in the cart screen
+• State management with GetX
+```
+
 ## Directory Structure
 ```
 📂lib
