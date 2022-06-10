@@ -1,14 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:office_furniture_store/core/app_extension.dart';
 import 'package:office_furniture_store/core/app_style.dart';
-import 'package:office_furniture_store/src/controller/office_furniture_controller.dart';
-import 'package:office_furniture_store/src/view/widget/counter_button.dart';
 import '../../model/furniture.dart';
 import '../screen/home_screen.dart';
 
 class CartListView extends StatelessWidget {
-  const CartListView({Key? key}) : super(key: key);
+  const CartListView({Key? key,required this.counterButton}) : super(key: key);
+
+  final Widget Function(Furniture furniture) counterButton;
 
   @override
   Widget build(BuildContext context) {
@@ -58,17 +57,7 @@ class CartListView extends StatelessWidget {
               ),
               // Spacer(),
               Expanded(
-                child: GetBuilder(
-                  builder: (OfficeFurnitureController controller) {
-                    return CounterButton(
-                        orientation: Axis.vertical,
-                        onIncrementSelected: () =>
-                            controller.increaseItem(furniture),
-                        onDecrementSelected: () =>
-                            controller.decreaseItem(furniture),
-                        label: furniture.quantity);
-                  },
-                ),
+                child: counterButton(furniture),
               )
             ],
           ).fadeAnimation(0.4*index),
