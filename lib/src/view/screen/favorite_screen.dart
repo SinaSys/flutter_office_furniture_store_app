@@ -15,17 +15,19 @@ class FavoriteScreen extends StatelessWidget {
       ),
       body: Padding(
         padding: const EdgeInsets.all(15),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            controller.favoriteFurnitureList.isNotEmpty
-                ? FurnitureListView(
-                    isHorizontal: false,
-                    furnitureList: controller.favoriteFurnitureList,
-                  )
-                : const EmptyWidget(
-                    type: EmptyWidgetType.favorite, title: "Empty")
-          ],
+        child: SingleChildScrollView(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              controller.favoriteFurnitureList.isNotEmpty
+                  ? FurnitureListView(
+                      isHorizontal: false,
+                      furnitureList: controller.favoriteFurnitureList,
+                    )
+                  : const EmptyWidget(
+                      type: EmptyWidgetType.favorite, title: "Empty")
+            ],
+          ),
         ),
       ),
     );
