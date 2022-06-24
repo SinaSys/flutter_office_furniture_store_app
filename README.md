@@ -92,3 +92,10 @@ Package Name        |
 ## Created & Maintained By
 
 [SinaSys](https://github.com/SinaSys) 
+
+
+## My other flutter projects
+project        |
+:-------------------------|
+|[Japanese restaurant app](https://github.com/SinaSys/flutter_japanese_restaurant_app)
+|[Ecommerce app](https://github.com/SinaSys/flutter_ecommerce_app)
