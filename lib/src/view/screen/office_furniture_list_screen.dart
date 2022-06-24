@@ -67,8 +67,7 @@ class OfficeFurnitureListScreen extends StatelessWidget {
       appBar: _appBar(),
       body: Padding(
         padding: const EdgeInsets.all(15),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
+        child: ListView(
           children: [
             _searchBar(),
             FurnitureListView(
@@ -80,7 +79,7 @@ class OfficeFurnitureListScreen extends StatelessWidget {
               furnitureList: AppData.furnitureList,
               isHorizontal: false,
               onTap: _navigate,
-            )
+            ),
           ],
         ),
       ),

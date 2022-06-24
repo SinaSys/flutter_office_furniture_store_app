@@ -6,13 +6,13 @@ import '../../model/furniture.dart';
 
 class FurnitureListView extends StatelessWidget {
   final bool isHorizontal;
-  final Function(Furniture furniture,int index)? onTap;
+  final Function(Furniture furniture, int index)? onTap;
   final List<Furniture> furnitureList;
 
   const FurnitureListView(
       {Key? key,
       this.isHorizontal = true,
-       this.onTap,
+      this.onTap,
       required this.furnitureList})
       : super(key: key);
 
@@ -37,16 +37,15 @@ class FurnitureListView extends StatelessWidget {
     ).fadeAnimation(0.4);
   }
 
-  Widget _listViewItem(Furniture furniture,int index) {
+  Widget _listViewItem(Furniture furniture, int index) {
     Widget widget;
     widget = isHorizontal == true
         ? Column(
             children: [
-              Hero(
-                tag: index,
-                  child: _furnitureImage(furniture.images[0])),
+              Hero(tag: index, child: _furnitureImage(furniture.images[0])),
               const SizedBox(height: 10),
-              Text(furniture.title.addOverFlow, style: h4Style).fadeAnimation(0.8),
+              Text(furniture.title.addOverFlow, style: h4Style)
+                  .fadeAnimation(0.8),
               _furnitureScore(furniture),
             ],
           )
@@ -78,7 +77,7 @@ class FurnitureListView extends StatelessWidget {
           );
 
     return GestureDetector(
-      onTap: () => onTap?.call(furniture,index) ,
+      onTap: () => onTap?.call(furniture, index),
       child: widget,
     );
   }
@@ -93,7 +92,7 @@ class FurnitureListView extends StatelessWidget {
               itemCount: furnitureList.length,
               itemBuilder: (_, index) {
                 Furniture furniture = furnitureList[index];
-                return _listViewItem(furniture,index);
+                return _listViewItem(furniture, index);
               },
               separatorBuilder: (BuildContext context, int index) {
                 return const Padding(
@@ -102,18 +101,17 @@ class FurnitureListView extends StatelessWidget {
               },
             ),
           )
-        : Expanded(
-            child: ListView.builder(
-              shrinkWrap: true,
-              itemCount: furnitureList.length,
-              itemBuilder: (_, index) {
-                Furniture furniture = furnitureList.reversed.toList()[index];
-                return Padding(
-                  padding: const EdgeInsets.only(bottom: 15, top: 10),
-                  child: _listViewItem(furniture,index),
-                );
-              },
-            ),
+        : ListView.builder(
+            shrinkWrap: true,
+            physics: const ClampingScrollPhysics(),
+            itemCount: furnitureList.length,
+            itemBuilder: (_, index) {
+              Furniture furniture = furnitureList.reversed.toList()[index];
+              return Padding(
+                padding: const EdgeInsets.only(bottom: 15, top: 10),
+                child: _listViewItem(furniture, index),
+              );
+            },
           );
   }
 }
