@@ -20,12 +20,12 @@ class CartListView extends StatelessWidget {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
-              ClipRRect(
-                borderRadius: BorderRadius.circular(15.0),
-                child: Image.asset(
-                  furniture.images[0],
-                  width: 150,
-                  height: 150,
+              Expanded(
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(15.0),
+                  child: Image.asset(
+                    furniture.images[0],
+                  ),
                 ),
               ),
               const SizedBox(width: 5),
@@ -56,9 +56,7 @@ class CartListView extends StatelessWidget {
                 ],
               ),
               // Spacer(),
-              Expanded(
-                child: counterButton(furniture),
-              )
+              counterButton(furniture)
             ],
           ).fadeAnimation(0.4*index),
         );
