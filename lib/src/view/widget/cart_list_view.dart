@@ -2,19 +2,21 @@ import 'package:flutter/material.dart';
 import 'package:office_furniture_store/core/app_extension.dart';
 import 'package:office_furniture_store/core/app_style.dart';
 import '../../model/furniture.dart';
-import '../screen/home_screen.dart';
 
 class CartListView extends StatelessWidget {
-  const CartListView({Key? key,required this.counterButton}) : super(key: key);
+  const CartListView(
+      {Key? key, required this.counterButton, required this.furnitureItems})
+      : super(key: key);
 
   final Widget Function(Furniture furniture) counterButton;
+  final List<Furniture> furnitureItems;
 
   @override
   Widget build(BuildContext context) {
     return ListView.separated(
-      itemCount: controller.cartFurniture.length,
+      itemCount: furnitureItems.length,
       itemBuilder: (_, index) {
-        Furniture furniture = controller.cartFurniture[index];
+        Furniture furniture = furnitureItems[index];
         return Padding(
           padding: const EdgeInsets.all(15),
           child: Row(
@@ -58,7 +60,7 @@ class CartListView extends StatelessWidget {
               // Spacer(),
               counterButton(furniture)
             ],
-          ).fadeAnimation(0.4*index),
+          ).fadeAnimation(0.4 * index),
         );
       },
       separatorBuilder: (BuildContext context, int index) {

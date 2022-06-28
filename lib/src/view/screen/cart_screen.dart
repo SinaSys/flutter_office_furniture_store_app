@@ -36,7 +36,7 @@ class CartScreen extends StatelessWidget {
         () {
           return BottomBar(
             priceLabel: "Total price",
-            priceValue: "\$${controller.totalPrice.value}",
+            priceValue: "\$${controller.totalPrice.value.toStringAsFixed(2)}",
             buttonLabel: "Checkout",
             onTap: controller.totalPrice > 0 ? () {} : null,
           );
@@ -47,18 +47,14 @@ class CartScreen extends StatelessWidget {
           return controller.cartFurniture.isNotEmpty
               ? Padding(
                   padding: const EdgeInsets.all(15),
-                  child: CartListView(counterButton: (furniture) {
-                    return GetBuilder(
-                      builder: (OfficeFurnitureController controller) {
-                        return CounterButton(
-                            orientation: Axis.vertical,
-                            onIncrementSelected: () =>
-                                controller.increaseItem(furniture),
-                            onDecrementSelected: () =>
-                                controller.decreaseItem(furniture),
-                            label: furniture.quantity);
-                      },
-                    );
+                  child: CartListView(furnitureItems: controller.cartFurniture,counterButton: (furniture) {
+                    return CounterButton(
+                        orientation: Axis.vertical,
+                        onIncrementSelected: () =>
+                            controller.increaseItem(furniture),
+                        onDecrementSelected: () =>
+                            controller.decreaseItem(furniture),
+                        label: furniture.quantity);
                   }),
                 )
               : const EmptyWidget(title: "Empty");

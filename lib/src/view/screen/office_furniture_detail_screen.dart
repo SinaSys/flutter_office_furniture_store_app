@@ -15,9 +15,8 @@ import 'home_screen.dart';
 
 class OfficeFurnitureDetailScreen extends StatelessWidget {
   final Furniture furniture;
-  final int index;
 
-  const OfficeFurnitureDetailScreen({Key? key, required this.furniture,required this.index})
+  const OfficeFurnitureDetailScreen({Key? key, required this.furniture})
       : super(key: key);
 
   PreferredSizeWidget _appBar(BuildContext context) {

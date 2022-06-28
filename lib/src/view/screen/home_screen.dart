@@ -11,17 +11,10 @@ import '../../controller/office_furniture_controller.dart';
 final OfficeFurnitureController controller =
     Get.put(OfficeFurnitureController());
 
-class HomeScreen extends StatefulWidget {
+class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);
 
-  @override
-  State<HomeScreen> createState() => _HomeScreenState();
-}
-
-class _HomeScreenState extends State<HomeScreen> {
-  int selectedIndex = 0;
-
-  List<Widget> screens = const [
+  final List<Widget> screens = const [
     OfficeFurnitureListScreen(),
     CartScreen(),
     FavoriteScreen(),
@@ -32,7 +25,7 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       bottomNavigationBar: Obx(
-        () {
+            () {
           return BottomNavigationBar(
             unselectedItemColor: Colors.grey,
             currentIndex: controller.currentBottomNavItemIndex.value,
@@ -42,8 +35,8 @@ class _HomeScreenState extends State<HomeScreen> {
             items: AppData.bottomNavigationItems
                 .map(
                   (element) => BottomNavigationBarItem(
-                      icon: element.icon, label: element.label),
-                )
+                  icon: element.icon, label: element.label),
+            )
                 .toList(),
           );
         },

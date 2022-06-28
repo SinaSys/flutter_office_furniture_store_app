@@ -58,7 +58,7 @@ class OfficeFurnitureListScreen extends StatelessWidget {
         PageRouteBuilder(
           transitionDuration: const Duration(seconds: 1),
           pageBuilder: (_, __, ___) =>
-              OfficeFurnitureDetailScreen(furniture: furniture, index: index),
+              OfficeFurnitureDetailScreen(furniture: furniture),
         ),
       );
     }
