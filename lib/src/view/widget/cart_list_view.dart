@@ -36,7 +36,7 @@ class CartListView extends StatelessWidget {
                 children: [
                   Text(furniture.title.addOverFlow, style: h4Style),
                   const SizedBox(height: 5),
-                  Text(furniture.price, style: h2Style),
+                  Text("\$${furniture.price}", style: h2Style),
                   const SizedBox(height: 5),
                   Row(
                     children: [

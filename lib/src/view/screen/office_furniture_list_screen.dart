@@ -52,7 +52,7 @@ class OfficeFurnitureListScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Future<Widget?> _navigate(Furniture furniture, int index) {
+    Future<Widget?> _navigate(Furniture furniture) {
       return Navigator.push(
         context,
         PageRouteBuilder(

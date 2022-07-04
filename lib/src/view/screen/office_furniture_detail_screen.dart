@@ -64,7 +64,7 @@ class OfficeFurnitureDetailScreen extends StatelessWidget {
                         color: Colors.black45, fontWeight: FontWeight.bold)),
               ),
               const SizedBox(height: 5),
-              FittedBox(child: Text(furniture.price, style: h2Style))
+              FittedBox(child: Text("\$${furniture.price}", style: h2Style))
             ],
           ),
           ElevatedButton(

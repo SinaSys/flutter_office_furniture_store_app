@@ -6,7 +6,7 @@ import '../../model/furniture.dart';
 
 class FurnitureListView extends StatelessWidget {
   final bool isHorizontal;
-  final Function(Furniture furniture, int index)? onTap;
+  final Function(Furniture furniture)? onTap;
   final List<Furniture> furnitureList;
 
   const FurnitureListView(
@@ -77,7 +77,7 @@ class FurnitureListView extends StatelessWidget {
           );
 
     return GestureDetector(
-      onTap: () => onTap?.call(furniture, index),
+      onTap: () => onTap?.call(furniture),
       child: widget,
     );
   }
@@ -103,10 +103,11 @@ class FurnitureListView extends StatelessWidget {
           )
         : ListView.builder(
             shrinkWrap: true,
+            reverse: true,
             physics: const ClampingScrollPhysics(),
             itemCount: furnitureList.length,
             itemBuilder: (_, index) {
-              Furniture furniture = furnitureList.reversed.toList()[index];
+              Furniture furniture = furnitureList[index];
               return Padding(
                 padding: const EdgeInsets.only(bottom: 15, top: 10),
                 child: _listViewItem(furniture, index),

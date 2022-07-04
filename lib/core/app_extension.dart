@@ -9,10 +9,6 @@ extension StringExtension on String {
       return "${substring(0, 15)}...";
     }
   }
-
-  double get dropSign {
-    return double.parse(replaceAll("\$", ""));
-  }
 }
 
 

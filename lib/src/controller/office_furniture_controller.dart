@@ -54,7 +54,7 @@ class OfficeFurnitureController extends GetxController {
   calculateTotalPrice() {
     totalPrice.value = 0;
     for (var element in cartFurniture) {
-      totalPrice.value += element.quantity *  element.price.dropSign;
+      totalPrice.value += element.quantity *  element.price;
     }
   }
 

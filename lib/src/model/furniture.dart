@@ -3,7 +3,7 @@ import 'package:office_furniture_store/src/model/furniture_color.dart';
 class Furniture {
   String title;
   String description;
-  String price;
+  double price;
   int quantity;
   double score;
   List<String> images;

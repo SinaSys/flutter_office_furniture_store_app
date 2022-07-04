@@ -16,7 +16,7 @@ class AppData {
       isFavorite: false,
       title: 'Comhar All-in-One Standing Desk Glass',
       description: dummyText,
-      price: '\$469.99',
+      price: 469.99,
       score: 3.5,
       images: [
         AppAsset.comharStandingDesk1,
@@ -37,7 +37,7 @@ class AppData {
       quantity: 1,
       title: 'Ergonomic Gaming Desk with Mouse Pad',
       description: dummyText,
-      price: '\$299.99',
+      price: 299.99,
       score: 4.5,
       images: [
         AppAsset.ergonomicGamingDesk1,
@@ -56,7 +56,7 @@ class AppData {
       isFavorite: false,
       title: 'Kana Pro Bamboo Standing Desk',
       description: dummyText,
-      price: '\$659.99',
+      price: 659.99,
       score: 3.0,
       images: [
         AppAsset.kanaBambooDesk1,
@@ -76,7 +76,7 @@ class AppData {
       isFavorite: false,
       title: 'Soutien Ergonomic Office Chair',
       description: dummyText,
-      price: '\$349.99',
+      price: 349.99,
       score: 2.5,
       images: [
         AppAsset.soutienOfficeChair1,
@@ -96,7 +96,7 @@ class AppData {
       isFavorite: false,
       title: 'Theodore Standing Desk',
       description: dummyText,
-      price: '\$499.99',
+      price: 499.99,
       score: 2.8,
       images: [
         AppAsset.theodoreStandingDesk1,
