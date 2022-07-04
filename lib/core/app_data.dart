@@ -12,13 +12,14 @@ class AppData {
 
   static List<Furniture> furnitureList = [
     Furniture(
+      id: 1,
       quantity: 1,
       isFavorite: false,
       title: 'Comhar All-in-One Standing Desk Glass',
       description: dummyText,
       price: 469.99,
       score: 3.5,
-      images: [
+      images: const [
         AppAsset.comharStandingDesk1,
         AppAsset.comharStandingDesk2,
         AppAsset.comharStandingDesk3,
@@ -33,13 +34,14 @@ class AppData {
       ],
     ),
     Furniture(
+      id: 2,
       isFavorite: false,
       quantity: 1,
       title: 'Ergonomic Gaming Desk with Mouse Pad',
       description: dummyText,
       price: 299.99,
       score: 4.5,
-      images: [
+      images: const [
         AppAsset.ergonomicGamingDesk1,
         AppAsset.ergonomicGamingDesk2,
         AppAsset.ergonomicGamingDesk3,
@@ -52,13 +54,14 @@ class AppData {
       ],
     ),
     Furniture(
+      id: 3,
       quantity: 1,
       isFavorite: false,
       title: 'Kana Pro Bamboo Standing Desk',
       description: dummyText,
       price: 659.99,
       score: 3.0,
-      images: [
+      images: const [
         AppAsset.kanaBambooDesk1,
         AppAsset.kanaBambooDesk2,
         AppAsset.kanaBambooDesk3,
@@ -72,13 +75,14 @@ class AppData {
       ],
     ),
     Furniture(
+      id: 4,
       quantity: 1,
       isFavorite: false,
       title: 'Soutien Ergonomic Office Chair',
       description: dummyText,
       price: 349.99,
       score: 2.5,
-      images: [
+      images: const [
         AppAsset.soutienOfficeChair1,
         AppAsset.soutienOfficeChair2,
         AppAsset.soutienOfficeChair3,
@@ -92,13 +96,14 @@ class AppData {
       ],
     ),
     Furniture(
+      id: 5,
       quantity: 1,
       isFavorite: false,
       title: 'Theodore Standing Desk',
       description: dummyText,
       price: 499.99,
       score: 2.8,
-      images: [
+      images: const [
         AppAsset.theodoreStandingDesk1,
         AppAsset.theodoreStandingDesk2,
         AppAsset.theodoreStandingDesk3,
@@ -112,11 +117,10 @@ class AppData {
     ),
   ];
 
-  static List<BottomNavigationItem> bottomNavigationItems = [
-    BottomNavigationItem(const Icon(Icons.home), 'Home'),
-    BottomNavigationItem(
-        const Icon(Icons.add_shopping_cart_rounded), 'Shopping cart'),
-    BottomNavigationItem(const Icon(Icons.bookmark), 'Favorite'),
-    BottomNavigationItem(const Icon(Icons.person), 'Profile')
+  static const List<BottomNavigationItem> bottomNavigationItems = [
+    BottomNavigationItem(Icon(Icons.home), 'Home'),
+    BottomNavigationItem(Icon(Icons.add_shopping_cart_rounded), 'Shopping cart'),
+    BottomNavigationItem(Icon(Icons.bookmark), 'Favorite'),
+    BottomNavigationItem(Icon(Icons.person), 'Profile')
   ];
 }

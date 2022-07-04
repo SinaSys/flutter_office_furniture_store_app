@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:office_furniture_store/core/app_data.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:office_furniture_store/core/app_style.dart';
+import 'package:office_furniture_store/src/cubit/furniture_cubit.dart';
 import 'package:office_furniture_store/src/model/furniture.dart';
 import 'package:office_furniture_store/src/view/screen/office_furniture_detail_screen.dart';
 import '../widget/furniture_list_view.dart';
@@ -52,13 +53,16 @@ class OfficeFurnitureListScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Future<Widget?> _navigate(Furniture furniture) {
+
+    final List<Furniture> items = context.watch<FurnitureCubit>().state.mainItems;
+
+    Future<Widget?> _navigate(Furniture furniture, int index) {
       return Navigator.push(
         context,
         PageRouteBuilder(
           transitionDuration: const Duration(seconds: 1),
           pageBuilder: (_, __, ___) =>
-              OfficeFurnitureDetailScreen(furniture: furniture),
+              OfficeFurnitureDetailScreen(furniture: furniture,index: index),
         ),
       );
     }
@@ -71,12 +75,12 @@ class OfficeFurnitureListScreen extends StatelessWidget {
           children: [
             _searchBar(),
             FurnitureListView(
-              furnitureList: AppData.furnitureList,
+              furnitureList: items,
               onTap: _navigate,
             ),
             const Text("Popular", style: h2Style),
             FurnitureListView(
-              furnitureList: AppData.furnitureList,
+              furnitureList: items,
               isHorizontal: false,
               onTap: _navigate,
             ),

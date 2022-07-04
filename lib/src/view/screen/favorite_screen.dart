@@ -1,14 +1,19 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:office_furniture_store/src/cubit/furniture_cubit.dart';
+import 'package:office_furniture_store/src/model/furniture.dart';
 import 'package:office_furniture_store/src/view/widget/empty_widget.dart';
 import 'package:office_furniture_store/src/view/widget/furniture_list_view.dart';
 import '../../../core/app_style.dart';
-import 'home_screen.dart';
 
 class FavoriteScreen extends StatelessWidget {
   const FavoriteScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+
+    final List<Furniture> favoriteList = context.watch<FurnitureCubit>().getFavoriteList;
+
     return Scaffold(
       appBar: AppBar(
         title: const Text("Favorites",style: h2Style),
@@ -19,13 +24,13 @@ class FavoriteScreen extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              controller.favoriteFurnitureList.isNotEmpty
+              favoriteList.isNotEmpty
                   ? FurnitureListView(
-                      isHorizontal: false,
-                      furnitureList: controller.favoriteFurnitureList,
-                    )
+                isHorizontal: false,
+                furnitureList: favoriteList,
+              )
                   : const EmptyWidget(
-                      type: EmptyWidgetType.favorite, title: "Empty")
+                  type: EmptyWidgetType.favorite, title: "Empty favorite")
             ],
           ),
         ),

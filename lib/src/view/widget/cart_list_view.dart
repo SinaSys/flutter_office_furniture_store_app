@@ -8,7 +8,7 @@ class CartListView extends StatelessWidget {
       {Key? key, required this.counterButton, required this.furnitureItems})
       : super(key: key);
 
-  final Widget Function(Furniture furniture) counterButton;
+  final Widget Function(Furniture furniture,int index) counterButton;
   final List<Furniture> furnitureItems;
 
   @override
@@ -36,7 +36,7 @@ class CartListView extends StatelessWidget {
                 children: [
                   Text(furniture.title.addOverFlow, style: h4Style),
                   const SizedBox(height: 5),
-                  Text("\$${furniture.price}", style: h2Style),
+                  Text("${furniture.price}", style: h2Style),
                   const SizedBox(height: 5),
                   Row(
                     children: [
@@ -58,7 +58,7 @@ class CartListView extends StatelessWidget {
                 ],
               ),
               // Spacer(),
-              counterButton(furniture)
+              counterButton(furniture,index)
             ],
           ).fadeAnimation(0.4 * index),
         );

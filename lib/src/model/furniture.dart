@@ -1,16 +1,23 @@
+import 'package:equatable/equatable.dart';
+import 'package:flutter/material.dart';
 import 'package:office_furniture_store/src/model/furniture_color.dart';
 
-class Furniture {
-  String title;
-  String description;
-  double price;
-  int quantity;
-  double score;
-  List<String> images;
-  bool isFavorite;
-  List<FurnitureColor> colors;
+@immutable
+class Furniture extends Equatable {
+  final int id;
+  final String title;
+  final String description;
+  final double price;
+  final int quantity;
+  final double score;
+  final List<String> images;
+  final bool isFavorite;
+  final bool cart;
+  final List<FurnitureColor> colors;
 
-  Furniture({
+  const Furniture({
+    required this.id,
+    this.cart = false,
     required this.title,
     required this.description,
     required this.price,
@@ -20,4 +27,44 @@ class Furniture {
     this.isFavorite = false,
     required this.colors,
   });
+
+  @override
+  List<Object?> get props => [
+    id,
+    cart,
+    title,
+    description,
+    price,
+    quantity,
+    score,
+    images,
+    isFavorite,
+    colors
+  ];
+
+  Furniture copyWith({
+    int? id,
+    String? title,
+    String? description,
+    double? price,
+    int? quantity,
+    double? score,
+    List<String>? images,
+    bool? isFavorite,
+    bool? cart,
+    List<FurnitureColor>? colors,
+  }) {
+    return Furniture(
+      id: id ?? this.id,
+      title: title ?? this.title,
+      description: description ?? this.description,
+      price: price ?? this.price,
+      quantity: quantity ?? this.quantity,
+      score: score ?? this.score,
+      images: images ?? this.images,
+      isFavorite: isFavorite ?? this.isFavorite,
+      cart: cart ?? this.cart,
+      colors: colors ?? this.colors,
+    );
+  }
 }

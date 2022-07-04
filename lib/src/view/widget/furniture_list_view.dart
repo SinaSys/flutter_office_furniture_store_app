@@ -6,7 +6,7 @@ import '../../model/furniture.dart';
 
 class FurnitureListView extends StatelessWidget {
   final bool isHorizontal;
-  final Function(Furniture furniture)? onTap;
+  final Function(Furniture furniture, int index)? onTap;
   final List<Furniture> furnitureList;
 
   const FurnitureListView(
@@ -77,7 +77,7 @@ class FurnitureListView extends StatelessWidget {
           );
 
     return GestureDetector(
-      onTap: () => onTap?.call(furniture),
+      onTap: () => onTap?.call(furniture, index),
       child: widget,
     );
   }

@@ -12,6 +12,15 @@ Office Furniture Store app is a design implementation of [Office Furniture Store
 ![](https://github.com/SinaSys/flutter_office_furniture_store_app/blob/master/screenshots/office_furniture_store_app.jpg?raw=true)
 
 
+  <br/>
+
+## GetX | Cubit + flutter hooks
+There are Two different implementations : 1 : Getx version , 2: Cubit + hooks version <br/>
+• You can access Getx version from ```master branch``` [(here)](https://github.com/SinaSys/flutter_office_furniture_store_app/tree/master) <br/>
+• You can access Cubit + flutter hooks version from ```cubit branch``` [(here)](https://github.com/SinaSys/flutter_office_furniture_store_app/tree/cubit)
+
+ <br/>
+
 ## Screenshots
 
 Preview                    |   List screen             |   Detail Screen           |  Cart Screen
@@ -19,10 +28,11 @@ Preview                    |   List screen             |   Detail Screen        
 ![](https://github.com/SinaSys/flutter_office_furniture_store_app/blob/master/screenshots/preview.gif?raw=true)|![](https://github.com/SinaSys/flutter_office_furniture_store_app/blob/master/screenshots/office_furniture_list_screen.png?raw=true)|![](https://github.com/SinaSys/flutter_office_furniture_store_app/blob/master/screenshots/office_furniture_detail_screen.png?raw=true)|![](https://github.com/SinaSys/flutter_office_furniture_store_app/blob/master/screenshots/cart_screen.png?raw=true)
 
 
-
+  <br/>
 
 ## 🚀 Features :
 ```
+• Two different implementations
 • Display items on list item screen
 • Display detail of each item on detail screen
 • Hero animation for images when navigate fron list screen to detail screen
@@ -37,7 +47,8 @@ Preview                    |   List screen             |   Detail Screen        
 • State management with GetX
 ```
 
-## Directory Structure
+
+## Directory Structure (GetX version)
 ```
 📂lib
  │───main.dart  
@@ -75,24 +86,73 @@ Preview                    |   List screen             |   Detail Screen        
           └──office_furniture_controller.dart
 ```
 
+
+
+
+## Directory Structure (Cubit + hooks version)
+```
+📂lib
+ │───main.dart  
+ │───📂core  
+ |   │──app_asset.dart
+ |   │──app_color.dart
+ |   │──app_data.dart
+ |   │──app_extension.dart
+ |   │──app_style.dart
+ |   └──app_theme.dart
+ └───📂src
+     │────📂model
+     │    │──bottom_navigation_item.dart
+     |    │──furniture.dart
+     |    └──furniture_color.dart
+     └────📂view
+     |    │───📂screen
+     |    |   |──cart_screen.dart
+     |    |   |──favorite_screen.dart
+     |    |   |──home_screen.dart
+     |    |   |──intro_screen.dart
+     |    |   |──office_furniture_detail_screen.dart
+     |    |   |──office_furniture_list_screen.dart
+     |    |   └──profile_screen.dart
+     |    │───📂widget
+     |    |   |──bottom_bar.dart
+     │    |   |──cart_list_view.dart
+     │    |   |──color_picker.dart
+     │    |   |──counter_button.dart
+     │    |   |──empty_widget.dart
+     │    |   |──furniture_list_view.dart
+     │    |   |──fade_in_animation.dart
+     |    |   └──rating_bar.dart
+     └────📂cubit
+          |──furniture_cubit.dart
+          └──furniture_state.dart
+```
+
+
+
 ## Pull Requests
 I welcome and encourage all pull requests. It usually will take me within 48-72 hours to respond to any issue or request.
 
+  <br/>
 
-## Packages
-Package Name        |
-:-------------------------|
-|[GetX](https://pub.dev/packages/get)
-|[smooth_page_indicator](https://pub.dev/packages/smooth_page_indicator)
-|[flutter_rating_bar](https://pub.dev/packages/flutter_rating_bar)
-|[font_awesome_flutter](https://pub.dev/packages/font_awesome_flutter)
-|[simple_animations](https://pub.dev/packages/simple_animations)
+## Dependencies
+|       Name      |  Cubit + hooks <br/> version  |     GetX <br/> version     |
+| :-------------: | :--------------------------: | :------------------------: |
+| [flutter_bloc](https://pub.dev/packages/flutter_bloc)  |  ✔️  |    ✖️    |
+| [GetX](https://pub.dev/packages/get)  | ✖️  | ✔️    |
+| [flutter_hooks](https://pub.dev/packages/flutter_hooks)  | ✔️  | ✖️ |
+| [equatable](https://pub.dev/packages/equatable)  | ✔️  | ✖️ |
+| [smooth_page_indicator](https://pub.dev/packages/smooth_page_indicator)  | ✔️  | ✔️ |
+| [flutter_rating_bar](https://pub.dev/packages/flutter_rating_bar)  | ✔️  | ✔️ |
+| [simple_animations](https://pub.dev/packages/simple_animations)  | ✔️  | ✔️ |
 
+  <br/>
 
 ## Created & Maintained By
 
 [SinaSys](https://github.com/SinaSys) 
 
+  <br/>
 
 ## My other flutter projects
 project        |

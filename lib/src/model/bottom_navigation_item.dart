@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
+@immutable
 class BottomNavigationItem{
   final Icon icon;
-  String label;
-  BottomNavigationItem(this.icon, this.label);
+  final String label;
+  const BottomNavigationItem(this.icon, this.label);
 }

@@ -2,6 +2,7 @@ on:
   push:
     branches:
       - master
+      - cubit
 
 name: "Build & Release"
 jobs:
@@ -19,9 +20,9 @@ jobs:
       - run: flutter pub get
       - run: flutter analyze
       - run: flutter build apk
-      - name: Push to Releases
-        uses: ncipollo/release-action@v1
-        with:
-          artifacts: "build/app/outputs/apk/release/app-release.apk"
-          tag: v2.0.4
-          token: ${{ secrets.TOKEN }}
+#      - name: Push to Releases
+#        uses: ncipollo/release-action@v1
+#        with:
+#          artifacts: "build/app/outputs/apk/release/app-release.apk"
+#          tag: v2.0.4
+#          token: ${{ secrets.TOKEN }}
