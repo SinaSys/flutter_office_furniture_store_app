@@ -14,10 +14,12 @@ Office Furniture Store app is a design implementation of [Office Furniture Store
 
   <br/>
 
-## GetX | Cubit + flutter hooks
-There are Two different implementations : 1 : Getx version , 2: Cubit + hooks version <br/>
+## GetX | Cubit + flutter hooks | Bloc + flutter hooks
+There are Three different implementations : 1 : Getx version , 2: Cubit + hooks version , 3: Bloc + hooks version <br/>
 • You can access Getx version from ```master branch``` [(here)](https://github.com/SinaSys/flutter_office_furniture_store_app/tree/master) <br/>
-• You can access Cubit + flutter hooks version from ```cubit branch``` [(here)](https://github.com/SinaSys/flutter_office_furniture_store_app/tree/cubit)
+• You can access Cubit + flutter hooks version from ```cubit branch``` [(here)](https://github.com/SinaSys/flutter_office_furniture_store_app/tree/cubit) <br/>
+• You can access Bloc + flutter hooks version from ```bloc branch``` [(here)](https://github.com/SinaSys/flutter_office_furniture_store_app/tree/bloc)
+
 
  <br/>
 
@@ -32,7 +34,7 @@ Preview                    |   List screen             |   Detail Screen        
 
 ## 🚀 Features :
 ```
-• Two different implementations
+• Three different implementations
 • Display items on list item screen
 • Display detail of each item on detail screen
 • Hero animation for images when navigate fron list screen to detail screen
@@ -44,7 +46,7 @@ Preview                    |   List screen             |   Detail Screen        
 • Clear all itms from cart screen
 • Automatically delete single item from cart by set its value to zero
 • Real-time calculation of total price in the cart screen
-• State management with GetX
+• State management with GetX | cubit | bloc
 ```
 
 
@@ -129,6 +131,49 @@ Preview                    |   List screen             |   Detail Screen        
 ```
 
 
+## Directory Structure (Bloc + hooks version)
+```
+📂lib
+ │───main.dart  
+ │───📂core  
+ |   │──app_asset.dart
+ |   │──app_color.dart
+ |   │──app_data.dart
+ |   │──app_extension.dart
+ |   │──app_style.dart
+ |   └──app_theme.dart
+ └───📂src
+     │────📂model
+     │    │──bottom_navigation_item.dart
+     |    │──furniture.dart
+     |    └──furniture_color.dart
+     └────📂view
+     |    │───📂screen
+     |    |   |──cart_screen.dart
+     |    |   |──favorite_screen.dart
+     |    |   |──home_screen.dart
+     |    |   |──intro_screen.dart
+     |    |   |──office_furniture_detail_screen.dart
+     |    |   |──office_furniture_list_screen.dart
+     |    |   └──profile_screen.dart
+     |    │───📂widget
+     |    |   |──bottom_bar.dart
+     │    |   |──cart_list_view.dart
+     │    |   |──color_picker.dart
+     │    |   |──counter_button.dart
+     │    |   |──empty_widget.dart
+     │    |   |──furniture_list_view.dart
+     │    |   |──fade_in_animation.dart
+     |    |   └──rating_bar.dart
+     └────📂bloc
+          |──furniture_bloc.dart
+          |──furniture_event.dart
+          └──furniture_state.dart
+```
+
+
+
+
 
 ## Pull Requests
 I welcome and encourage all pull requests. It usually will take me within 48-72 hours to respond to any issue or request.
@@ -136,21 +181,21 @@ I welcome and encourage all pull requests. It usually will take me within 48-72 
   <br/>
 
 ## Dependencies
-|       Name      |  Cubit + hooks <br/> version  |     GetX <br/> version     |
-| :-------------: | :--------------------------: | :------------------------: |
-| [flutter_bloc](https://pub.dev/packages/flutter_bloc)  |  ✔️  |    ✖️    |
-| [GetX](https://pub.dev/packages/get)  | ✖️  | ✔️    |
-| [flutter_hooks](https://pub.dev/packages/flutter_hooks)  | ✔️  | ✖️ |
-| [equatable](https://pub.dev/packages/equatable)  | ✔️  | ✖️ |
-| [smooth_page_indicator](https://pub.dev/packages/smooth_page_indicator)  | ✔️  | ✔️ |
-| [flutter_rating_bar](https://pub.dev/packages/flutter_rating_bar)  | ✔️  | ✔️ |
-| [simple_animations](https://pub.dev/packages/simple_animations)  | ✔️  | ✔️ |
+|       Name      |  Cubit + hooks <br/> version |   Bloc + hooks <br/> version   |      GetX <br/> version     |
+| :-------------: | :--------------------------: | :----------------------------: |  :------------------------: |
+| [flutter_bloc](https://pub.dev/packages/flutter_bloc)  |  ✔️  |  ✔️  |    ✖️    |
+| [GetX](https://pub.dev/packages/get)  | ✖️  |  ✖️  | ✔️    |
+| [flutter_hooks](https://pub.dev/packages/flutter_hooks)  | ✔️  | ✔️  | ✖️ |
+| [equatable](https://pub.dev/packages/equatable)  | ✔️  | ✔️  | ✖️ |
+| [smooth_page_indicator](https://pub.dev/packages/smooth_page_indicator)  | ✔️  | ✔️ | ✔️ |
+| [flutter_rating_bar](https://pub.dev/packages/flutter_rating_bar)  | ✔️  | ✔️ |✔️ |
+| [simple_animations](https://pub.dev/packages/simple_animations)  | ✔️  | ✔️ |✔️ |
 
   <br/>
 
 ## Created & Maintained By
 
-[SinaSys](https://github.com/SinaSys) 
+[SinaSys](https://github.com/SinaSys)
 
   <br/>
 

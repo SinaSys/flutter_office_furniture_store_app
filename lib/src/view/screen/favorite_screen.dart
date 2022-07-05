@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:office_furniture_store/src/cubit/furniture_cubit.dart';
+import 'package:office_furniture_store/src/bloc/furniture_bloc.dart';
 import 'package:office_furniture_store/src/model/furniture.dart';
 import 'package:office_furniture_store/src/view/widget/empty_widget.dart';
 import 'package:office_furniture_store/src/view/widget/furniture_list_view.dart';
@@ -12,7 +12,7 @@ class FavoriteScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
 
-    final List<Furniture> favoriteList = context.watch<FurnitureCubit>().getFavoriteList;
+    final List<Furniture> favoriteList = context.watch<FurnitureBloc>().getFavoriteList;
 
     return Scaffold(
       appBar: AppBar(

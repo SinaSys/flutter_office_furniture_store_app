@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:office_furniture_store/core/app_style.dart';
-import 'package:office_furniture_store/src/cubit/furniture_cubit.dart';
+import 'package:office_furniture_store/src/bloc/furniture_bloc.dart';
 import 'package:office_furniture_store/src/model/furniture.dart';
 import 'package:office_furniture_store/src/view/screen/office_furniture_detail_screen.dart';
 import '../widget/furniture_list_view.dart';
@@ -54,7 +54,7 @@ class OfficeFurnitureListScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
 
-    final List<Furniture> items = context.watch<FurnitureCubit>().state.mainItems;
+    final List<Furniture> items = context.watch<FurnitureBloc>().state.mainItems;
 
     Future<Widget?> _navigate(Furniture furniture, int index) {
       return Navigator.push(

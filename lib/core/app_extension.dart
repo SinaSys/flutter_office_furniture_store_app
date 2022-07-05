@@ -33,14 +33,12 @@ extension WidgetExtension on Widget{
   }
 }
 
-
 extension IntegerExtension on int {
   get increase => this + 1;
-
   get decrease => this - 1;
 }
 
-enum Operation { increase, decrease, cart, delete, favorite }
+enum Operation { increase, decrease, delete, favorite }
 
 extension ListExtension on List<Furniture> {
   List<Furniture> operator(Furniture furniture, Operation operation) {
@@ -50,9 +48,6 @@ extension ListExtension on List<Furniture> {
         break;
       case Operation.decrease:
         furniture = furniture.copyWith(quantity: furniture.quantity.decrease);
-        break;
-      case Operation.cart:
-        furniture = furniture.copyWith(cart: true);
         break;
       case Operation.delete:
         furniture = furniture.copyWith(cart: false);
