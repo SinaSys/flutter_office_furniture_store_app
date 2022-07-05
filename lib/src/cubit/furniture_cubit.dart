@@ -4,8 +4,6 @@ import 'package:office_furniture_store/src/model/furniture.dart';
 import 'furniture_state.dart';
 
 
-
-
 class FurnitureCubit extends Cubit<FurnitureState> {
   FurnitureCubit() : super(FurnitureState.initial());
 
@@ -70,7 +68,7 @@ class FurnitureCubit extends Cubit<FurnitureState> {
     final List<Furniture> favoriteItems =
         state.mainItems.operator(furniture, Operation.favorite);
 
-    emit(FurnitureState(mainItems: favoriteItems));
+    emit(FurnitureState(mainItems: favoriteItems,totalPrice: state.totalPrice));
   }
 
   get getCartList => state.mainItems.where((element) => element.cart).toList();
