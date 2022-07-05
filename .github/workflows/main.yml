@@ -2,7 +2,6 @@ on:
   push:
     branches:
       - master
-      - cubit
 
 name: "Build & Release"
 jobs:
