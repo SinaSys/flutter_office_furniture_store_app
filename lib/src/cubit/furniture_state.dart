@@ -6,27 +6,27 @@ import '../model/furniture.dart';
 @immutable
 class FurnitureState extends Equatable {
   final List<Furniture> mainItems;
-  final double totalPride;
+  final double totalPrice;
 
   factory FurnitureState.initial() {
     return FurnitureState(mainItems: AppData.furnitureList);
   }
 
   @override
-  List<Object?> get props => [mainItems, totalPride];
+  List<Object?> get props => [mainItems, totalPrice];
 
   const FurnitureState({
     required this.mainItems,
-    this.totalPride = 0.0,
+    this.totalPrice = 0.0,
   });
 
   FurnitureState copyWith({
     List<Furniture>? mainItems,
-    double? totalPride,
+    double? totalPrice,
   }) {
     return FurnitureState(
       mainItems: mainItems ?? this.mainItems,
-      totalPride: totalPride ?? this.totalPride,
+      totalPrice: totalPrice ?? this.totalPrice,
     );
   }
 }

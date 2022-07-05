@@ -1,31 +1,27 @@
 import 'package:bloc/bloc.dart';
+import 'package:office_furniture_store/core/app_extension.dart';
 import 'package:office_furniture_store/src/model/furniture.dart';
 import 'furniture_state.dart';
+
+
+
 
 class FurnitureCubit extends Cubit<FurnitureState> {
   FurnitureCubit() : super(FurnitureState.initial());
 
   increaseQuantity(Furniture furniture) {
-    final List<Furniture> mainItems = state.mainItems.map((element) {
-      if (element.id == furniture.id) {
-        return furniture.copyWith(quantity: furniture.quantity + 1);
-      }
-      return element;
-    }).toList();
+    final List<Furniture> mainItems =
+        state.mainItems.operator(furniture, Operation.increase);
 
     emit(FurnitureState(mainItems: mainItems));
+
     calculateTotalPrice();
   }
 
   decreaseQuantity(Furniture furniture) {
     if (furniture.quantity > 1) {
-      final List<Furniture> mainItems = state.mainItems.map((element) {
-        if (element.id == furniture.id) {
-          return furniture.copyWith(quantity: furniture.quantity - 1);
-        }
-        return element;
-      }).toList();
-
+      final List<Furniture> mainItems =
+          state.mainItems.operator(furniture, Operation.decrease);
 
       emit(FurnitureState(mainItems: mainItems));
     } else {
@@ -35,26 +31,17 @@ class FurnitureCubit extends Cubit<FurnitureState> {
   }
 
   addToCart(Furniture furniture) {
-
-    List<Furniture> cartItems = state.mainItems.map((element) {
-      if (element.id == furniture.id) {
-        return furniture.copyWith(cart: true);
-      }
-      return element;
-    }).toList();
+    final List<Furniture> cartItems =
+        state.mainItems.operator(furniture, Operation.cart);
 
     emit(FurnitureState(mainItems: cartItems));
-    calculateTotalPrice();
 
+    calculateTotalPrice();
   }
 
   deleteFromCart(Furniture furniture) {
-    List<Furniture> cartItems = state.mainItems.map((element) {
-      if (element.id == furniture.id) {
-        return furniture.copyWith(cart: false);
-      }
-      return element;
-    }).toList();
+    final List<Furniture> cartItems =
+        state.mainItems.operator(furniture, Operation.delete);
 
     emit(FurnitureState(mainItems: cartItems));
   }
@@ -76,22 +63,18 @@ class FurnitureCubit extends Cubit<FurnitureState> {
       }
     }
 
-    emit(FurnitureState(mainItems: state.mainItems, totalPride: totalPrice));
+    emit(FurnitureState(mainItems: state.mainItems, totalPrice: totalPrice));
   }
 
   addToFavorite(Furniture furniture) {
-    List<Furniture> favoriteItems = state.mainItems.map((element) {
-      if (element.id == furniture.id) {
-        return furniture.copyWith(isFavorite: !furniture.isFavorite);
-      }
-      return element;
-    }).toList();
+    final List<Furniture> favoriteItems =
+        state.mainItems.operator(furniture, Operation.favorite);
 
     emit(FurnitureState(mainItems: favoriteItems));
   }
 
   get getCartList => state.mainItems.where((element) => element.cart).toList();
 
-  get getFavoriteList => state.mainItems.where((element) => element.isFavorite).toList();
-
+  get getFavoriteList =>
+      state.mainItems.where((element) => element.isFavorite).toList();
 }

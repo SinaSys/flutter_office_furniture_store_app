@@ -17,7 +17,7 @@ class CartScreen extends StatelessWidget {
     final List<Furniture> cartList =
         context.watch<FurnitureCubit>().getCartList;
 
-    final totalPrice = context.watch<FurnitureCubit>().state.totalPride;
+    final totalPrice = context.watch<FurnitureCubit>().state.totalPrice;
 
     PreferredSizeWidget _appBar() {
       return AppBar(
