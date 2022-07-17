@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
-import '../../model/furniture_color.dart';
+
+import '../../data/model/furniture_color.dart';
 
 class ColorPicker extends HookWidget {
 

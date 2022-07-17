@@ -5,11 +5,11 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:office_furniture_store/core/app_color.dart';
 import 'package:office_furniture_store/core/app_extension.dart';
 import 'package:office_furniture_store/core/app_style.dart';
-import 'package:office_furniture_store/src/bloc/furniture_bloc.dart';
-import 'package:office_furniture_store/src/view/widget/counter_button.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
-import '../../model/furniture.dart';
+import '../../business_logic/bloc/furniture_bloc.dart';
+import '../../data/model/furniture.dart';
 import '../widget/color_picker.dart';
+import '../widget/counter_button.dart';
 import '../widget/rating_bar.dart';
 
 class OfficeFurnitureDetailScreen extends HookWidget {

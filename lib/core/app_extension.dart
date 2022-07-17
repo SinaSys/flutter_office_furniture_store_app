@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import '../src/model/furniture.dart';
-import '../src/view/widget/fade_in_animation.dart';
+import '../src/data/model/furniture.dart';
+import '../src/presentation/animation/fade_in_animation.dart';
 
 extension StringExtension on String {
   String get addOverFlow {
@@ -9,21 +9,6 @@ extension StringExtension on String {
     } else {
       return "${substring(0, 15)}...";
     }
-  }
-}
-
-extension IterableExtension<T> on Iterable<T> {
-  Iterable<T> distinctBy(Object Function(T e) getCompareValue) {
-    var result = <T>[];
-    forEach(
-      (element) {
-        if (!result
-            .any((x) => getCompareValue(x) == getCompareValue(element))) {
-          result.add(element);
-        }
-      },
-    );
-    return result;
   }
 }
 

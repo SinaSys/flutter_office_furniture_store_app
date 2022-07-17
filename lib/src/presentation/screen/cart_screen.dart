@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:office_furniture_store/core/app_color.dart';
 import 'package:office_furniture_store/core/app_style.dart';
-import 'package:office_furniture_store/src/bloc/furniture_bloc.dart';
-import 'package:office_furniture_store/src/model/furniture.dart';
-import 'package:office_furniture_store/src/view/widget/counter_button.dart';
-import 'package:office_furniture_store/src/view/widget/empty_widget.dart';
+import '../../business_logic/bloc/furniture_bloc.dart';
+import '../../data/model/furniture.dart';
 import '../widget/bottom_bar.dart';
 import '../widget/cart_list_view.dart';
+import '../widget/counter_button.dart';
+import '../widget/empty_widget.dart';
 
 class CartScreen extends StatelessWidget {
   const CartScreen({Key? key}) : super(key: key);

@@ -2,10 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:office_furniture_store/core/app_color.dart';
 import 'package:office_furniture_store/core/app_data.dart';
-import 'package:office_furniture_store/src/view/screen/cart_screen.dart';
-import 'package:office_furniture_store/src/view/screen/favorite_screen.dart';
-import 'package:office_furniture_store/src/view/screen/office_furniture_list_screen.dart';
-import 'package:office_furniture_store/src/view/screen/profile_screen.dart';
+import 'package:office_furniture_store/src/presentation/screen/profile_screen.dart';
+
+import 'cart_screen.dart';
+import 'favorite_screen.dart';
+import 'office_furniture_list_screen.dart';
 
 
 class HomeScreen extends HookWidget {
