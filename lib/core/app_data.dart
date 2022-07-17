@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:office_furniture_store/core/app_asset.dart';
-import 'package:office_furniture_store/src/model/furniture.dart';
-import 'package:office_furniture_store/src/model/furniture_color.dart';
-import '../src/model/bottom_navigation_item.dart';
+
+import '../src/data/model/bottom_navigation_item.dart';
+import '../src/data/model/furniture.dart';
+import '../src/data/model/furniture_color.dart';
 
 class AppData {
   const AppData._();

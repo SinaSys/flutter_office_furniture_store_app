@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:office_furniture_store/core/app_style.dart';
-import 'package:office_furniture_store/src/cubit/furniture_cubit.dart';
-import 'package:office_furniture_store/src/model/furniture.dart';
-import 'package:office_furniture_store/src/view/screen/office_furniture_detail_screen.dart';
+import '../../business_logic/cubit/furniture_cubit.dart';
+import '../../data/model/furniture.dart';
 import '../widget/furniture_list_view.dart';
+import 'office_furniture_detail_screen.dart';
 
 class OfficeFurnitureListScreen extends StatelessWidget {
   const OfficeFurnitureListScreen({Key? key}) : super(key: key);

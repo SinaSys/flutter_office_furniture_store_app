@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import '../src/model/furniture.dart';
-import '../src/view/widget/fade_in_animation.dart';
+import '../src/data/model/furniture.dart';
+import '../src/presentation/animation/fade_in_animation.dart';
 
 extension StringExtension on String {
   String get addOverFlow {
@@ -32,7 +32,6 @@ extension WidgetExtension on Widget{
     return FadeInAnimation(delay: delay, child: this);
   }
 }
-
 
 extension IntegerExtension on int {
   get increase => this + 1;

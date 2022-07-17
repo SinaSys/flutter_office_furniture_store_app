@@ -1,7 +1,8 @@
 import 'package:bloc/bloc.dart';
 import 'package:office_furniture_store/core/app_extension.dart';
-import 'package:office_furniture_store/src/model/furniture.dart';
+import '../../data/model/furniture.dart';
 import 'furniture_state.dart';
+
 
 
 class FurnitureCubit extends Cubit<FurnitureState> {

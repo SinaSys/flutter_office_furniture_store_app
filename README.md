@@ -1,10 +1,12 @@
 ## office_furniture_store_app
 
+
 <p align="center">
-  <img src="https://img.shields.io/github/workflow/status/SinaSys/flutter_office_furniture_store_app/Analyze%20and%20Build?label=CI&logo=github">
+  <img src="https://img.shields.io/github/workflow/status/SInaSys/flutter_office_furniture_store_app/Build%20&%20Release/cubit?label=CI&logo=github">
   <img src="https://img.shields.io/github/v/release/SinaSys/flutter_office_furniture_store_app?label=Release&logo=semantic-release">
-  <img src="https://img.shields.io/github/last-commit/SinaSys/flutter_office_furniture_store_app?label=Last%20commit">
+  <img src="https://img.shields.io/github/last-commit/SinaSys/flutter_office_furniture_store_app/cubit?label=Last%20commit">
 </p>
+
 
 
 Office Furniture Store app is a design implementation of [Office Furniture Store app](https://dribbble.com/shots/16394699-E-commerce-design-concept) designed by [Jonatan](https://dribbble.com/Jhonatan_artist23)
@@ -15,8 +17,8 @@ Office Furniture Store app is a design implementation of [Office Furniture Store
   <br/>
 
 ## GetX | Cubit + flutter hooks
-There are Two different implementations : 1 : Getx version , 2: Cubit + hooks version <br/>
-• You can access Getx version from ```master branch``` [(here)](https://github.com/SinaSys/flutter_office_furniture_store_app/tree/master) <br/>
+There are Two different implementations:  1: GetX version , 2: Cubit + hooks version <br/>
+• You can access GetX version from ```master branch``` [(here)](https://github.com/SinaSys/flutter_office_furniture_store_app/tree/master) <br/>
 • You can access Cubit + flutter hooks version from ```cubit branch``` [(here)](https://github.com/SinaSys/flutter_office_furniture_store_app/tree/cubit)
 
  <br/>
@@ -44,7 +46,7 @@ Preview                    |   List screen             |   Detail Screen        
 • Clear all itms from cart screen
 • Automatically delete single item from cart by set its value to zero
 • Real-time calculation of total price in the cart screen
-• State management with GetX
+• State management with GetX | Bloc | Cubit
 ```
 
 
@@ -94,6 +96,51 @@ Preview                    |   List screen             |   Detail Screen        
 📂lib
  │───main.dart  
  │───📂core  
+ │   │──app_asset.dart
+ │   │──app_color.dart
+ │   │──app_data.dart
+ │   │──app_extension.dart
+ │   │──app_style.dart
+ │   └──app_extension.dart
+ └───📂src
+     │────📂data
+     │    │───📂model
+     │    │   |──bottom_navigation_item.dart
+     │    │   |──furniture.dart
+     │    │   └──furniture_color.dart
+     └────📂presentation
+     │    │───📂screen
+     │    │   |──cart_screen.dart
+     │    │   |──favorite_screen.dart
+     │    │   |──home_screen.dart
+     │    │   |──intro_screen.dart
+     │    │   |──office_furniture_detail_screen.dart
+     │    │   |──office_furniture_list_screen.dart
+     │    │   └──profile_screen.dart
+     │    │───📂widget
+     │    │   |──bottom_bar.dart
+     │    │   |──cart_list_view.dart
+     │    │   |──color_picker.dart
+     │    │   |──counter_button.dart
+     │    │   |──empty_widget.dart
+     │    │   |──furniture_list_view.dart
+     │    │   └──rating_bar.dart
+     │    │───📂animation
+     │    │   └──fade_in_animation.dart
+     └────📂business_logic
+          └───📂cubit
+              └──📂food
+                  |──furniture_cubit.dart
+                  └──furniture_state.dart
+```
+
+
+
+## Directory Structure (Bloc + hooks version)
+```
+📂lib
+ │───main.dart  
+ │───📂core  
  |   │──app_asset.dart
  |   │──app_color.dart
  |   │──app_data.dart
@@ -123,11 +170,11 @@ Preview                    |   List screen             |   Detail Screen        
      │    |   |──furniture_list_view.dart
      │    |   |──fade_in_animation.dart
      |    |   └──rating_bar.dart
-     └────📂cubit
-          |──furniture_cubit.dart
+     └────📂bloc
+          |──furniture_bloc.dart
+          |──furniture_event.dart
           └──furniture_state.dart
 ```
-
 
 
 ## Pull Requests
@@ -135,16 +182,17 @@ I welcome and encourage all pull requests. It usually will take me within 48-72 
 
   <br/>
 
+
 ## Dependencies
-|       Name      |  Cubit + hooks <br/> version  |     GetX <br/> version     |
-| :-------------: | :--------------------------: | :------------------------: |
-| [flutter_bloc](https://pub.dev/packages/flutter_bloc)  |  ✔️  |    ✖️    |
-| [GetX](https://pub.dev/packages/get)  | ✖️  | ✔️    |
-| [flutter_hooks](https://pub.dev/packages/flutter_hooks)  | ✔️  | ✖️ |
-| [equatable](https://pub.dev/packages/equatable)  | ✔️  | ✖️ |
-| [smooth_page_indicator](https://pub.dev/packages/smooth_page_indicator)  | ✔️  | ✔️ |
-| [flutter_rating_bar](https://pub.dev/packages/flutter_rating_bar)  | ✔️  | ✔️ |
-| [simple_animations](https://pub.dev/packages/simple_animations)  | ✔️  | ✔️ |
+|       Name      |  Cubit + hooks <br/> version |   Bloc + hooks <br/> version   |      GetX <br/> version     |
+| :-------------: | :--------------------------: | :----------------------------: |  :------------------------: |
+| [flutter_bloc](https://pub.dev/packages/flutter_bloc)  |  ✔️  |  ✔️  |    ✖️    |
+| [GetX](https://pub.dev/packages/get)  | ✖️  |  ✖️  | ✔️    |
+| [flutter_hooks](https://pub.dev/packages/flutter_hooks)  | ✔️  | ✔️  | ✖️ |
+| [equatable](https://pub.dev/packages/equatable)  | ✔️  | ✔️  | ✖️ |
+| [smooth_page_indicator](https://pub.dev/packages/smooth_page_indicator)  | ✔️  | ✔️ | ✔️ |
+| [flutter_rating_bar](https://pub.dev/packages/flutter_rating_bar)  | ✔️  | ✔️ |✔️ |
+| [simple_animations](https://pub.dev/packages/simple_animations)  | ✔️  | ✔️ |✔️ |
 
   <br/>
 

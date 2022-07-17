@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:office_furniture_store/core/app_theme.dart';
-import 'package:office_furniture_store/src/cubit/furniture_cubit.dart';
-import 'package:office_furniture_store/src/view/screen/intro_screen.dart';
+import 'package:office_furniture_store/src/business_logic/cubit/furniture_cubit.dart';
+import 'package:office_furniture_store/src/presentation/screen/intro_screen.dart';
 
 void main() => runApp(const MyApp());
 

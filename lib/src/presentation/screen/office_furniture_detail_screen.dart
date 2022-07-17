@@ -5,11 +5,11 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:office_furniture_store/core/app_color.dart';
 import 'package:office_furniture_store/core/app_extension.dart';
 import 'package:office_furniture_store/core/app_style.dart';
-import 'package:office_furniture_store/src/cubit/furniture_cubit.dart';
-import 'package:office_furniture_store/src/view/widget/counter_button.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
-import '../../model/furniture.dart';
+import '../../business_logic/cubit/furniture_cubit.dart';
+import '../../data/model/furniture.dart';
 import '../widget/color_picker.dart';
+import '../widget/counter_button.dart';
 import '../widget/rating_bar.dart';
 
 class OfficeFurnitureDetailScreen extends HookWidget {
@@ -20,11 +20,11 @@ class OfficeFurnitureDetailScreen extends HookWidget {
       {Key? key, required this.furniture, required this.index})
       : super(key: key);
 
-
   @override
   Widget build(BuildContext context) {
     final List<Furniture> items =
         context.watch<FurnitureCubit>().state.mainItems;
+
     double height = MediaQuery.of(context).size.height;
 
     final _selectedIndex = useState(0);
@@ -37,9 +37,9 @@ class OfficeFurnitureDetailScreen extends HookWidget {
           alignment: Alignment.bottomCenter,
           children: [
             PageView.builder(
-              onPageChanged: (int index){
+              onPageChanged: (int index) {
                 _selectedIndex.value = index;
-              } ,
+              },
               itemCount: furniture.images.length,
               itemBuilder: (_, index) {
                 return Padding(
@@ -71,7 +71,6 @@ class OfficeFurnitureDetailScreen extends HookWidget {
       );
     }
 
-
     PreferredSizeWidget _appBar(BuildContext context) {
       return AppBar(
         actions: [
@@ -80,7 +79,7 @@ class OfficeFurnitureDetailScreen extends HookWidget {
             onPressed: () =>
                 context.read<FurnitureCubit>().addToFavorite(items[index]),
             icon: items[index].isFavorite
-            // icon: state.
+                // icon: state.
                 ? const Icon(Icons.bookmark, color: Colors.black)
                 : const Icon(Icons.bookmark_border, color: Colors.black),
           )
@@ -121,7 +120,7 @@ class OfficeFurnitureDetailScreen extends HookWidget {
               style: ElevatedButton.styleFrom(
                   primary: AppColor.lightBlack,
                   padding:
-                  const EdgeInsets.symmetric(horizontal: 40, vertical: 15),
+                      const EdgeInsets.symmetric(horizontal: 40, vertical: 15),
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(10))),
               onPressed: () {
@@ -157,13 +156,13 @@ class OfficeFurnitureDetailScreen extends HookWidget {
                 Padding(
                   padding: const EdgeInsets.only(top: 20, bottom: 10),
                   child: const Text("Synopsis",
-                      style: h2Style, textAlign: TextAlign.end)
+                          style: h2Style, textAlign: TextAlign.end)
                       .fadeAnimation(0.6),
                 ),
                 Text(furniture.description,
-                    maxLines: 5,
-                    overflow: TextOverflow.ellipsis,
-                    style: const TextStyle(color: Colors.black45))
+                        maxLines: 5,
+                        overflow: TextOverflow.ellipsis,
+                        style: const TextStyle(color: Colors.black45))
                     .fadeAnimation(0.8),
                 const SizedBox(height: 20),
                 Row(
