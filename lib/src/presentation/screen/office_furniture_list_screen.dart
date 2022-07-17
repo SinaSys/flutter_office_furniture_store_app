@@ -53,8 +53,8 @@ class OfficeFurnitureListScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
-    final List<Furniture> items = context.watch<FurnitureCubit>().state.mainItems;
+    final List<Furniture> items =
+        context.watch<FurnitureCubit>().state.mainItems;
 
     Future<Widget?> _navigate(Furniture furniture, int index) {
       return Navigator.push(
@@ -62,7 +62,7 @@ class OfficeFurnitureListScreen extends StatelessWidget {
         PageRouteBuilder(
           transitionDuration: const Duration(seconds: 1),
           pageBuilder: (_, __, ___) =>
-              OfficeFurnitureDetailScreen(furniture: furniture,index: index),
+              OfficeFurnitureDetailScreen(furniture: furniture, index: index),
         ),
       );
     }

@@ -108,6 +108,8 @@ Preview                    |   List screen             |   Detail Screen        
      │    │   |──bottom_navigation_item.dart
      │    │   |──furniture.dart
      │    │   └──furniture_color.dart
+     │    │───📂repository
+     │    │   └──repository.dart
      └────📂presentation
      │    │───📂screen
      │    │   |──cart_screen.dart

@@ -1,7 +1,5 @@
 import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
-
-import '../../../core/app_data.dart';
 import '../../data/model/furniture.dart';
 
 @immutable
@@ -9,9 +7,8 @@ class FurnitureState extends Equatable {
   final List<Furniture> mainItems;
   final double totalPrice;
 
-  factory FurnitureState.initial() {
-    return FurnitureState(mainItems: AppData.furnitureList);
-  }
+  const FurnitureState.initial(List<Furniture> mainItems)
+      : this(mainItems: mainItems);
 
   @override
   List<Object?> get props => [mainItems, totalPrice];

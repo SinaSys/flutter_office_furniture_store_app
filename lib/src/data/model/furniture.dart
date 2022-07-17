@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 
 import '../model/furniture_color.dart';
 
-
 @immutable
 class Furniture extends Equatable {
   final int id;
@@ -32,17 +31,17 @@ class Furniture extends Equatable {
 
   @override
   List<Object?> get props => [
-    id,
-    cart,
-    title,
-    description,
-    price,
-    quantity,
-    score,
-    images,
-    isFavorite,
-    colors
-  ];
+        id,
+        cart,
+        title,
+        description,
+        price,
+        quantity,
+        score,
+        images,
+        isFavorite,
+        colors
+      ];
 
   Furniture copyWith({
     int? id,

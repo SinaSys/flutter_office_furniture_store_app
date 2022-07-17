@@ -1,12 +1,14 @@
 import 'package:bloc/bloc.dart';
 import 'package:office_furniture_store/core/app_extension.dart';
+import 'package:office_furniture_store/src/data/repository/repository.dart';
 import '../../data/model/furniture.dart';
 import 'furniture_state.dart';
 
-
-
 class FurnitureCubit extends Cubit<FurnitureState> {
-  FurnitureCubit() : super(FurnitureState.initial());
+  FurnitureCubit({required this.repository})
+      : super(FurnitureState.initial(repository.getFurnitureList));
+
+  final Repository repository;
 
   increaseQuantity(Furniture furniture) {
     final List<Furniture> mainItems =
@@ -69,7 +71,8 @@ class FurnitureCubit extends Cubit<FurnitureState> {
     final List<Furniture> favoriteItems =
         state.mainItems.operator(furniture, Operation.favorite);
 
-    emit(FurnitureState(mainItems: favoriteItems,totalPrice: state.totalPrice));
+    emit(
+        FurnitureState(mainItems: favoriteItems, totalPrice: state.totalPrice));
   }
 
   get getCartList => state.mainItems.where((element) => element.cart).toList();

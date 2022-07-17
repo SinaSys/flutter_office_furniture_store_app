@@ -11,12 +11,12 @@ class FavoriteScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
-    final List<Furniture> favoriteList = context.watch<FurnitureCubit>().getFavoriteList;
+    final List<Furniture> favoriteList =
+        context.watch<FurnitureCubit>().getFavoriteList;
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Favorites",style: h2Style),
+        title: const Text("Favorites", style: h2Style),
       ),
       body: Padding(
         padding: const EdgeInsets.all(15),
@@ -26,11 +26,11 @@ class FavoriteScreen extends StatelessWidget {
             children: [
               favoriteList.isNotEmpty
                   ? FurnitureListView(
-                isHorizontal: false,
-                furnitureList: favoriteList,
-              )
+                      isHorizontal: false,
+                      furnitureList: favoriteList,
+                    )
                   : const EmptyWidget(
-                  type: EmptyWidgetType.favorite, title: "Empty favorite")
+                      type: EmptyWidgetType.favorite, title: "Empty favorite")
             ],
           ),
         ),

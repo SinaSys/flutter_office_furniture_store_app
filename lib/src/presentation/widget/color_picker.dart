@@ -4,18 +4,16 @@ import 'package:flutter_hooks/flutter_hooks.dart';
 import '../../data/model/furniture_color.dart';
 
 class ColorPicker extends HookWidget {
-
   final List<FurnitureColor> colors;
 
   const ColorPicker({
     Key? key,
     required this.colors,
-  }):super(key: key);
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-
-    final colorUseState = useState<List<FurnitureColor>>(colors) ;
+    final colorUseState = useState<List<FurnitureColor>>(colors);
 
     final List<FurnitureColor> colorList = List.from(colorUseState.value);
 
@@ -32,10 +30,10 @@ class ColorPicker extends HookWidget {
               children: [
                 colorList[index].isSelected
                     ? CircleAvatar(
-                  backgroundColor:
-                  colorList[index].color.withOpacity(0.5),
-                  radius: 18,
-                )
+                        backgroundColor:
+                            colorList[index].color.withOpacity(0.5),
+                        radius: 18,
+                      )
                     : const IgnorePointer(),
                 InkWell(
                   onTap: () {
@@ -44,7 +42,6 @@ class ColorPicker extends HookWidget {
                     }
                     colorList[index].isSelected = true;
                     colorUseState.value = colorList;
-
                   },
                   child: CircleAvatar(
                     backgroundColor: colorList[index].color,

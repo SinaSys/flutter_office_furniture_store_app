@@ -12,23 +12,8 @@ extension StringExtension on String {
   }
 }
 
-extension IterableExtension<T> on Iterable<T> {
-  Iterable<T> distinctBy(Object Function(T e) getCompareValue) {
-    var result = <T>[];
-    forEach(
-      (element) {
-        if (!result
-            .any((x) => getCompareValue(x) == getCompareValue(element))) {
-          result.add(element);
-        }
-      },
-    );
-    return result;
-  }
-}
-
-extension WidgetExtension on Widget{
-  Widget fadeAnimation(double delay){
+extension WidgetExtension on Widget {
+  Widget fadeAnimation(double delay) {
     return FadeInAnimation(delay: delay, child: this);
   }
 }
@@ -70,4 +55,3 @@ extension ListExtension on List<Furniture> {
     return list;
   }
 }
-
