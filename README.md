@@ -142,41 +142,46 @@ Preview                    |   List screen             |   Detail Screen        
 📂lib
  │───main.dart  
  │───📂core  
- |   │──app_asset.dart
- |   │──app_color.dart
- |   │──app_data.dart
- |   │──app_extension.dart
- |   │──app_style.dart
- |   └──app_theme.dart
+ │   │──app_asset.dart
+ │   │──app_color.dart
+ │   │──app_data.dart
+ │   │──app_extension.dart
+ │   │──app_style.dart
+ │   └──app_extension.dart
  └───📂src
-     │────📂model
-     │    │──bottom_navigation_item.dart
-     |    │──furniture.dart
-     |    └──furniture_color.dart
-     └────📂view
-     |    │───📂screen
-     |    |   |──cart_screen.dart
-     |    |   |──favorite_screen.dart
-     |    |   |──home_screen.dart
-     |    |   |──intro_screen.dart
-     |    |   |──office_furniture_detail_screen.dart
-     |    |   |──office_furniture_list_screen.dart
-     |    |   └──profile_screen.dart
-     |    │───📂widget
-     |    |   |──bottom_bar.dart
-     │    |   |──cart_list_view.dart
-     │    |   |──color_picker.dart
-     │    |   |──counter_button.dart
-     │    |   |──empty_widget.dart
-     │    |   |──furniture_list_view.dart
-     │    |   |──fade_in_animation.dart
-     |    |   └──rating_bar.dart
-     └────📂bloc
-          |──furniture_bloc.dart
-          |──furniture_event.dart
-          └──furniture_state.dart
+     │────📂data
+     │    │───📂model
+     │    │   |──bottom_navigation_item.dart
+     │    │   |──furniture.dart
+     │    │   └──furniture_color.dart
+     │    │───📂repository
+     │    │   └──repository.dart
+     └────📂presentation
+     │    │───📂screen
+     │    │   |──cart_screen.dart
+     │    │   |──favorite_screen.dart
+     │    │   |──home_screen.dart
+     │    │   |──intro_screen.dart
+     │    │   |──office_furniture_detail_screen.dart
+     │    │   |──office_furniture_list_screen.dart
+     │    │   └──profile_screen.dart
+     │    │───📂widget
+     │    │   |──bottom_bar.dart
+     │    │   |──cart_list_view.dart
+     │    │   |──color_picker.dart
+     │    │   |──counter_button.dart
+     │    │   |──empty_widget.dart
+     │    │   |──furniture_list_view.dart
+     │    │   └──rating_bar.dart
+     │    │───📂animation
+     │    │   └──fade_in_animation.dart
+     └────📂business_logic
+          └───📂bloc
+              └──📂furniture
+                  |──furniture_bloc.dart
+                  |──furniture_state.dart
+                  └──furniture_event.dart
 ```
-
 
 
 
