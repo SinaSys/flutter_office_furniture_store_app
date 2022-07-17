@@ -15,8 +15,8 @@ Office Furniture Store app is a design implementation of [Office Furniture Store
   <br/>
 
 ## GetX | Cubit + flutter hooks | Bloc + flutter hooks
-There are Three different implementations : 1 : Getx version , 2: Cubit + hooks version , 3: Bloc + hooks version <br/>
-• You can access Getx version from ```master branch``` [(here)](https://github.com/SinaSys/flutter_office_furniture_store_app/tree/master) <br/>
+There are Three different implementations: 1 : GetX version , 2: Cubit + hooks version , 3: Bloc + hooks version <br/>
+• You can access GetX version from ```master branch``` [(here)](https://github.com/SinaSys/flutter_office_furniture_store_app/tree/master) <br/>
 • You can access Cubit + flutter hooks version from ```cubit branch``` [(here)](https://github.com/SinaSys/flutter_office_furniture_store_app/tree/cubit) <br/>
 • You can access Bloc + flutter hooks version from ```bloc branch``` [(here)](https://github.com/SinaSys/flutter_office_furniture_store_app/tree/bloc)
 
@@ -96,38 +96,44 @@ Preview                    |   List screen             |   Detail Screen        
 📂lib
  │───main.dart  
  │───📂core  
- |   │──app_asset.dart
- |   │──app_color.dart
- |   │──app_data.dart
- |   │──app_extension.dart
- |   │──app_style.dart
- |   └──app_theme.dart
+ │   │──app_asset.dart
+ │   │──app_color.dart
+ │   │──app_data.dart
+ │   │──app_extension.dart
+ │   │──app_style.dart
+ │   └──app_extension.dart
  └───📂src
-     │────📂model
-     │    │──bottom_navigation_item.dart
-     |    │──furniture.dart
-     |    └──furniture_color.dart
-     └────📂view
-     |    │───📂screen
-     |    |   |──cart_screen.dart
-     |    |   |──favorite_screen.dart
-     |    |   |──home_screen.dart
-     |    |   |──intro_screen.dart
-     |    |   |──office_furniture_detail_screen.dart
-     |    |   |──office_furniture_list_screen.dart
-     |    |   └──profile_screen.dart
-     |    │───📂widget
-     |    |   |──bottom_bar.dart
-     │    |   |──cart_list_view.dart
-     │    |   |──color_picker.dart
-     │    |   |──counter_button.dart
-     │    |   |──empty_widget.dart
-     │    |   |──furniture_list_view.dart
-     │    |   |──fade_in_animation.dart
-     |    |   └──rating_bar.dart
-     └────📂cubit
-          |──furniture_cubit.dart
-          └──furniture_state.dart
+     │────📂data
+     │    │───📂model
+     │    │   |──bottom_navigation_item.dart
+     │    │   |──furniture.dart
+     │    │   └──furniture_color.dart
+     │    │───📂repository
+     │    │   └──repository.dart
+     └────📂presentation
+     │    │───📂screen
+     │    │   |──cart_screen.dart
+     │    │   |──favorite_screen.dart
+     │    │   |──home_screen.dart
+     │    │   |──intro_screen.dart
+     │    │   |──office_furniture_detail_screen.dart
+     │    │   |──office_furniture_list_screen.dart
+     │    │   └──profile_screen.dart
+     │    │───📂widget
+     │    │   |──bottom_bar.dart
+     │    │   |──cart_list_view.dart
+     │    │   |──color_picker.dart
+     │    │   |──counter_button.dart
+     │    │   |──empty_widget.dart
+     │    │   |──furniture_list_view.dart
+     │    │   └──rating_bar.dart
+     │    │───📂animation
+     │    │   └──fade_in_animation.dart
+     └────📂business_logic
+          └───📂cubit
+              └──📂furniture
+                  |──furniture_cubit.dart
+                  └──furniture_state.dart
 ```
 
 
@@ -170,7 +176,6 @@ Preview                    |   List screen             |   Detail Screen        
           |──furniture_event.dart
           └──furniture_state.dart
 ```
-
 
 
 
