@@ -3,10 +3,10 @@ on:
     branches:
       - cubit
 
-name: "Build & Release"
+name: "Analysis & Build"
 jobs:
   build:
-    name: Build & Release
+    name: Analysis & Build
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1

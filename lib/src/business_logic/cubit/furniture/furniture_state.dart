@@ -1,6 +1,6 @@
 import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
-import '../../data/model/furniture.dart';
+import '../../../data/model/furniture.dart';
 
 @immutable
 class FurnitureState extends Equatable {

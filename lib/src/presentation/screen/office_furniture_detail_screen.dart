@@ -6,7 +6,7 @@ import 'package:office_furniture_store/core/app_color.dart';
 import 'package:office_furniture_store/core/app_extension.dart';
 import 'package:office_furniture_store/core/app_style.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
-import '../../business_logic/cubit/furniture_cubit.dart';
+import '../../business_logic/cubit/furniture/furniture_cubit.dart';
 import '../../data/model/furniture.dart';
 import '../widget/color_picker.dart';
 import '../widget/counter_button.dart';

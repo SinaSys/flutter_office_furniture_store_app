@@ -2,7 +2,7 @@
 
 
 <p align="center">
-  <img src="https://img.shields.io/github/workflow/status/SInaSys/flutter_office_furniture_store_app/Build%20&%20Release/cubit?label=CI&logo=github">
+  <img src="https://img.shields.io/github/workflow/status/SinaSys/flutter_office_furniture_store_app/Analysis%20&%20Build/cubit?label=CI&logo=github">
   <img src="https://img.shields.io/github/v/release/SinaSys/flutter_office_furniture_store_app?label=Release&logo=semantic-release">
   <img src="https://img.shields.io/github/last-commit/SinaSys/flutter_office_furniture_store_app/cubit?label=Last%20commit">
 </p>
@@ -50,46 +50,6 @@ Preview                    |   List screen             |   Detail Screen        
 ```
 
 
-## Directory Structure (GetX version)
-```
-📂lib
- │───main.dart  
- │───📂core  
- |   │──app_asset.dart
- |   │──app_color.dart
- |   │──app_data.dart
- |   │──app_extension.dart
- |   │──app_style.dart
- |   └──app_theme.dart
- └───📂src
-     │────📂model
-     │    │──bottom_navigation_item.dart
-     |    │──furniture.dart
-     |    └──furniture_color.dart
-     └────📂view
-     |    │───📂screen
-     |    |   |──cart_screen.dart
-     |    |   |──favorite_screen.dart
-     |    |   |──home_screen.dart
-     |    |   |──intro_screen.dart
-     |    |   |──office_furniture_detail_screen.dart
-     |    |   |──office_furniture_list_screen.dart
-     |    |   └──profile_screen.dart
-     |    │───📂widget
-     |    |   |──bottom_bar.dart
-     │    |   |──cart_list_view.dart
-     │    |   |──color_picker.dart
-     │    |   |──counter_button.dart
-     │    |   |──empty_widget.dart
-     │    |   |──furniture_list_view.dart
-     │    |   |──fade_in_animation.dart
-     |    |   └──rating_bar.dart
-     └────📂controller
-          └──office_furniture_controller.dart
-```
-
-
-
 
 ## Directory Structure (Cubit + hooks version)
 ```
@@ -131,7 +91,7 @@ Preview                    |   List screen             |   Detail Screen        
      │    │   └──fade_in_animation.dart
      └────📂business_logic
           └───📂cubit
-              └──📂food
+              └──📂furniture
                   |──furniture_cubit.dart
                   └──furniture_state.dart
 ```
@@ -177,6 +137,47 @@ Preview                    |   List screen             |   Detail Screen        
           |──furniture_event.dart
           └──furniture_state.dart
 ```
+
+
+
+## Directory Structure (GetX version)
+```
+📂lib
+ │───main.dart  
+ │───📂core  
+ |   │──app_asset.dart
+ |   │──app_color.dart
+ |   │──app_data.dart
+ |   │──app_extension.dart
+ |   │──app_style.dart
+ |   └──app_theme.dart
+ └───📂src
+     │────📂model
+     │    │──bottom_navigation_item.dart
+     |    │──furniture.dart
+     |    └──furniture_color.dart
+     └────📂view
+     |    │───📂screen
+     |    |   |──cart_screen.dart
+     |    |   |──favorite_screen.dart
+     |    |   |──home_screen.dart
+     |    |   |──intro_screen.dart
+     |    |   |──office_furniture_detail_screen.dart
+     |    |   |──office_furniture_list_screen.dart
+     |    |   └──profile_screen.dart
+     |    │───📂widget
+     |    |   |──bottom_bar.dart
+     │    |   |──cart_list_view.dart
+     │    |   |──color_picker.dart
+     │    |   |──counter_button.dart
+     │    |   |──empty_widget.dart
+     │    |   |──furniture_list_view.dart
+     │    |   |──fade_in_animation.dart
+     |    |   └──rating_bar.dart
+     └────📂controller
+          └──office_furniture_controller.dart
+```
+
 
 
 ## Pull Requests
