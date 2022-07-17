@@ -31,17 +31,17 @@ class Furniture extends Equatable {
 
   @override
   List<Object?> get props => [
-    id,
-    cart,
-    title,
-    description,
-    price,
-    quantity,
-    score,
-    images,
-    isFavorite,
-    colors
-  ];
+        id,
+        cart,
+        title,
+        description,
+        price,
+        quantity,
+        score,
+        images,
+        isFavorite,
+        colors
+      ];
 
   Furniture copyWith({
     int? id,

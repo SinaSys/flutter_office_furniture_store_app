@@ -2,21 +2,24 @@ import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:office_furniture_store/core/app_extension.dart';
-import '../../../core/app_data.dart';
-import '../../data/model/furniture.dart';
+import 'package:office_furniture_store/src/data/repository/repository.dart';
+import '../../../data/model/furniture.dart';
 
 part 'furniture_event.dart';
 
 part 'furniture_state.dart';
 
 class FurnitureBloc extends Bloc<FurnitureEvent, FurnitureState> {
-  FurnitureBloc() : super(FurnitureState.initial()) {
+  FurnitureBloc({required this.repository})
+      : super(FurnitureState.initial(repository.getFurnitureList)) {
     on<IncreaseQuantityEvent>(_increaseQuantity);
     on<DecreaseQuantityEvent>(_decreaseQuantity);
     on<AddToCartEvent>(_addToCart);
     on<AddToFavoriteEvent>(_addToFavorite);
     on<ClearCartEvent>(_clearCart);
   }
+
+  final Repository repository;
 
   void _increaseQuantity(
       IncreaseQuantityEvent event, Emitter<FurnitureState> emit) {

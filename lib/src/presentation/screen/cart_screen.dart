@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:office_furniture_store/core/app_color.dart';
 import 'package:office_furniture_store/core/app_style.dart';
-import '../../business_logic/bloc/furniture_bloc.dart';
+import '../../business_logic/bloc/furniture/furniture_bloc.dart';
 import '../../data/model/furniture.dart';
 import '../widget/bottom_bar.dart';
 import '../widget/cart_list_view.dart';
@@ -14,15 +14,9 @@ class CartScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final List<Furniture> cartList =
-        context
-            .watch<FurnitureBloc>()
-            .getCartList;
+    final List<Furniture> cartList = context.watch<FurnitureBloc>().getCartList;
 
-    final totalPrice = context
-        .watch<FurnitureBloc>()
-        .state
-        .totalPrice;
+    final totalPrice = context.watch<FurnitureBloc>().state.totalPrice;
 
     PreferredSizeWidget _appBar() {
       return AppBar(
@@ -54,20 +48,19 @@ class CartScreen extends StatelessWidget {
         padding: const EdgeInsets.all(15),
         child: cartList.isNotEmpty
             ? CartListView(
-          furnitureItems: cartList,
-          counterButton: (furniture, index) {
-            return CounterButton(
-                orientation: Axis.vertical,
-                onIncrementSelected: () =>
-                    context.read<FurnitureBloc>().add(
-                        IncreaseQuantityEvent(furniture: furniture)),
-
-                onDecrementSelected: () =>
-                    context.read<FurnitureBloc>().add(
-                        DecreaseQuantityEvent(furniture: furniture)),
-                label: cartList[index].quantity);
-          },
-        )
+                furnitureItems: cartList,
+                counterButton: (furniture, index) {
+                  return CounterButton(
+                      orientation: Axis.vertical,
+                      onIncrementSelected: () => context
+                          .read<FurnitureBloc>()
+                          .add(IncreaseQuantityEvent(furniture: furniture)),
+                      onDecrementSelected: () => context
+                          .read<FurnitureBloc>()
+                          .add(DecreaseQuantityEvent(furniture: furniture)),
+                      label: cartList[index].quantity);
+                },
+              )
             : const EmptyWidget(title: "Empty cart"),
       ),
     );

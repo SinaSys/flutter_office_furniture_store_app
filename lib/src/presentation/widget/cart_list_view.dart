@@ -9,7 +9,7 @@ class CartListView extends StatelessWidget {
       {Key? key, required this.counterButton, required this.furnitureItems})
       : super(key: key);
 
-  final Widget Function(Furniture furniture,int index) counterButton;
+  final Widget Function(Furniture furniture, int index) counterButton;
   final List<Furniture> furnitureItems;
 
   @override
@@ -59,7 +59,7 @@ class CartListView extends StatelessWidget {
                 ],
               ),
               // Spacer(),
-              counterButton(furniture,index)
+              counterButton(furniture, index)
             ],
           ).fadeAnimation(0.4 * index),
         );

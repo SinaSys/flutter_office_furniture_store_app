@@ -6,7 +6,7 @@ import 'package:office_furniture_store/core/app_color.dart';
 import 'package:office_furniture_store/core/app_extension.dart';
 import 'package:office_furniture_store/core/app_style.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
-import '../../business_logic/bloc/furniture_bloc.dart';
+import '../../business_logic/bloc/furniture/furniture_bloc.dart';
 import '../../data/model/furniture.dart';
 import '../widget/color_picker.dart';
 import '../widget/counter_button.dart';
@@ -76,8 +76,9 @@ class OfficeFurnitureDetailScreen extends HookWidget {
           IconButton(
             splashRadius: 18.0,
             onPressed: () {
-              context.read<FurnitureBloc>().add(
-                  AddToFavoriteEvent(furniture: items[index]));
+              context
+                  .read<FurnitureBloc>()
+                  .add(AddToFavoriteEvent(furniture: items[index]));
             },
             icon: items[index].isFavorite
                 ? const Icon(Icons.bookmark, color: Colors.black)
@@ -177,13 +178,11 @@ class OfficeFurnitureDetailScreen extends HookWidget {
                           label: items[index].quantity,
                           onIncrementSelected: () {
                             context.read<FurnitureBloc>().add(
-                                IncreaseQuantityEvent(
-                                    furniture: items[index]));
+                                IncreaseQuantityEvent(furniture: items[index]));
                           },
                           onDecrementSelected: () {
                             context.read<FurnitureBloc>().add(
-                                DecreaseQuantityEvent(
-                                    furniture: items[index]));
+                                DecreaseQuantityEvent(furniture: items[index]));
                           }),
                     )
                   ],

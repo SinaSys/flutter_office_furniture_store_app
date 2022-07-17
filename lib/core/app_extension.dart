@@ -12,14 +12,15 @@ extension StringExtension on String {
   }
 }
 
-extension WidgetExtension on Widget{
-  Widget fadeAnimation(double delay){
+extension WidgetExtension on Widget {
+  Widget fadeAnimation(double delay) {
     return FadeInAnimation(delay: delay, child: this);
   }
 }
 
 extension IntegerExtension on int {
   get increase => this + 1;
+
   get decrease => this - 1;
 }
 
@@ -51,4 +52,3 @@ extension ListExtension on List<Furniture> {
     return list;
   }
 }
-

@@ -1,14 +1,12 @@
 part of 'furniture_bloc.dart';
 
-
 @immutable
 class FurnitureState extends Equatable {
   final List<Furniture> mainItems;
   final double totalPrice;
 
-  factory FurnitureState.initial() {
-    return FurnitureState(mainItems: AppData.furnitureList);
-  }
+  const FurnitureState.initial(List<Furniture> mainItems)
+      : this(mainItems: mainItems);
 
   @override
   List<Object?> get props => [mainItems, totalPrice];

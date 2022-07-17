@@ -1,9 +1,9 @@
 ## office_furniture_store_app
 
 <p align="center">
-  <img src="https://img.shields.io/github/workflow/status/SinaSys/flutter_office_furniture_store_app/Analyze%20and%20Build?label=CI&logo=github">
+  <img src="https://img.shields.io/github/workflow/status/SinaSys/flutter_office_furniture_store_app/Analysis%20&%20Build/bloc?label=CI&logo=github">
   <img src="https://img.shields.io/github/v/release/SinaSys/flutter_office_furniture_store_app?label=Release&logo=semantic-release">
-  <img src="https://img.shields.io/github/last-commit/SinaSys/flutter_office_furniture_store_app?label=Last%20commit">
+  <img src="https://img.shields.io/github/last-commit/SinaSys/flutter_office_furniture_store_app/bloc?label=Last%20commit">
 </p>
 
 
@@ -15,8 +15,8 @@ Office Furniture Store app is a design implementation of [Office Furniture Store
   <br/>
 
 ## GetX | Cubit + flutter hooks | Bloc + flutter hooks
-There are Three different implementations : 1 : Getx version , 2: Cubit + hooks version , 3: Bloc + hooks version <br/>
-• You can access Getx version from ```master branch``` [(here)](https://github.com/SinaSys/flutter_office_furniture_store_app/tree/master) <br/>
+There are Three different implementations: 1 : GetX version , 2: Cubit + hooks version , 3: Bloc + hooks version <br/>
+• You can access GetX version from ```master branch``` [(here)](https://github.com/SinaSys/flutter_office_furniture_store_app/tree/master) <br/>
 • You can access Cubit + flutter hooks version from ```cubit branch``` [(here)](https://github.com/SinaSys/flutter_office_furniture_store_app/tree/cubit) <br/>
 • You can access Bloc + flutter hooks version from ```bloc branch``` [(here)](https://github.com/SinaSys/flutter_office_furniture_store_app/tree/bloc)
 
@@ -47,6 +47,99 @@ Preview                    |   List screen             |   Detail Screen        
 • Automatically delete single item from cart by set its value to zero
 • Real-time calculation of total price in the cart screen
 • State management with GetX | cubit | bloc
+```
+
+
+## Directory Structure (Bloc + hooks version)
+```
+📂lib
+ │───main.dart  
+ │───📂core  
+ │   │──app_asset.dart
+ │   │──app_color.dart
+ │   │──app_data.dart
+ │   │──app_extension.dart
+ │   │──app_style.dart
+ │   └──app_extension.dart
+ └───📂src
+     │────📂data
+     │    │───📂model
+     │    │   |──bottom_navigation_item.dart
+     │    │   |──furniture.dart
+     │    │   └──furniture_color.dart
+     │    │───📂repository
+     │    │   └──repository.dart
+     └────📂presentation
+     │    │───📂screen
+     │    │   |──cart_screen.dart
+     │    │   |──favorite_screen.dart
+     │    │   |──home_screen.dart
+     │    │   |──intro_screen.dart
+     │    │   |──office_furniture_detail_screen.dart
+     │    │   |──office_furniture_list_screen.dart
+     │    │   └──profile_screen.dart
+     │    │───📂widget
+     │    │   |──bottom_bar.dart
+     │    │   |──cart_list_view.dart
+     │    │   |──color_picker.dart
+     │    │   |──counter_button.dart
+     │    │   |──empty_widget.dart
+     │    │   |──furniture_list_view.dart
+     │    │   └──rating_bar.dart
+     │    │───📂animation
+     │    │   └──fade_in_animation.dart
+     └────📂business_logic
+          └───📂bloc
+              └──📂furniture
+                  |──furniture_bloc.dart
+                  |──furniture_state.dart
+                  └──furniture_event.dart
+```
+
+
+## Directory Structure (Cubit + hooks version)
+```
+📂lib
+ │───main.dart  
+ │───📂core  
+ │   │──app_asset.dart
+ │   │──app_color.dart
+ │   │──app_data.dart
+ │   │──app_extension.dart
+ │   │──app_style.dart
+ │   └──app_extension.dart
+ └───📂src
+     │────📂data
+     │    │───📂model
+     │    │   |──bottom_navigation_item.dart
+     │    │   |──furniture.dart
+     │    │   └──furniture_color.dart
+     │    │───📂repository
+     │    │   └──repository.dart
+     └────📂presentation
+     │    │───📂screen
+     │    │   |──cart_screen.dart
+     │    │   |──favorite_screen.dart
+     │    │   |──home_screen.dart
+     │    │   |──intro_screen.dart
+     │    │   |──office_furniture_detail_screen.dart
+     │    │   |──office_furniture_list_screen.dart
+     │    │   └──profile_screen.dart
+     │    │───📂widget
+     │    │   |──bottom_bar.dart
+     │    │   |──cart_list_view.dart
+     │    │   |──color_picker.dart
+     │    │   |──counter_button.dart
+     │    │   |──empty_widget.dart
+     │    │   |──furniture_list_view.dart
+     │    │   └──rating_bar.dart
+     │    │───📂animation
+     │    │   └──fade_in_animation.dart
+     └────📂business_logic
+          └───📂cubit
+              └──📂food
+                  |──furniture_cubit.dart
+                  └──furniture_state.dart
 ```
 
 
@@ -87,91 +180,6 @@ Preview                    |   List screen             |   Detail Screen        
      └────📂controller
           └──office_furniture_controller.dart
 ```
-
-
-
-
-## Directory Structure (Cubit + hooks version)
-```
-📂lib
- │───main.dart  
- │───📂core  
- |   │──app_asset.dart
- |   │──app_color.dart
- |   │──app_data.dart
- |   │──app_extension.dart
- |   │──app_style.dart
- |   └──app_theme.dart
- └───📂src
-     │────📂model
-     │    │──bottom_navigation_item.dart
-     |    │──furniture.dart
-     |    └──furniture_color.dart
-     └────📂view
-     |    │───📂screen
-     |    |   |──cart_screen.dart
-     |    |   |──favorite_screen.dart
-     |    |   |──home_screen.dart
-     |    |   |──intro_screen.dart
-     |    |   |──office_furniture_detail_screen.dart
-     |    |   |──office_furniture_list_screen.dart
-     |    |   └──profile_screen.dart
-     |    │───📂widget
-     |    |   |──bottom_bar.dart
-     │    |   |──cart_list_view.dart
-     │    |   |──color_picker.dart
-     │    |   |──counter_button.dart
-     │    |   |──empty_widget.dart
-     │    |   |──furniture_list_view.dart
-     │    |   |──fade_in_animation.dart
-     |    |   └──rating_bar.dart
-     └────📂cubit
-          |──furniture_cubit.dart
-          └──furniture_state.dart
-```
-
-
-## Directory Structure (Bloc + hooks version)
-```
-📂lib
- │───main.dart  
- │───📂core  
- |   │──app_asset.dart
- |   │──app_color.dart
- |   │──app_data.dart
- |   │──app_extension.dart
- |   │──app_style.dart
- |   └──app_theme.dart
- └───📂src
-     │────📂model
-     │    │──bottom_navigation_item.dart
-     |    │──furniture.dart
-     |    └──furniture_color.dart
-     └────📂view
-     |    │───📂screen
-     |    |   |──cart_screen.dart
-     |    |   |──favorite_screen.dart
-     |    |   |──home_screen.dart
-     |    |   |──intro_screen.dart
-     |    |   |──office_furniture_detail_screen.dart
-     |    |   |──office_furniture_list_screen.dart
-     |    |   └──profile_screen.dart
-     |    │───📂widget
-     |    |   |──bottom_bar.dart
-     │    |   |──cart_list_view.dart
-     │    |   |──color_picker.dart
-     │    |   |──counter_button.dart
-     │    |   |──empty_widget.dart
-     │    |   |──furniture_list_view.dart
-     │    |   |──fade_in_animation.dart
-     |    |   └──rating_bar.dart
-     └────📂bloc
-          |──furniture_bloc.dart
-          |──furniture_event.dart
-          └──furniture_state.dart
-```
-
-
 
 
 

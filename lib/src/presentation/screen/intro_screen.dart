@@ -25,7 +25,7 @@ class IntroScreen extends StatelessWidget {
                 const EdgeInsets.all(8),
               ),
               backgroundColor:
-              MaterialStateProperty.all(Colors.white.withOpacity(0.4)),
+                  MaterialStateProperty.all(Colors.white.withOpacity(0.4)),
               shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                 RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(25.0),

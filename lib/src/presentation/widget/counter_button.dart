@@ -9,11 +9,11 @@ class CounterButton extends StatelessWidget {
 
   const CounterButton(
       {Key? key,
-        required this.onIncrementSelected,
+      required this.onIncrementSelected,
       required this.onDecrementSelected,
       required this.label,
-        this.orientation = Axis.horizontal
-      }):super(key: key);
+      this.orientation = Axis.horizontal})
+      : super(key: key);
 
   Widget button(Icon icon, Function() onTap) {
     return RawMaterialButton(
@@ -25,7 +25,7 @@ class CounterButton extends StatelessWidget {
     );
   }
 
-  List<Widget> body(){
+  List<Widget> body() {
     return [
       button(const Icon(Icons.remove), onDecrementSelected),
       Padding(
@@ -41,11 +41,10 @@ class CounterButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return orientation==Axis.horizontal ? Row(
-      mainAxisAlignment: MainAxisAlignment.end,
-      children: body()
-    ) : Column(
-      children: body().reversed.toList(),
-    );
+    return orientation == Axis.horizontal
+        ? Row(mainAxisAlignment: MainAxisAlignment.end, children: body())
+        : Column(
+            children: body().reversed.toList(),
+          );
   }
 }

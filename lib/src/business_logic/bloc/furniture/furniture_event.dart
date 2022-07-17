@@ -2,6 +2,7 @@ part of 'furniture_bloc.dart';
 
 abstract class FurnitureEvent extends Equatable {
   const FurnitureEvent();
+
   @override
   List<Object?> get props => [];
 }
@@ -31,7 +32,7 @@ class AddToCartEvent extends FurnitureEvent {
   const AddToCartEvent({required this.furniture, required this.index});
 
   @override
-  List<Object?> get props => [furniture,index];
+  List<Object?> get props => [furniture, index];
 }
 
 class AddToFavoriteEvent extends FurnitureEvent {
