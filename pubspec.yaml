@@ -40,7 +40,7 @@ dependencies:
   simple_animations: ^4.0.1
   equatable: ^2.0.3
   flutter_bloc: ^8.0.1
-  flutter_hooks: ^0.18.3
+  flutter_hooks: ^0.18.5
 
 
 dev_dependencies:
