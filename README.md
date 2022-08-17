@@ -16,10 +16,12 @@ Office Furniture Store app is a design implementation of [Office Furniture Store
 
   <br/>
 
-## GetX | Cubit + flutter hooks
-There are Two different implementations:  1: GetX version , 2: Cubit + hooks version <br/>
+## GetX | Cubit | Bloc | Provider
+There are four different implementations:  1: GetX version , 2: Cubit version 3: Bloc version , 4: Provider version <br/>
+• You can access Provider version from ```provider branch``` [(here)](https://github.com/SinaSys/flutter_office_furniture_store_app/tree/provider)
 • You can access GetX version from ```master branch``` [(here)](https://github.com/SinaSys/flutter_office_furniture_store_app/tree/master) <br/>
-• You can access Cubit + flutter hooks version from ```cubit branch``` [(here)](https://github.com/SinaSys/flutter_office_furniture_store_app/tree/cubit)
+• You can access Cubit version from ```cubit branch``` [(here)](https://github.com/SinaSys/flutter_office_furniture_store_app/tree/cubit)
+• You can access Bloc version from ```bloc branch``` [(here)](https://github.com/SinaSys/flutter_office_furniture_store_app/tree/bloc)
 
  <br/>
 
@@ -51,7 +53,54 @@ Preview                    |   List screen             |   Detail Screen        
 
 
 
-## Directory Structure (Cubit + hooks version)
+## Directory Structure (Provider version)
+```
+📂lib
+ │───main.dart  
+ │───📂core  
+ │   │──app_asset.dart
+ │   │──app_color.dart
+ │   │──app_data.dart
+ │   │──app_extension.dart
+ │   │──app_style.dart
+ │   └──app_extension.dart
+ └───📂src
+     │────📂data
+     │    │───📂model
+     │    │   |──bottom_navigation_item.dart
+     │    │   |──furniture.dart
+     │    │   └──furniture_color.dart
+     │    │───📂repository
+     │    │   └──repository.dart
+     └────📂presentation
+     │    │───📂screen
+     │    │   |──cart_screen.dart
+     │    │   |──favorite_screen.dart
+     │    │   |──home_screen.dart
+     │    │   |──intro_screen.dart
+     │    │   |──office_furniture_detail_screen.dart
+     │    │   |──office_furniture_list_screen.dart
+     │    │   └──profile_screen.dart
+     │    │───📂widget
+     │    │   |──bottom_bar.dart
+     │    │   |──cart_list_view.dart
+     │    │   |──color_picker.dart
+     │    │   |──counter_button.dart
+     │    │   |──empty_widget.dart
+     │    │   |──furniture_list_view.dart
+     │    │   └──rating_bar.dart
+     │    │───📂animation
+     │    │   └──fade_in_animation.dart
+     └────📂business_logic
+          └───📂provider
+              └──📂furniture
+                  |──furniture_provider.dart
+                  └──furniture_state.dart
+```
+
+
+
+## Directory Structure (Cubit version)
 ```
 📂lib
  │───main.dart  
@@ -98,7 +147,7 @@ Preview                    |   List screen             |   Detail Screen        
 
 
 
-## Directory Structure (Bloc + hooks version)
+## Directory Structure (Bloc version)
 ```
 📂lib
  │───main.dart  
@@ -193,15 +242,15 @@ I welcome and encourage all pull requests. It usually will take me within 48-72 
 
 
 ## Dependencies
-|       Name      |  Cubit + hooks <br/> version |   Bloc + hooks <br/> version   |      GetX <br/> version     |
-| :-------------: | :--------------------------: | :----------------------------: |  :------------------------: |
-| [flutter_bloc](https://pub.dev/packages/flutter_bloc)  |  ✔️  |  ✔️  |    ✖️    |
-| [GetX](https://pub.dev/packages/get)  | ✖️  |  ✖️  | ✔️    |
-| [flutter_hooks](https://pub.dev/packages/flutter_hooks)  | ✔️  | ✔️  | ✖️ |
-| [equatable](https://pub.dev/packages/equatable)  | ✔️  | ✔️  | ✖️ |
-| [smooth_page_indicator](https://pub.dev/packages/smooth_page_indicator)  | ✔️  | ✔️ | ✔️ |
-| [flutter_rating_bar](https://pub.dev/packages/flutter_rating_bar)  | ✔️  | ✔️ |✔️ |
-| [simple_animations](https://pub.dev/packages/simple_animations)  | ✔️  | ✔️ |✔️ |
+|       Name      |    Cubit  <br/> version      |       Bloc <br/> version       |      GetX <br/> version     |    provider <br/> version   |
+| :-------------: | :--------------------------: | :----------------------------: |  :------------------------: |  :------------------------: | 
+| [flutter_bloc](https://pub.dev/packages/flutter_bloc)  |  ✔️  |  ✔️  |    ✖️    |  ✖️    | 
+| [GetX](https://pub.dev/packages/get)  | ✖️  |  ✖️  | ✔️    | ✖️    | 
+| [flutter_hooks](https://pub.dev/packages/flutter_hooks)  | ✔️  | ✔️  | ✖️ | ✔️    | 
+| [equatable](https://pub.dev/packages/equatable)  | ✔️  | ✔️  | ✖️ | ✔️| 
+| [smooth_page_indicator](https://pub.dev/packages/smooth_page_indicator)  | ✔️  | ✔️ | ✔️ |✔️| 
+| [flutter_rating_bar](https://pub.dev/packages/flutter_rating_bar)  | ✔️  | ✔️ |✔️ |✔️| 
+| [simple_animations](https://pub.dev/packages/simple_animations)  | ✔️  | ✔️ |✔️ |✔️| 
 
   <br/>
 

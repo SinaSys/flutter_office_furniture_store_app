@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:office_furniture_store/core/app_color.dart';
 import 'package:office_furniture_store/core/app_style.dart';
-import '../../business_logic/cubit/furniture/furniture_cubit.dart';
+import 'package:office_furniture_store/src/business_logic/provider/furniture_provider.dart';
+import 'package:provider/provider.dart';
 import '../../data/model/furniture.dart';
 import '../widget/bottom_bar.dart';
 import '../widget/cart_list_view.dart';
@@ -15,9 +15,9 @@ class CartScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final List<Furniture> cartList =
-        context.watch<FurnitureCubit>().getCartList;
+        context.watch<FurnitureProvider>().getCartList;
 
-    final totalPrice = context.watch<FurnitureCubit>().state.totalPrice;
+    final totalPrice = context.watch<FurnitureProvider>().state.totalPrice;
 
     PreferredSizeWidget _appBar() {
       return AppBar(
@@ -26,7 +26,7 @@ class CartScreen extends StatelessWidget {
           IconButton(
             splashRadius: 20.0,
             onPressed: () {
-              context.read<FurnitureCubit>().clearCart();
+              context.read<FurnitureProvider>().clearCart();
             },
             icon: const Icon(
               Icons.delete,
@@ -55,12 +55,12 @@ class CartScreen extends StatelessWidget {
                       orientation: Axis.vertical,
                       onIncrementSelected: () {
                         context
-                            .read<FurnitureCubit>()
+                            .read<FurnitureProvider>()
                             .increaseQuantity(cartList[index]);
                       },
                       onDecrementSelected: () {
                         context
-                            .read<FurnitureCubit>()
+                            .read<FurnitureProvider>()
                             .decreaseQuantity(cartList[index]);
                       },
                       label: furniture.quantity);

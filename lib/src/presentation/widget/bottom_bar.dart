@@ -27,9 +27,11 @@ class BottomBar extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               FittedBox(
-                child: Text(priceLabel,
-                    style: const TextStyle(
-                        color: Colors.black45, fontWeight: FontWeight.bold)),
+                child: Text(
+                  priceLabel,
+                  style: const TextStyle(
+                      color: Colors.black45, fontWeight: FontWeight.bold),
+                ),
               ),
               const SizedBox(height: 5),
               FittedBox(

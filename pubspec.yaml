@@ -39,8 +39,8 @@ dependencies:
   font_awesome_flutter: ^10.1.0
   simple_animations: ^4.0.1
   equatable: ^2.0.3
-  flutter_bloc: ^8.0.1
   flutter_hooks: ^0.18.5
+  provider: ^6.0.3
 
 
 dev_dependencies:

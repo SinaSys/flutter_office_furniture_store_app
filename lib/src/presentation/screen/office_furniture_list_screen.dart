@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:office_furniture_store/core/app_style.dart';
-import '../../business_logic/cubit/furniture/furniture_cubit.dart';
+import 'package:office_furniture_store/src/business_logic/provider/furniture_provider.dart';
+import 'package:provider/provider.dart';
 import '../../data/model/furniture.dart';
 import '../widget/furniture_list_view.dart';
 import 'office_furniture_detail_screen.dart';
@@ -54,15 +54,19 @@ class OfficeFurnitureListScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final List<Furniture> items =
-        context.watch<FurnitureCubit>().state.mainItems;
+        context.watch<FurnitureProvider>().state.mainItems;
 
     Future<Widget?> _navigate(Furniture furniture, int index) {
       return Navigator.push(
         context,
         PageRouteBuilder(
           transitionDuration: const Duration(seconds: 1),
-          pageBuilder: (_, __, ___) =>
-              OfficeFurnitureDetailScreen(furniture: furniture, index: index),
+          pageBuilder: (furnitureContext, __, ___) =>
+              ChangeNotifierProvider.value(
+            value: context.read<FurnitureProvider>(),
+            child:
+                OfficeFurnitureDetailScreen(furniture: furniture, index: index),
+          ),
         ),
       );
     }

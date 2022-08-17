@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:office_furniture_store/core/app_theme.dart';
-import 'package:office_furniture_store/src/business_logic/cubit/furniture/furniture_cubit.dart';
+import 'package:office_furniture_store/src/business_logic/provider/furniture_provider.dart';
 import 'package:office_furniture_store/src/data/repository/repository.dart';
 import 'package:office_furniture_store/src/presentation/screen/intro_screen.dart';
+import 'package:provider/provider.dart';
 
 void main() => runApp(const MyApp());
 
@@ -12,17 +12,20 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return RepositoryProvider<Repository>(
-      create: (context) => Repository(),
-      child: BlocProvider<FurnitureCubit>(
-        create: (context) =>
-            FurnitureCubit(repository: context.read<Repository>()),
-        child: MaterialApp(
-          debugShowCheckedModeBanner: false,
-          home: const IntroScreen(),
-          theme: AppTheme.lightTheme,
-        ),
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: MultiProvider(
+        providers: [
+          Provider<Repository>(create: (context) => Repository()),
+          ChangeNotifierProvider<FurnitureProvider>(
+            create: (context) => FurnitureProvider(
+              repository: context.read<Repository>(),
+            ),
+          )
+        ],
+        child: const IntroScreen(),
       ),
+      theme: AppTheme.lightTheme,
     );
   }
 }
