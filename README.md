@@ -2,9 +2,9 @@
 
 
 <p align="center">
-  <img src="https://img.shields.io/github/workflow/status/SinaSys/flutter_office_furniture_store_app/Analysis%20&%20Build/cubit?label=CI&logo=github">
+  <img src="https://img.shields.io/github/workflow/status/SinaSys/flutter_office_furniture_store_app/Analysis%20&%20Build/provider?label=CI&logo=github">
   <img src="https://img.shields.io/github/v/release/SinaSys/flutter_office_furniture_store_app?label=Release&logo=semantic-release">
-  <img src="https://img.shields.io/github/last-commit/SinaSys/flutter_office_furniture_store_app/cubit?label=Last%20commit">
+  <img src="https://img.shields.io/github/last-commit/SinaSys/flutter_office_furniture_store_app/provider?label=Last%20commit">
 </p>
 
 
@@ -18,10 +18,10 @@ Office Furniture Store app is a design implementation of [Office Furniture Store
 
 ## GetX | Cubit | Bloc | Provider
 There are four different implementations:  1: GetX version , 2: Cubit version 3: Bloc version , 4: Provider version <br/>
-• You can access Provider version from ```provider branch``` [(here)](https://github.com/SinaSys/flutter_office_furniture_store_app/tree/provider)
+• You can access Provider version from ```provider branch``` [(here)](https://github.com/SinaSys/flutter_office_furniture_store_app/tree/provider)<br/>
 • You can access GetX version from ```master branch``` [(here)](https://github.com/SinaSys/flutter_office_furniture_store_app/tree/master) <br/>
-• You can access Cubit version from ```cubit branch``` [(here)](https://github.com/SinaSys/flutter_office_furniture_store_app/tree/cubit)
-• You can access Bloc version from ```bloc branch``` [(here)](https://github.com/SinaSys/flutter_office_furniture_store_app/tree/bloc)
+• You can access Cubit version from ```cubit branch``` [(here)](https://github.com/SinaSys/flutter_office_furniture_store_app/tree/cubit)<br/>
+• You can access Bloc version from ```bloc branch``` [(here)](https://github.com/SinaSys/flutter_office_furniture_store_app/tree/bloc)<br/>
 
  <br/>
 
