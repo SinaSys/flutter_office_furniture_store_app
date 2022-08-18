@@ -242,6 +242,7 @@ I welcome and encourage all pull requests. It usually will take me within 48-72 
 | :-------------: | :--------------------------: | :----------------------------: |  :------------------------: |  :------------------------: | 
 | [flutter_bloc](https://pub.dev/packages/flutter_bloc)  |  ✔️  |  ✔️  |    ✖️    |  ✖️    | 
 | [GetX](https://pub.dev/packages/get)  | ✖️  |  ✖️  | ✔️    | ✖️    | 
+| [provider](https://pub.dev/packages/provider)  | ✖️  |  ✖️  | ✖️    | ✔️    | 
 | [flutter_hooks](https://pub.dev/packages/flutter_hooks)  | ✔️  | ✔️  | ✖️ | ✔️    | 
 | [equatable](https://pub.dev/packages/equatable)  | ✔️  | ✔️  | ✖️ | ✔️| 
 | [smooth_page_indicator](https://pub.dev/packages/smooth_page_indicator)  | ✔️  | ✔️ | ✔️ |✔️| 
