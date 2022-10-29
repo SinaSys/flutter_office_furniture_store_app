@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:office_furniture_store/core/app_style.dart';
 import 'package:office_furniture_store/src/business_logic/provider/furniture_provider.dart';
-import 'package:provider/provider.dart';
 import '../../data/model/furniture.dart';
 import '../widget/furniture_list_view.dart';
 import 'office_furniture_detail_screen.dart';
 
-class OfficeFurnitureListScreen extends StatelessWidget {
+class OfficeFurnitureListScreen extends ConsumerWidget {
   const OfficeFurnitureListScreen({Key? key}) : super(key: key);
 
   PreferredSize _appBar() {
@@ -52,9 +52,8 @@ class OfficeFurnitureListScreen extends StatelessWidget {
   }
 
   @override
-  Widget build(BuildContext context) {
-    final List<Furniture> items =
-        context.watch<FurnitureProvider>().state.mainItems;
+  Widget build(BuildContext context, WidgetRef ref) {
+    final items = ref.watch(furnitureStateNotifierProvider);
 
     Future<Widget?> _navigate(Furniture furniture, int index) {
       return Navigator.push(
@@ -62,11 +61,7 @@ class OfficeFurnitureListScreen extends StatelessWidget {
         PageRouteBuilder(
           transitionDuration: const Duration(seconds: 1),
           pageBuilder: (furnitureContext, __, ___) =>
-              ChangeNotifierProvider.value(
-            value: context.read<FurnitureProvider>(),
-            child:
-                OfficeFurnitureDetailScreen(furniture: furniture, index: index),
-          ),
+              OfficeFurnitureDetailScreen(furniture: furniture, index: index),
         ),
       );
     }
@@ -79,12 +74,12 @@ class OfficeFurnitureListScreen extends StatelessWidget {
           children: [
             _searchBar(),
             FurnitureListView(
-              furnitureList: items,
+              furnitureList: items.mainItems,
               onTap: _navigate,
             ),
             const Text("Popular", style: h2Style),
             FurnitureListView(
-              furnitureList: items,
+              furnitureList: items.mainItems,
               isHorizontal: false,
               onTap: _navigate,
             ),

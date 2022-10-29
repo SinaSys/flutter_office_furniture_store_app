@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:office_furniture_store/core/app_style.dart';
-import 'package:office_furniture_store/src/business_logic/provider/furniture_provider.dart';
-import 'package:provider/provider.dart';
 
 import 'home_screen.dart';
 
@@ -20,10 +18,7 @@ class IntroScreen extends StatelessWidget {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (furnitureContext) => ChangeNotifierProvider.value(
-                    value: context.read<FurnitureProvider>(),
-                    child: const HomeScreen(),
-                  ),
+                  builder: (furnitureContext) => const HomeScreen(),
                 ),
               );
             },

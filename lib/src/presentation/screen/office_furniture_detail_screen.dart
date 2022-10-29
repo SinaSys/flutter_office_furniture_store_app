@@ -1,18 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:office_furniture_store/core/app_color.dart';
 import 'package:office_furniture_store/core/app_extension.dart';
 import 'package:office_furniture_store/core/app_style.dart';
 import 'package:office_furniture_store/src/business_logic/provider/furniture_provider.dart';
-import 'package:provider/provider.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import '../../data/model/furniture.dart';
 import '../widget/color_picker.dart';
 import '../widget/counter_button.dart';
 import '../widget/rating_bar.dart';
 
-class OfficeFurnitureDetailScreen extends HookWidget {
+class OfficeFurnitureDetailScreen extends HookConsumerWidget {
   final Furniture furniture;
   final int index;
 
@@ -21,9 +21,9 @@ class OfficeFurnitureDetailScreen extends HookWidget {
       : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     final List<Furniture> items =
-        context.watch<FurnitureProvider>().state.mainItems;
+        ref.watch(furnitureStateNotifierProvider).mainItems;
 
     double height = MediaQuery.of(context).size.height;
 
@@ -76,8 +76,9 @@ class OfficeFurnitureDetailScreen extends HookWidget {
         actions: [
           IconButton(
             splashRadius: 18.0,
-            onPressed: () =>
-                context.read<FurnitureProvider>().addToFavorite(items[index]),
+            onPressed: () => ref
+                .read(furnitureStateNotifierProvider.notifier)
+                .addToFavorite(items[index]),
             icon: items[index].isFavorite
                 ? const Icon(Icons.bookmark, color: Colors.black)
                 : const Icon(Icons.bookmark_border, color: Colors.black),
@@ -119,7 +120,7 @@ class OfficeFurnitureDetailScreen extends HookWidget {
             ),
             ElevatedButton(
               style: ElevatedButton.styleFrom(
-                primary: AppColor.lightBlack,
+                backgroundColor: AppColor.lightBlack,
                 padding:
                     const EdgeInsets.symmetric(horizontal: 40, vertical: 15),
                 shape: RoundedRectangleBorder(
@@ -127,7 +128,9 @@ class OfficeFurnitureDetailScreen extends HookWidget {
                 ),
               ),
               onPressed: () {
-                context.read<FurnitureProvider>().addToCart(items[index]);
+                ref
+                    .read(furnitureStateNotifierProvider.notifier)
+                    .addToCart(items[index]);
               },
               child: const Text("Add to cart"),
             )
@@ -162,28 +165,31 @@ class OfficeFurnitureDetailScreen extends HookWidget {
                           style: h2Style, textAlign: TextAlign.end)
                       .fadeAnimation(0.6),
                 ),
-                Text(furniture.description,
-                        maxLines: 5,
-                        overflow: TextOverflow.ellipsis,
-                        style: const TextStyle(color: Colors.black45))
-                    .fadeAnimation(0.8),
+                Text(
+                  furniture.description,
+                  maxLines: 5,
+                  overflow: TextOverflow.ellipsis,
+                  style: const TextStyle(color: Colors.black45),
+                ).fadeAnimation(0.8),
                 const SizedBox(height: 20),
                 Row(
                   children: [
                     const Text("Color :",
                         style: h2Style, textAlign: TextAlign.end),
-                    Expanded(child: ColorPicker(colors: furniture.colors)),
+                    Expanded(
+                      child: ColorPicker(colors: furniture.colors),
+                    ),
                     Expanded(
                       child: CounterButton(
                         label: items[index].quantity,
                         onIncrementSelected: () {
-                          context
-                              .read<FurnitureProvider>()
+                          ref
+                              .read(furnitureStateNotifierProvider.notifier)
                               .increaseQuantity(items[index]);
                         },
                         onDecrementSelected: () {
-                          context
-                              .read<FurnitureProvider>()
+                          ref
+                              .read(furnitureStateNotifierProvider.notifier)
                               .decreaseQuantity(items[index]);
                         },
                       ),

@@ -43,8 +43,6 @@ class CounterButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return orientation == Axis.horizontal
         ? Row(mainAxisAlignment: MainAxisAlignment.end, children: body())
-        : Column(
-            children: body().reversed.toList(),
-          );
+        : Column(children: body().reversed.toList());
   }
 }

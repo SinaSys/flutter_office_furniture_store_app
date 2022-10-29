@@ -1,18 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:office_furniture_store/src/business_logic/provider/furniture_provider.dart';
-import 'package:provider/provider.dart';
 import '../../../core/app_style.dart';
 import '../../data/model/furniture.dart';
 import '../widget/empty_widget.dart';
 import '../widget/furniture_list_view.dart';
 
-class FavoriteScreen extends StatelessWidget {
+class FavoriteScreen extends ConsumerWidget {
   const FavoriteScreen({Key? key}) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
-    final List<Furniture> favoriteList =
-        context.watch<FurnitureProvider>().getFavoriteList;
+  Widget build(BuildContext context, WidgetRef ref) {
+    final List<Furniture> favoriteList = ref.watch(favoriteListProvider);
 
     return Scaffold(
       appBar: AppBar(
