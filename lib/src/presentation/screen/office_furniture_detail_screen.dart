@@ -118,7 +118,7 @@ class OfficeFurnitureDetailScreen extends HookWidget {
             ),
             ElevatedButton(
               style: ElevatedButton.styleFrom(
-                  primary: AppColor.lightBlack,
+                  backgroundColor: AppColor.lightBlack,
                   padding:
                       const EdgeInsets.symmetric(horizontal: 40, vertical: 15),
                   shape: RoundedRectangleBorder(
