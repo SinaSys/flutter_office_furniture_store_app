@@ -1,7 +1,9 @@
 ## office_furniture_store_app
 
 <p align="center">
-  <img src="https://img.shields.io/github/workflow/status/SinaSys/flutter_office_furniture_store_app/Analyze%20and%20Build?label=CI&logo=github">
+  <img src="https://img.shields.io/github/stars/SinaSys/flutter_office_furniture_store_app">
+  <img src="https://img.shields.io/github/forks/SinaSys/flutter_office_furniture_store_app">
+  <img src="https://img.shields.io/github/actions/workflow/status/SinaSys/flutter_office_furniture_store_app/main.yml?branch=master&label=CI%20&logo=github">
   <img src="https://img.shields.io/github/v/release/SinaSys/flutter_office_furniture_store_app?label=Release&logo=semantic-release">
   <img src="https://img.shields.io/github/last-commit/SinaSys/flutter_office_furniture_store_app?label=Last%20commit">
 </p>
@@ -312,9 +314,9 @@ any issue or request.
 
   <br/>
 
-## My other flutter projects
-
-project        |
-:-------------------------|
-|[Japanese restaurant app](https://github.com/SinaSys/flutter_japanese_restaurant_app)
-|[Ecommerce app](https://github.com/SinaSys/flutter_ecommerce_app)
+##  Other flutter projects
+ Project Name        |Stars        
+:-------------------------|-------------------------
+[Go rest app](https://github.com/SinaSys/flutter_go_rest_app)|![GitHub stars](https://img.shields.io/github/stars/SinaSys/flutter_go_rest_app?style=social)
+[Japanese restaurant app](https://github.com/SinaSys/flutter_japanese_restaurant_app)| ![GitHub stars](https://img.shields.io/github/stars/SinaSys/flutter_japanese_restaurant_app?style=social)
+|[Ecommerce app](https://github.com/SinaSys/flutter_ecommerce_app) |![GitHub stars](https://img.shields.io/github/stars/SinaSys/flutter_ecommerce_app?style=social)
