@@ -1,8 +1,9 @@
-import 'package:flutter/material.dart';
+import 'package:flutter/material.dart' show Icon, immutable;
 
 @immutable
-class BottomNavigationItem{
+class BottomNavigationItem {
   final Icon icon;
   final String label;
+
   const BottomNavigationItem(this.icon, this.label);
 }

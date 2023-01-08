@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:office_furniture_store/src/business_logic/provider/furniture_provider.dart';
+import '../../business_logic/provider/furniture_provider.dart';
 import 'package:provider/provider.dart';
 import '../../../core/app_style.dart';
 import '../../data/model/furniture.dart';

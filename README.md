@@ -283,11 +283,6 @@ Preview                    |   List screen             |   Detail Screen        
           └──office_furniture_controller.dart
 ```
 
-## Pull Requests
-
-I welcome and encourage all pull requests. It usually will take me within 48-72 hours to respond to
-any issue or request.
-
 
   <br/>
 
