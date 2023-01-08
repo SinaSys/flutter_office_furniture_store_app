@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:office_furniture_store/core/app_color.dart';
-import 'package:office_furniture_store/core/app_style.dart';
+import '../../../core/app_style.dart';
+import '../../../core/app_color.dart';
 import '../../business_logic/bloc/furniture/furniture_bloc.dart';
 import '../../data/model/furniture.dart';
 import '../widget/bottom_bar.dart';
