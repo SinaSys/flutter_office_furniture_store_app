@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:office_furniture_store/core/app_color.dart';
-import 'package:office_furniture_store/core/app_style.dart';
-import 'package:office_furniture_store/src/controller/office_furniture_controller.dart';
-import 'package:office_furniture_store/src/view/widget/counter_button.dart';
-import 'package:office_furniture_store/src/view/widget/empty_widget.dart';
+import '../../../core/app_color.dart';
+import '../../../core/app_style.dart';
+import '../../controller/office_furniture_controller.dart';
+import './../widget/counter_button.dart';
+import './../widget/empty_widget.dart';
 import '../widget/bottom_bar.dart';
 import '../widget/cart_list_view.dart';
 import 'home_screen.dart';
@@ -47,15 +47,17 @@ class CartScreen extends StatelessWidget {
           return controller.cartFurniture.isNotEmpty
               ? Padding(
                   padding: const EdgeInsets.all(15),
-                  child: CartListView(furnitureItems: controller.cartFurniture,counterButton: (furniture) {
-                    return CounterButton(
-                        orientation: Axis.vertical,
-                        onIncrementSelected: () =>
-                            controller.increaseItem(furniture),
-                        onDecrementSelected: () =>
-                            controller.decreaseItem(furniture),
-                        label: furniture.quantity);
-                  }),
+                  child: CartListView(
+                      furnitureItems: controller.cartFurniture,
+                      counterButton: (furniture) {
+                        return CounterButton(
+                            orientation: Axis.vertical,
+                            onIncrementSelected: () =>
+                                controller.increaseItem(furniture),
+                            onDecrementSelected: () =>
+                                controller.decreaseItem(furniture),
+                            label: furniture.quantity);
+                      }),
                 )
               : const EmptyWidget(title: "Empty");
         },

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:office_furniture_store/core/app_style.dart';
-import 'package:office_furniture_store/src/view/screen/home_screen.dart';
+import '../../../core/app_style.dart';
+import '../screen/home_screen.dart';
 
 class IntroScreen extends StatelessWidget {
   const IntroScreen({Key? key}) : super(key: key);
@@ -24,7 +24,7 @@ class IntroScreen extends StatelessWidget {
                 const EdgeInsets.all(8),
               ),
               backgroundColor:
-              MaterialStateProperty.all(Colors.white.withOpacity(0.4)),
+                  MaterialStateProperty.all(Colors.white.withOpacity(0.4)),
               shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                 RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(25.0),

@@ -1,6 +1,6 @@
 import 'package:get/get.dart';
-import 'package:office_furniture_store/core/app_extension.dart';
-import 'package:office_furniture_store/src/model/furniture.dart';
+import '../../core/app_extension.dart';
+import '../model/furniture.dart';
 
 class OfficeFurnitureController extends GetxController {
   RxInt currentBottomNavItemIndex = 0.obs;
@@ -38,13 +38,13 @@ class OfficeFurnitureController extends GetxController {
     furniture.quantity = furniture.quantity-- < 1 ? 0 : furniture.quantity--;
     calculateTotalPrice();
     update();
-    if(furniture.quantity<1) {
-      cartFurniture.removeWhere((element) => element==furniture);
+    if (furniture.quantity < 1) {
+      cartFurniture.removeWhere((element) => element == furniture);
     }
   }
 
   addToCart(Furniture furniture) {
-    if(furniture.quantity>0){
+    if (furniture.quantity > 0) {
       cartFurniture.add(furniture);
       cartFurniture.assignAll(cartFurniture.distinctBy((item) => item));
       calculateTotalPrice();
@@ -54,14 +54,13 @@ class OfficeFurnitureController extends GetxController {
   calculateTotalPrice() {
     totalPrice.value = 0;
     for (var element in cartFurniture) {
-      totalPrice.value += element.quantity *  element.price;
+      totalPrice.value += element.quantity * element.price;
     }
   }
 
-  void clearCart(){
+  void clearCart() {
     cartFurniture.clear();
     totalPrice.value = 0;
-   update();
+    update();
   }
-
 }

@@ -1,17 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
-import 'package:office_furniture_store/core/app_color.dart';
-import 'package:office_furniture_store/core/app_extension.dart';
-import 'package:office_furniture_store/core/app_style.dart';
-import 'package:office_furniture_store/src/controller/office_furniture_controller.dart';
-import 'package:office_furniture_store/src/view/widget/counter_button.dart';
+import '../../../core/app_extension.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
+import '../../../core/app_color.dart';
+import '../../../core/app_style.dart';
+import '../../controller/office_furniture_controller.dart';
 import '../../model/furniture.dart';
 import '../widget/color_picker.dart';
+import '../widget/counter_button.dart';
 import '../widget/rating_bar.dart';
 import 'home_screen.dart';
-
 
 class OfficeFurnitureDetailScreen extends StatelessWidget {
   final Furniture furniture;
@@ -126,7 +125,7 @@ class OfficeFurnitureDetailScreen extends StatelessWidget {
             ),
           ),
         ],
-     // ).fadeAnimation(0.2),
+        // ).fadeAnimation(0.2),
       ),
     );
   }
@@ -135,8 +134,8 @@ class OfficeFurnitureDetailScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     double height = MediaQuery.of(context).size.height;
     return WillPopScope(
-      onWillPop: ()async{
-        controller.currentPageViewItemIndicator.value=0;
+      onWillPop: () async {
+        controller.currentPageViewItemIndicator.value = 0;
         return Future.value(true);
       },
       child: Scaffold(
@@ -155,15 +154,17 @@ class OfficeFurnitureDetailScreen extends StatelessWidget {
                     itemSize: 25,
                   ).fadeAnimation(0.4),
                 ),
-                 Padding(
+                Padding(
                   padding: const EdgeInsets.only(top: 20, bottom: 10),
-                  child:
-                      const Text("Synopsis", style: h2Style, textAlign: TextAlign.end).fadeAnimation(0.6),
+                  child: const Text("Synopsis",
+                          style: h2Style, textAlign: TextAlign.end)
+                      .fadeAnimation(0.6),
                 ),
                 Text(furniture.description,
-                    maxLines: 5,
-                    overflow: TextOverflow.ellipsis,
-                    style: const TextStyle(color: Colors.black45)).fadeAnimation(0.8),
+                        maxLines: 5,
+                        overflow: TextOverflow.ellipsis,
+                        style: const TextStyle(color: Colors.black45))
+                    .fadeAnimation(0.8),
                 const SizedBox(height: 20),
                 Row(
                   children: [
@@ -174,8 +175,10 @@ class OfficeFurnitureDetailScreen extends StatelessWidget {
                       builder: (OfficeFurnitureController controller) {
                         return CounterButton(
                           label: furniture.quantity,
-                          onIncrementSelected: ()=>controller.increaseItem(furniture),
-                          onDecrementSelected: ()=> controller.decreaseItem(furniture),
+                          onIncrementSelected: () =>
+                              controller.increaseItem(furniture),
+                          onDecrementSelected: () =>
+                              controller.decreaseItem(furniture),
                         );
                       },
                     ))

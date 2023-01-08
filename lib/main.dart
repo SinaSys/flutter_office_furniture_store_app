@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:office_furniture_store/core/app_theme.dart';
-import 'package:office_furniture_store/src/view/screen/intro_screen.dart';
+import 'src/view/screen/intro_screen.dart';
+import 'core/app_theme.dart';
 
 void main() => runApp(const MyApp());
 
@@ -16,4 +16,3 @@ class MyApp extends StatelessWidget {
     );
   }
 }
-
