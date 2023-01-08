@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:office_furniture_store/core/app_style.dart';
+import '../../../core/app_style.dart';
 
 import 'home_screen.dart';
 

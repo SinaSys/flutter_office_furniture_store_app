@@ -1,6 +1,6 @@
 import 'package:bloc/bloc.dart';
-import 'package:office_furniture_store/core/app_extension.dart';
-import 'package:office_furniture_store/src/data/repository/repository.dart';
+import '../../../../core/app_extension.dart';
+import '../../../../src/data/repository/repository.dart';
 import '../../../data/model/furniture.dart';
 import 'furniture_state.dart';
 

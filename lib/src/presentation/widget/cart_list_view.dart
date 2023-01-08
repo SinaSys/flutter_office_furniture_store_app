@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:office_furniture_store/core/app_extension.dart';
-import 'package:office_furniture_store/core/app_style.dart';
+import '../../../core/app_extension.dart';
+import '../../../core/app_style.dart';
 
 import '../../data/model/furniture.dart';
 
@@ -58,7 +58,6 @@ class CartListView extends StatelessWidget {
                   )
                 ],
               ),
-              // Spacer(),
               counterButton(furniture, index)
             ],
           ).fadeAnimation(0.4 * index),
