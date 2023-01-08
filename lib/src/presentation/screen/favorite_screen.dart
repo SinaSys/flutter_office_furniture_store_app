@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:office_furniture_store/src/business_logic/provider/furniture_provider.dart';
+import '../../business_logic/provider/furniture_provider.dart';
 import '../../../core/app_style.dart';
 import '../../data/model/furniture.dart';
 import '../widget/empty_widget.dart';

@@ -280,9 +280,6 @@ Preview                    |   List screen             |   Detail Screen        
 
 
 
-## Pull Requests
-I welcome and encourage all pull requests. It usually will take me within 48-72 hours to respond to any issue or request.
-
   <br/>
 
 
