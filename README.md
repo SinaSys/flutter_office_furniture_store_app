@@ -2,7 +2,9 @@
 
 
 <p align="center">
-  <img src="https://img.shields.io/github/workflow/status/SinaSys/flutter_office_furniture_store_app/Analysis%20&%20Build/riverpod?label=CI&logo=github">
+ <img src="https://img.shields.io/github/stars/SinaSys/flutter_office_furniture_store_app">
+  <img src="https://img.shields.io/github/forks/SinaSys/flutter_office_furniture_store_app">
+  <img src="https://img.shields.io/github/actions/workflow/status/SinaSys/flutter_office_furniture_store_app/main.yml?branch=riverpod&label=CI%20&logo=github">
   <img src="https://img.shields.io/github/v/release/SinaSys/flutter_office_furniture_store_app?label=Release&logo=semantic-release">
   <img src="https://img.shields.io/github/last-commit/SinaSys/flutter_office_furniture_store_app/riverpod?label=Last%20commit">
 </p>
@@ -17,14 +19,14 @@ Office Furniture Store app is a design implementation of [Office Furniture Store
   <br/>
 
 ## GetX | Cubit | Bloc | Provider | Riverpod
-There are five different implementations:  1: GetX version , 2: Cubit version 3: Bloc version , 4: Provider version , 5: Riverpod version<br/>
-• You can access riverpod version from ```riverpod branch``` [(here)](https://github.com/SinaSys/flutter_office_furniture_store_app/tree/riverpod)<br/>
-• You can access Provider version from ```provider branch``` [(here)](https://github.com/SinaSys/flutter_office_furniture_store_app/tree/provider)<br/>
-• You can access GetX version from ```master branch``` [(here)](https://github.com/SinaSys/flutter_office_furniture_store_app/tree/master) <br/>
-• You can access Cubit version from ```cubit branch``` [(here)](https://github.com/SinaSys/flutter_office_furniture_store_app/tree/cubit)<br/>
-• You can access Bloc version from ```bloc branch``` [(here)](https://github.com/SinaSys/flutter_office_furniture_store_app/tree/bloc)<br/>
 
- <br/>
+#### • Access to different versions
+
+|               Version               |                                                  Bloc                                                  |                                                   Cubit                                                   |                                                     Getx                                                      |                                                     Provider                                                      |                                                     Riverpod                                                     |
+|:-----------------------------------:|:------------------------------------------------------------------------------------------------------:|:---------------------------------------------------------------------------------------------------------:|:-------------------------------------------------------------------------------------------------------------:|:-----------------------------------------------------------------------------------------------------------------:|:----------------------------------------------------------------------------------------------------------------:|
+|               Branch                | [Source](https://github.com/SinaSys/flutter_office_furniture_store_app/tree/bloc) <br/> (bloc branch)️ | [Source](https://github.com/SinaSys/flutter_office_furniture_store_app/tree/cubit)   <br/> (cubit branch) | [Source](https://github.com/SinaSys/flutter_office_furniture_store_app/tree/master)     <br/> (master branch) | [Source](https://github.com/SinaSys/flutter_office_furniture_store_app/tree/provider)     <br/> (provider branch) | [Source](https://github.com/SinaSys/flutter_office_furniture_store_app/tree/riverpod)    <br/> (riverpod branch) |
+
+  <br/>
 
 ## Screenshots
 
@@ -51,6 +53,23 @@ Preview                    |   List screen             |   Detail Screen        
 • Real-time calculation of total price in the cart screen
 • State management with GetX | Bloc | Cubit | Provider | Riverpod
 ```
+
+
+
+## Dependencies
+|       Name      |    Cubit  <br/> version      |       Bloc <br/> version       |      GetX <br/> version     |    provider <br/> version   | riverpod <br/> version |
+| :-------------: | :--------------------------: | :----------------------------: |  :------------------------: |  :------------------------: |:----------------------:| 
+| [flutter_bloc](https://pub.dev/packages/flutter_bloc)  |  ✔️  |  ✔️  |    ✖️    |  ✖️    |  ✖️    | 
+| [GetX](https://pub.dev/packages/get)  | ✖️  |  ✖️  | ✔️    | ✖️    | ✖️    | 
+| [provider](https://pub.dev/packages/provider)  | ✖️  |  ✖️  | ✖️    | ✔️    | ✖️    | 
+| [flutter_hooks](https://pub.dev/packages/flutter_hooks)  | ✔️  | ✔️  | ✖️ | ✔️    | ✖️    | 
+| [hooks_riverpod](https://pub.dev/packages/hooks_riverpod)  | ✖️  | ✖️  | ✖️ | ✖️    |✔️    | 
+| [equatable](https://pub.dev/packages/equatable)  | ✔️  | ✔️  | ✖️ | ✔️| ✔️    | 
+| [smooth_page_indicator](https://pub.dev/packages/smooth_page_indicator)  | ✔️  | ✔️ | ✔️ |✔️| ✔️    | 
+| [flutter_rating_bar](https://pub.dev/packages/flutter_rating_bar)  | ✔️  | ✔️ |✔️ |✔️| ✔️    | 
+| [simple_animations](https://pub.dev/packages/simple_animations)  | ✔️  | ✔️ |✔️ |✔️| ✔️    | 
+
+  <br/>
 
 
 ## Directory Structure (Riverpod version)
@@ -283,20 +302,6 @@ Preview                    |   List screen             |   Detail Screen        
   <br/>
 
 
-## Dependencies
-|       Name      |    Cubit  <br/> version      |       Bloc <br/> version       |      GetX <br/> version     |    provider <br/> version   | riverpod <br/> version |
-| :-------------: | :--------------------------: | :----------------------------: |  :------------------------: |  :------------------------: |:----------------------:| 
-| [flutter_bloc](https://pub.dev/packages/flutter_bloc)  |  ✔️  |  ✔️  |    ✖️    |  ✖️    |  ✖️    | 
-| [GetX](https://pub.dev/packages/get)  | ✖️  |  ✖️  | ✔️    | ✖️    | ✖️    | 
-| [provider](https://pub.dev/packages/provider)  | ✖️  |  ✖️  | ✖️    | ✔️    | ✖️    | 
-| [flutter_hooks](https://pub.dev/packages/flutter_hooks)  | ✔️  | ✔️  | ✖️ | ✔️    | ✖️    | 
-| [hooks_riverpod](https://pub.dev/packages/hooks_riverpod)  | ✖️  | ✖️  | ✖️ | ✖️    |✔️    | 
-| [equatable](https://pub.dev/packages/equatable)  | ✔️  | ✔️  | ✖️ | ✔️| ✔️    | 
-| [smooth_page_indicator](https://pub.dev/packages/smooth_page_indicator)  | ✔️  | ✔️ | ✔️ |✔️| ✔️    | 
-| [flutter_rating_bar](https://pub.dev/packages/flutter_rating_bar)  | ✔️  | ✔️ |✔️ |✔️| ✔️    | 
-| [simple_animations](https://pub.dev/packages/simple_animations)  | ✔️  | ✔️ |✔️ |✔️| ✔️    | 
-
-  <br/>
 
 ## Created & Maintained By
 
@@ -304,8 +309,10 @@ Preview                    |   List screen             |   Detail Screen        
 
   <br/>
 
-## My other flutter projects
-project        |
-:-------------------------|
-|[Japanese restaurant app](https://github.com/SinaSys/flutter_japanese_restaurant_app)
-|[Ecommerce app](https://github.com/SinaSys/flutter_ecommerce_app)
+
+##  Other flutter projects
+Project Name        |Stars
+:-------------------------|-------------------------
+[Go rest app](https://github.com/SinaSys/flutter_go_rest_app)|![GitHub stars](https://img.shields.io/github/stars/SinaSys/flutter_go_rest_app?style=social)
+[Japanese restaurant app](https://github.com/SinaSys/flutter_japanese_restaurant_app)| ![GitHub stars](https://img.shields.io/github/stars/SinaSys/flutter_japanese_restaurant_app?style=social)
+|[Ecommerce app](https://github.com/SinaSys/flutter_ecommerce_app) |![GitHub stars](https://img.shields.io/github/stars/SinaSys/flutter_ecommerce_app?style=social)
