@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import '../../../core/app_style.dart';
-
-import 'home_screen.dart';
+import 'package:office_furniture_store/core/app_style.dart';
+import 'package:office_furniture_store/src/presentation/screen/home_screen.dart';
 
 class IntroScreen extends StatelessWidget {
   const IntroScreen({Key? key}) : super(key: key);

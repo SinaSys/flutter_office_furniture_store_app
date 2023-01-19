@@ -1,9 +1,9 @@
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
-import '../../../../core/app_extension.dart';
-import '../../../data/repository/repository.dart';
-import '../../../data/model/furniture.dart';
+import 'package:office_furniture_store/core/app_extension.dart';
+import 'package:office_furniture_store/src/data/model/furniture.dart';
+import 'package:office_furniture_store/src/data/repository/repository.dart';
 
 part 'furniture_event.dart';
 

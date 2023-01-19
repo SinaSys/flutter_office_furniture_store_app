@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-
-import '../../../core/app_asset.dart';
-import '../model/furniture.dart';
-import '../model/furniture_color.dart';
+import 'package:office_furniture_store/core/app_asset.dart';
+import 'package:office_furniture_store/src/data/model/furniture.dart';
+import 'package:office_furniture_store/src/data/model/furniture_color.dart';
 
 class Repository {
   get getFurnitureList {

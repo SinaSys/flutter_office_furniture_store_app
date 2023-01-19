@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'src/data/repository/repository.dart';
-import 'src/business_logic/bloc/furniture/furniture_bloc.dart';
-import 'src/presentation/screen/intro_screen.dart';
-import 'core/app_theme.dart';
+import 'package:office_furniture_store/core/app_theme.dart';
+import 'package:office_furniture_store/src/data/repository/repository.dart';
+import 'package:office_furniture_store/src/presentation/screen/intro_screen.dart';
+import 'package:office_furniture_store/src/business_logic/bloc/furniture/furniture_bloc.dart';
 
 void main() => runApp(const MyApp());
 
