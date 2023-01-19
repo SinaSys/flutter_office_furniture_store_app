@@ -1,8 +1,8 @@
-import 'package:flutter/material.dart';
-import '../../../core/app_extension.dart';
 import '../widget/rating_bar.dart';
-import '../../../core/app_style.dart';
-import '../../data/model/furniture.dart';
+import 'package:flutter/material.dart';
+import 'package:office_furniture_store/core/app_style.dart';
+import 'package:office_furniture_store/core/app_extension.dart';
+import 'package:office_furniture_store/src/data/model/furniture.dart';
 
 class FurnitureListView extends StatelessWidget {
   final bool isHorizontal;

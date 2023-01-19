@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import '../../../core/app_style.dart';
-import '../../business_logic/cubit/furniture/furniture_cubit.dart';
-import '../../data/model/furniture.dart';
-import '../widget/empty_widget.dart';
-import '../widget/furniture_list_view.dart';
+import 'package:office_furniture_store/core/app_style.dart';
+import 'package:office_furniture_store/src/data/model/furniture.dart';
+import 'package:office_furniture_store/src/presentation/widget/empty_widget.dart';
+import 'package:office_furniture_store/src/presentation/widget/furniture_list_view.dart';
+import 'package:office_furniture_store/src/business_logic/cubit/furniture/furniture_cubit.dart';
 
 class FavoriteScreen extends StatelessWidget {
   const FavoriteScreen({Key? key}) : super(key: key);

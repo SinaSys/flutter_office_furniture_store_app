@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../src/data/model/bottom_navigation_item.dart';
+import 'package:office_furniture_store/src/data/model/bottom_navigation_item.dart';
 
 class AppData {
   const AppData._();
