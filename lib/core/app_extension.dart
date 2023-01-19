@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../src/view/widget/fade_in_animation.dart';
+import 'package:office_furniture_store/src/view/widget/fade_in_animation.dart';
 
 extension StringExtension on String {
   String get addOverFlow {
@@ -10,7 +10,6 @@ extension StringExtension on String {
     }
   }
 }
-
 
 extension IterableExtension<T> on Iterable<T> {
   Iterable<T> distinctBy(Object Function(T e) getCompareValue) {
@@ -27,9 +26,8 @@ extension IterableExtension<T> on Iterable<T> {
   }
 }
 
-extension WidgetExtension on Widget{
-  Widget fadeAnimation(double delay){
+extension WidgetExtension on Widget {
+  Widget fadeAnimation(double delay) {
     return FadeInAnimation(delay: delay, child: this);
   }
 }
-

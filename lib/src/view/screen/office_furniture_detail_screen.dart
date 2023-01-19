@@ -1,16 +1,16 @@
-import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
-import '../../../core/app_extension.dart';
+import 'package:flutter/material.dart';
+import 'package:office_furniture_store/core/app_color.dart';
+import 'package:office_furniture_store/core/app_style.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:office_furniture_store/core/app_extension.dart';
+import 'package:office_furniture_store/src/model/furniture.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
-import '../../../core/app_color.dart';
-import '../../../core/app_style.dart';
-import '../../controller/office_furniture_controller.dart';
-import '../../model/furniture.dart';
-import '../widget/color_picker.dart';
-import '../widget/counter_button.dart';
-import '../widget/rating_bar.dart';
-import 'home_screen.dart';
+import 'package:office_furniture_store/src/view/widget/rating_bar.dart';
+import 'package:office_furniture_store/src/view/widget/color_picker.dart';
+import 'package:office_furniture_store/src/view/screen/home_screen.dart';
+import 'package:office_furniture_store/src/view/widget/counter_button.dart';
+import 'package:office_furniture_store/src/controller/office_furniture_controller.dart';
 
 class OfficeFurnitureDetailScreen extends StatelessWidget {
   final Furniture furniture;

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../../model/furniture_color.dart';
+import 'package:office_furniture_store/src/model/furniture_color.dart';
 
 class ColorPicker extends StatefulWidget {
   final List<FurnitureColor> colors;
@@ -26,10 +26,10 @@ class _ColorPickerState extends State<ColorPicker> {
               children: [
                 widget.colors[index].isSelected
                     ? CircleAvatar(
-                  backgroundColor:
-                  widget.colors[index].color.withOpacity(0.5),
-                  radius: 18,
-                )
+                        backgroundColor:
+                            widget.colors[index].color.withOpacity(0.5),
+                        radius: 18,
+                      )
                     : const IgnorePointer(),
                 InkWell(
                   onTap: () {
@@ -37,8 +37,8 @@ class _ColorPickerState extends State<ColorPicker> {
                       element.isSelected = false;
                     }
                     setState(
-                          () {
-                            widget.colors[index].isSelected = true;
+                      () {
+                        widget.colors[index].isSelected = true;
                       },
                     );
                   },

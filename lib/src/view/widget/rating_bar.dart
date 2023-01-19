@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
-
-import '../../../core/app_color.dart';
+import 'package:office_furniture_store/core/app_color.dart';
 
 class StarRatingBar extends StatelessWidget {
   final double score;

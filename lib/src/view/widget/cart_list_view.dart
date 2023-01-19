@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import '../../../core/app_extension.dart';
-
-import '../../../core/app_style.dart';
-import '../../model/furniture.dart';
+import 'package:office_furniture_store/core/app_style.dart';
+import 'package:office_furniture_store/core/app_extension.dart';
+import 'package:office_furniture_store/src/model/furniture.dart';
 
 class CartListView extends StatelessWidget {
   const CartListView(

@@ -1,4 +1,4 @@
-import '../model/furniture_color.dart';
+import 'package:office_furniture_store/src/model/furniture_color.dart';
 
 class Furniture {
   String title;

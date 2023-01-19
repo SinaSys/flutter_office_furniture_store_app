@@ -1,13 +1,13 @@
-import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import '../../../core/app_color.dart';
-import '../../../core/app_style.dart';
-import '../../controller/office_furniture_controller.dart';
-import './../widget/counter_button.dart';
-import './../widget/empty_widget.dart';
-import '../widget/bottom_bar.dart';
-import '../widget/cart_list_view.dart';
-import 'home_screen.dart';
+import 'package:flutter/material.dart';
+import 'package:office_furniture_store/core/app_color.dart';
+import 'package:office_furniture_store/core/app_style.dart';
+import 'package:office_furniture_store/src/view/widget/bottom_bar.dart';
+import 'package:office_furniture_store/src/view/screen/home_screen.dart';
+import 'package:office_furniture_store/src/view/widget/empty_widget.dart';
+import 'package:office_furniture_store/src/view/widget/counter_button.dart';
+import 'package:office_furniture_store/src/view/widget/cart_list_view.dart';
+import 'package:office_furniture_store/src/controller/office_furniture_controller.dart';
 
 class CartScreen extends StatelessWidget {
   const CartScreen({Key? key}) : super(key: key);
