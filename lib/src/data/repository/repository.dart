@@ -1,13 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-
-import '../../../core/app_asset.dart';
-import '../model/furniture.dart';
-import '../model/furniture_color.dart';
-
+import 'package:office_furniture_store/core/app_asset.dart';
+import 'package:office_furniture_store/src/data/model/furniture.dart';
+import 'package:office_furniture_store/src/data/model/furniture_color.dart';
 
 final repositoryProvider = Provider<Repository>((ref) => Repository());
-
 
 class Repository {
   get getFurnitureList {

@@ -1,7 +1,7 @@
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import '../../data/model/furniture.dart';
-import '../../data/repository/repository.dart';
-import 'furniture_state.dart';
+import 'package:office_furniture_store/src/data/model/furniture.dart';
+import 'package:office_furniture_store/src/data/repository/repository.dart';
+import 'package:office_furniture_store/src/business_logic/provider/furniture_state.dart';
 
 final favoriteListProvider = Provider<List<Furniture>>(
   (ref) {

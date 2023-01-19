@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'core/app_theme.dart';
-import 'src/presentation/screen/intro_screen.dart';
+import 'package:office_furniture_store/core/app_theme.dart';
+import 'package:office_furniture_store/src/presentation/screen/intro_screen.dart';
 
 void main() => runApp(const ProviderScope(child: MyApp()));
 

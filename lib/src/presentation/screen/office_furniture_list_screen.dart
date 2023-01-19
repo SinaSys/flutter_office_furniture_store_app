@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import '../../../core/app_style.dart';
-
-import '../../business_logic/provider/furniture_provider.dart';
-import '../../data/model/furniture.dart';
-import '../widget/furniture_list_view.dart';
-import 'office_furniture_detail_screen.dart';
+import 'package:office_furniture_store/core/app_style.dart';
+import 'package:office_furniture_store/src/data/model/furniture.dart';
+import 'package:office_furniture_store/src/presentation/widget/furniture_list_view.dart';
+import 'package:office_furniture_store/src/business_logic/provider/furniture_provider.dart';
+import 'package:office_furniture_store/src/presentation/screen/office_furniture_detail_screen.dart';
 
 class OfficeFurnitureListScreen extends ConsumerWidget {
   const OfficeFurnitureListScreen({Key? key}) : super(key: key);
