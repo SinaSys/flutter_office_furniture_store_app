@@ -1,6 +1,6 @@
 import 'package:equatable/equatable.dart';
 import 'package:flutter/foundation.dart' show immutable;
-import '../model/furniture_color.dart';
+import 'package:office_furniture_store/src/data/model/furniture_color.dart';
 
 @immutable
 class Furniture extends Equatable {

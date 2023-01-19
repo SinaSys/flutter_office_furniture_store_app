@@ -1,7 +1,7 @@
 import 'package:flutter/foundation.dart' show ChangeNotifier;
-import '../../data/model/furniture.dart';
-import '../../data/repository/repository.dart';
-import 'furniture_state.dart';
+import 'package:office_furniture_store/src/data/model/furniture.dart';
+import 'package:office_furniture_store/src/data/repository/repository.dart';
+import 'package:office_furniture_store/src/business_logic/provider/furniture_state.dart';
 
 class FurnitureProvider with ChangeNotifier {
   FurnitureState _state;

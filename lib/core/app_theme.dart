@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-
-import 'app_color.dart';
+import 'package:office_furniture_store/core/app_color.dart';
 
 class AppTheme {
   const AppTheme._();

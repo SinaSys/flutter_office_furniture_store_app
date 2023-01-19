@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
-import '../../../core/app_style.dart';
-import '../../business_logic/provider/furniture_provider.dart';
 import 'package:provider/provider.dart';
-
-import 'home_screen.dart';
+import 'package:office_furniture_store/core/app_style.dart';
+import 'package:office_furniture_store/src/presentation/screen/home_screen.dart';
+import 'package:office_furniture_store/src/business_logic/provider/furniture_provider.dart';
 
 class IntroScreen extends StatelessWidget {
   const IntroScreen({Key? key}) : super(key: key);
