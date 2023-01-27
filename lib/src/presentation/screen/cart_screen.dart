@@ -19,7 +19,7 @@ class CartScreen extends StatelessWidget {
 
     final totalPrice = context.watch<FurnitureProvider>().state.totalPrice;
 
-    PreferredSizeWidget _appBar() {
+    PreferredSizeWidget appBar() {
       return AppBar(
         title: const Text("Cart", style: h2Style),
         actions: [
@@ -38,7 +38,7 @@ class CartScreen extends StatelessWidget {
     }
 
     return Scaffold(
-      appBar: _appBar(),
+      appBar: appBar(),
       bottomNavigationBar: BottomBar(
         priceLabel: "Total price",
         priceValue: "\$${totalPrice.toStringAsFixed(2)}",

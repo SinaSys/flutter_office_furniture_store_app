@@ -56,7 +56,7 @@ class OfficeFurnitureListScreen extends StatelessWidget {
     final List<Furniture> items =
         context.watch<FurnitureProvider>().state.mainItems;
 
-    Future<Widget?> _navigate(Furniture furniture, int index) {
+    Future<Widget?> navigate(Furniture furniture, int index) {
       return Navigator.push(
         context,
         PageRouteBuilder(
@@ -78,15 +78,12 @@ class OfficeFurnitureListScreen extends StatelessWidget {
         child: ListView(
           children: [
             _searchBar(),
-            FurnitureListView(
-              furnitureList: items,
-              onTap: _navigate,
-            ),
+            FurnitureListView(furnitureList: items, onTap: navigate),
             const Text("Popular", style: h2Style),
             FurnitureListView(
               furnitureList: items,
               isHorizontal: false,
-              onTap: _navigate,
+              onTap: navigate,
             ),
           ],
         ),
