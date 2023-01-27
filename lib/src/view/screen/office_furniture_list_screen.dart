@@ -24,10 +24,7 @@ class OfficeFurnitureListScreen extends StatelessWidget {
                   Text("Buy Your favorite desk", style: h3Style),
                 ],
               ),
-              IconButton(
-                onPressed: () {},
-                icon: const Icon(Icons.menu),
-              )
+              IconButton(onPressed: () {}, icon: const Icon(Icons.menu))
             ],
           ),
         ),
@@ -40,19 +37,20 @@ class OfficeFurnitureListScreen extends StatelessWidget {
       padding: const EdgeInsets.only(bottom: 15),
       child: TextField(
         decoration: InputDecoration(
-            hintText: 'Search',
-            prefixIcon: const Icon(Icons.search, color: Colors.grey),
-            suffixIcon: const Icon(Icons.menu, color: Colors.grey),
-            contentPadding: const EdgeInsets.all(20),
-            border: textFieldStyle,
-            focusedBorder: textFieldStyle),
+          hintText: 'Search',
+          prefixIcon: const Icon(Icons.search, color: Colors.grey),
+          suffixIcon: const Icon(Icons.menu, color: Colors.grey),
+          contentPadding: const EdgeInsets.all(20),
+          border: textFieldStyle,
+          focusedBorder: textFieldStyle,
+        ),
       ),
     );
   }
 
   @override
   Widget build(BuildContext context) {
-    Future<Widget?> _navigate(Furniture furniture) {
+    Future<Widget?> navigate(Furniture furniture) {
       return Navigator.push(
         context,
         PageRouteBuilder(
@@ -72,13 +70,13 @@ class OfficeFurnitureListScreen extends StatelessWidget {
             _searchBar(),
             FurnitureListView(
               furnitureList: AppData.furnitureList,
-              onTap: _navigate,
+              onTap: navigate,
             ),
             const Text("Popular", style: h2Style),
             FurnitureListView(
               furnitureList: AppData.furnitureList,
               isHorizontal: false,
-              onTap: _navigate,
+              onTap: navigate,
             ),
           ],
         ),
