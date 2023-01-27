@@ -27,7 +27,7 @@ class OfficeFurnitureDetailScreen extends HookConsumerWidget {
 
     double height = MediaQuery.of(context).size.height;
 
-    final _selectedIndex = useState(0);
+    final selectedIndex = useState(0);
 
     Widget furnitureImageSlider(double height) {
       return Container(
@@ -38,7 +38,7 @@ class OfficeFurnitureDetailScreen extends HookConsumerWidget {
           children: [
             PageView.builder(
               onPageChanged: (int index) {
-                _selectedIndex.value = index;
+                selectedIndex.value = index;
               },
               itemCount: furniture.images.length,
               itemBuilder: (_, index) {
@@ -60,18 +60,20 @@ class OfficeFurnitureDetailScreen extends HookConsumerWidget {
             Positioned(
               bottom: 20,
               child: SmoothIndicator(
-                  effect: const WormEffect(
-                      dotColor: Colors.white38, activeDotColor: Colors.white),
-                  // ),
-                  offset: _selectedIndex.value.toDouble(),
-                  count: furniture.images.length),
+                effect: const WormEffect(
+                  dotColor: Colors.white38,
+                  activeDotColor: Colors.white,
+                ),
+                offset: selectedIndex.value.toDouble(),
+                count: furniture.images.length,
+              ),
             ),
           ],
         ),
       );
     }
 
-    PreferredSizeWidget _appBar(BuildContext context) {
+    PreferredSizeWidget appBar(BuildContext context) {
       return AppBar(
         actions: [
           IconButton(
@@ -85,10 +87,7 @@ class OfficeFurnitureDetailScreen extends HookConsumerWidget {
           )
         ],
         leading: IconButton(
-          icon: const Icon(
-            FontAwesomeIcons.arrowLeft,
-            color: Colors.black,
-          ),
+          icon: const Icon(FontAwesomeIcons.arrowLeft, color: Colors.black),
           onPressed: () => Navigator.pop(context),
         ),
         title: Text(furniture.title, style: h2Style),
@@ -145,7 +144,7 @@ class OfficeFurnitureDetailScreen extends HookConsumerWidget {
       },
       child: Scaffold(
         bottomNavigationBar: bottomBar(),
-        appBar: _appBar(context),
+        appBar: appBar(context),
         body: SingleChildScrollView(
           child: Padding(
             padding: const EdgeInsets.all(15),
@@ -161,9 +160,11 @@ class OfficeFurnitureDetailScreen extends HookConsumerWidget {
                 ),
                 Padding(
                   padding: const EdgeInsets.only(top: 20, bottom: 10),
-                  child: const Text("Synopsis",
-                          style: h2Style, textAlign: TextAlign.end)
-                      .fadeAnimation(0.6),
+                  child: const Text(
+                    "Synopsis",
+                    style: h2Style,
+                    textAlign: TextAlign.end,
+                  ).fadeAnimation(0.6),
                 ),
                 Text(
                   furniture.description,
@@ -174,11 +175,12 @@ class OfficeFurnitureDetailScreen extends HookConsumerWidget {
                 const SizedBox(height: 20),
                 Row(
                   children: [
-                    const Text("Color :",
-                        style: h2Style, textAlign: TextAlign.end),
-                    Expanded(
-                      child: ColorPicker(colors: furniture.colors),
+                    const Text(
+                      "Color :",
+                      style: h2Style,
+                      textAlign: TextAlign.end,
                     ),
+                    Expanded(child: ColorPicker(colors: furniture.colors)),
                     Expanded(
                       child: CounterButton(
                         label: items[index].quantity,

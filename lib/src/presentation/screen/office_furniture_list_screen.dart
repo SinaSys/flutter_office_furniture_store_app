@@ -41,12 +41,13 @@ class OfficeFurnitureListScreen extends ConsumerWidget {
       padding: const EdgeInsets.only(bottom: 15),
       child: TextField(
         decoration: InputDecoration(
-            hintText: 'Search',
-            prefixIcon: const Icon(Icons.search, color: Colors.grey),
-            suffixIcon: const Icon(Icons.menu, color: Colors.grey),
-            contentPadding: const EdgeInsets.all(20),
-            border: textFieldStyle,
-            focusedBorder: textFieldStyle),
+          hintText: 'Search',
+          prefixIcon: const Icon(Icons.search, color: Colors.grey),
+          suffixIcon: const Icon(Icons.menu, color: Colors.grey),
+          contentPadding: const EdgeInsets.all(20),
+          border: textFieldStyle,
+          focusedBorder: textFieldStyle,
+        ),
       ),
     );
   }
@@ -55,12 +56,12 @@ class OfficeFurnitureListScreen extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final items = ref.watch(furnitureStateNotifierProvider);
 
-    Future<Widget?> _navigate(Furniture furniture, int index) {
+    Future<Widget?> navigate(Furniture furniture, int index) {
       return Navigator.push(
         context,
         PageRouteBuilder(
           transitionDuration: const Duration(seconds: 1),
-          pageBuilder: (furnitureContext, __, ___) =>
+          pageBuilder: (_, __, ___) =>
               OfficeFurnitureDetailScreen(furniture: furniture, index: index),
         ),
       );
@@ -73,15 +74,12 @@ class OfficeFurnitureListScreen extends ConsumerWidget {
         child: ListView(
           children: [
             _searchBar(),
-            FurnitureListView(
-              furnitureList: items.mainItems,
-              onTap: _navigate,
-            ),
+            FurnitureListView(furnitureList: items.mainItems, onTap: navigate),
             const Text("Popular", style: h2Style),
             FurnitureListView(
               furnitureList: items.mainItems,
               isHorizontal: false,
-              onTap: _navigate,
+              onTap: navigate,
             ),
           ],
         ),

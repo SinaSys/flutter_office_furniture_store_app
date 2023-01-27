@@ -25,9 +25,7 @@ class CartListView extends StatelessWidget {
               Expanded(
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(15.0),
-                  child: Image.asset(
-                    furniture.images[0],
-                  ),
+                  child: Image.asset(furniture.images[0]),
                 ),
               ),
               const SizedBox(width: 5),
@@ -42,16 +40,17 @@ class CartListView extends StatelessWidget {
                     children: [
                       const Text("Color : ", style: h4Style),
                       CircleAvatar(
+                        radius: 15,
                         child: Container(
                           decoration: BoxDecoration(
-                              color: furniture.colors
-                                  .where((element) => element.isSelected)
-                                  .toList()
-                                  .first
-                                  .color,
-                              shape: BoxShape.circle),
+                            color: furniture.colors
+                                .where((element) => element.isSelected)
+                                .toList()
+                                .first
+                                .color,
+                            shape: BoxShape.circle,
+                          ),
                         ),
-                        radius: 15,
                       )
                     ],
                   )
@@ -63,7 +62,7 @@ class CartListView extends StatelessWidget {
           ).fadeAnimation(0.4 * index),
         );
       },
-      separatorBuilder: (BuildContext context, int index) {
+      separatorBuilder: (_, __) {
         return const Padding(padding: EdgeInsets.only(bottom: 15));
       },
     );

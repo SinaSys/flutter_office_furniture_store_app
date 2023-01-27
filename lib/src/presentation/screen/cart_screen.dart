@@ -18,7 +18,7 @@ class CartScreen extends ConsumerWidget {
 
     final totalPrice = ref.watch(furnitureStateNotifierProvider).totalPrice;
 
-    PreferredSizeWidget _appBar() {
+    PreferredSizeWidget appBar() {
       return AppBar(
         title: const Text("Cart", style: h2Style),
         actions: [
@@ -27,17 +27,14 @@ class CartScreen extends ConsumerWidget {
             onPressed: () {
               ref.read(furnitureStateNotifierProvider.notifier).clearCart();
             },
-            icon: const Icon(
-              Icons.delete,
-              color: AppColor.lightBlack,
-            ),
+            icon: const Icon(Icons.delete, color: AppColor.lightBlack),
           )
         ],
       );
     }
 
     return Scaffold(
-      appBar: _appBar(),
+      appBar: appBar(),
       bottomNavigationBar: BottomBar(
         priceLabel: "Total price",
         priceValue: "\$${totalPrice.toStringAsFixed(2)}",
@@ -51,18 +48,19 @@ class CartScreen extends ConsumerWidget {
                 furnitureItems: cartList,
                 counterButton: (furniture, index) {
                   return CounterButton(
-                      orientation: Axis.vertical,
-                      onIncrementSelected: () {
-                        ref
-                            .read(furnitureStateNotifierProvider.notifier)
-                            .increaseQuantity(cartList[index]);
-                      },
-                      onDecrementSelected: () {
-                        ref
-                            .read(furnitureStateNotifierProvider.notifier)
-                            .decreaseQuantity(cartList[index]);
-                      },
-                      label: furniture.quantity);
+                    orientation: Axis.vertical,
+                    onIncrementSelected: () {
+                      ref
+                          .read(furnitureStateNotifierProvider.notifier)
+                          .increaseQuantity(cartList[index]);
+                    },
+                    onDecrementSelected: () {
+                      ref
+                          .read(furnitureStateNotifierProvider.notifier)
+                          .decreaseQuantity(cartList[index]);
+                    },
+                    label: furniture.quantity,
+                  );
                 },
               )
             : const EmptyWidget(title: "Empty cart"),
