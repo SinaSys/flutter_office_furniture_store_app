@@ -18,10 +18,10 @@ class CounterButton extends StatelessWidget {
   Widget button(Icon icon, Function() onTap) {
     return RawMaterialButton(
       constraints: BoxConstraints.tight(const Size(36, 36)),
-      child: icon,
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
       fillColor: Colors.white,
       onPressed: () => onTap(),
+      child: icon,
     );
   }
 
