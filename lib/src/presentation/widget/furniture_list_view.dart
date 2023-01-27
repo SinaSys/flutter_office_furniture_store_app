@@ -9,12 +9,12 @@ class FurnitureListView extends StatelessWidget {
   final Function(Furniture furniture, int index)? onTap;
   final List<Furniture> furnitureList;
 
-  const FurnitureListView(
-      {Key? key,
-      this.isHorizontal = true,
-      this.onTap,
-      required this.furnitureList})
-      : super(key: key);
+  const FurnitureListView({
+    Key? key,
+    this.isHorizontal = true,
+    this.onTap,
+    required this.furnitureList,
+  }) : super(key: key);
 
   Widget _furnitureScore(Furniture furniture) {
     return Row(
@@ -29,11 +29,7 @@ class FurnitureListView extends StatelessWidget {
   Widget _furnitureImage(String image) {
     return ClipRRect(
       borderRadius: BorderRadius.circular(15.0),
-      child: Image.asset(
-        image,
-        width: 150,
-        height: 150,
-      ),
+      child: Image.asset(image, width: 150, height: 150),
     ).fadeAnimation(0.4);
   }
 
@@ -94,7 +90,7 @@ class FurnitureListView extends StatelessWidget {
                 Furniture furniture = furnitureList[index];
                 return _listViewItem(furniture, index);
               },
-              separatorBuilder: (BuildContext context, int index) {
+              separatorBuilder: (_,__) {
                 return const Padding(
                   padding: EdgeInsets.only(left: 15),
                 );

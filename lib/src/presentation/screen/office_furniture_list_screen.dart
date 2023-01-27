@@ -25,10 +25,7 @@ class OfficeFurnitureListScreen extends ConsumerWidget {
                   Text("Buy Your favorite desk", style: h3Style),
                 ],
               ),
-              IconButton(
-                onPressed: () {},
-                icon: const Icon(Icons.menu),
-              )
+              IconButton(onPressed: () {}, icon: const Icon(Icons.menu))
             ],
           ),
         ),
