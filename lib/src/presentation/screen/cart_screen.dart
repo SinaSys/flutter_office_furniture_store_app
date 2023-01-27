@@ -28,10 +28,7 @@ class CartScreen extends StatelessWidget {
             onPressed: () {
               context.read<FurnitureProvider>().clearCart();
             },
-            icon: const Icon(
-              Icons.delete,
-              color: AppColor.lightBlack,
-            ),
+            icon: const Icon(Icons.delete, color: AppColor.lightBlack),
           )
         ],
       );
@@ -52,18 +49,19 @@ class CartScreen extends StatelessWidget {
                 furnitureItems: cartList,
                 counterButton: (furniture, index) {
                   return CounterButton(
-                      orientation: Axis.vertical,
-                      onIncrementSelected: () {
-                        context
-                            .read<FurnitureProvider>()
-                            .increaseQuantity(cartList[index]);
-                      },
-                      onDecrementSelected: () {
-                        context
-                            .read<FurnitureProvider>()
-                            .decreaseQuantity(cartList[index]);
-                      },
-                      label: furniture.quantity);
+                    orientation: Axis.vertical,
+                    onIncrementSelected: () {
+                      context
+                          .read<FurnitureProvider>()
+                          .increaseQuantity(cartList[index]);
+                    },
+                    onDecrementSelected: () {
+                      context
+                          .read<FurnitureProvider>()
+                          .decreaseQuantity(cartList[index]);
+                    },
+                    label: furniture.quantity,
+                  );
                 },
               )
             : const EmptyWidget(title: "Empty cart"),

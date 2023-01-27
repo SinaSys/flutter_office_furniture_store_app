@@ -19,13 +19,10 @@ class EmptyWidget extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           type == EmptyWidgetType.cart
-              ? Image.asset(AppAsset.emptyCart)
+              ? Expanded(child: Image.asset(AppAsset.emptyCart))
               : Image.asset(AppAsset.emptyFavorite),
           const SizedBox(height: 10),
-          Text(
-            title,
-            style: h2Style,
-          )
+          Text(title, style: h2Style)
         ],
       ),
     );
