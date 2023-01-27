@@ -19,10 +19,7 @@ class CartScreen extends StatelessWidget {
         IconButton(
           splashRadius: 20.0,
           onPressed: controller.clearCart,
-          icon: const Icon(
-            Icons.delete,
-            color: AppColor.lightBlack,
-          ),
+          icon: const Icon(Icons.delete, color: AppColor.lightBlack),
         )
       ],
     );
@@ -48,16 +45,18 @@ class CartScreen extends StatelessWidget {
               ? Padding(
                   padding: const EdgeInsets.all(15),
                   child: CartListView(
-                      furnitureItems: controller.cartFurniture,
-                      counterButton: (furniture) {
-                        return CounterButton(
-                            orientation: Axis.vertical,
-                            onIncrementSelected: () =>
-                                controller.increaseItem(furniture),
-                            onDecrementSelected: () =>
-                                controller.decreaseItem(furniture),
-                            label: furniture.quantity);
-                      }),
+                    furnitureItems: controller.cartFurniture,
+                    counterButton: (furniture) {
+                      return CounterButton(
+                        orientation: Axis.vertical,
+                        onIncrementSelected: () =>
+                            controller.increaseItem(furniture),
+                        onDecrementSelected: () =>
+                            controller.decreaseItem(furniture),
+                        label: furniture.quantity,
+                      );
+                    },
+                  ),
                 )
               : const EmptyWidget(title: "Empty");
         },

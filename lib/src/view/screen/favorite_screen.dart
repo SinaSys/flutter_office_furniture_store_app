@@ -25,7 +25,9 @@ class FavoriteScreen extends StatelessWidget {
                       furnitureList: controller.favoriteFurnitureList,
                     )
                   : const EmptyWidget(
-                      type: EmptyWidgetType.favorite, title: "Empty")
+                      type: EmptyWidgetType.favorite,
+                      title: "Empty",
+                    )
             ],
           ),
         ),

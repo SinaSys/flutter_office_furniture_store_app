@@ -8,9 +8,11 @@ class EmptyWidget extends StatelessWidget {
   final EmptyWidgetType type;
   final String title;
 
-  const EmptyWidget(
-      {Key? key, this.type = EmptyWidgetType.cart, required this.title})
-      : super(key: key);
+  const EmptyWidget({
+    Key? key,
+    this.type = EmptyWidgetType.cart,
+    required this.title,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -19,13 +21,10 @@ class EmptyWidget extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           type == EmptyWidgetType.cart
-              ? Image.asset(AppAsset.emptyCart)
+              ? Expanded(child: Image.asset(AppAsset.emptyCart))
               : Image.asset(AppAsset.emptyFavorite),
           const SizedBox(height: 10),
-          Text(
-            title,
-            style: h2Style,
-          )
+          Text(title, style: h2Style)
         ],
       ),
     );
