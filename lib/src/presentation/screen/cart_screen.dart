@@ -27,10 +27,7 @@ class CartScreen extends StatelessWidget {
             onPressed: () {
               context.read<FurnitureBloc>().add(const ClearCartEvent());
             },
-            icon: const Icon(
-              Icons.delete,
-              color: AppColor.lightBlack,
-            ),
+            icon: const Icon(Icons.delete, color: AppColor.lightBlack),
           )
         ],
       );
@@ -51,14 +48,15 @@ class CartScreen extends StatelessWidget {
                 furnitureItems: cartList,
                 counterButton: (furniture, index) {
                   return CounterButton(
-                      orientation: Axis.vertical,
-                      onIncrementSelected: () => context
-                          .read<FurnitureBloc>()
-                          .add(IncreaseQuantityEvent(furniture: furniture)),
-                      onDecrementSelected: () => context
-                          .read<FurnitureBloc>()
-                          .add(DecreaseQuantityEvent(furniture: furniture)),
-                      label: cartList[index].quantity);
+                    orientation: Axis.vertical,
+                    onIncrementSelected: () => context
+                        .read<FurnitureBloc>()
+                        .add(IncreaseQuantityEvent(furniture: furniture)),
+                    onDecrementSelected: () => context
+                        .read<FurnitureBloc>()
+                        .add(DecreaseQuantityEvent(furniture: furniture)),
+                    label: cartList[index].quantity,
+                  );
                 },
               )
             : const EmptyWidget(title: "Empty cart"),
