@@ -121,9 +121,9 @@ class AppData {
   ];
 
   static List<BottomNavigationItem> bottomNavigationItems = [
-    BottomNavigationItem(const Icon(Icons.home), 'Home'),
-    BottomNavigationItem(const Icon(Icons.add_shopping_cart_rounded), 'Shopping cart'),
-    BottomNavigationItem(const Icon(Icons.bookmark), 'Favorite'),
-    BottomNavigationItem(const Icon(Icons.person), 'Profile')
+    const BottomNavigationItem(Icon(Icons.home), 'Home'),
+    const BottomNavigationItem(Icon(Icons.add_shopping_cart_rounded), 'Shopping cart'),
+    const BottomNavigationItem(Icon(Icons.bookmark), 'Favorite'),
+    const BottomNavigationItem(Icon(Icons.person), 'Profile')
   ];
 }
