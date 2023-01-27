@@ -34,10 +34,7 @@ class OfficeFurnitureDetailScreen extends StatelessWidget {
         )
       ],
       leading: IconButton(
-        icon: const Icon(
-          FontAwesomeIcons.arrowLeft,
-          color: Colors.black,
-        ),
+        icon: const Icon(FontAwesomeIcons.arrowLeft, color: Colors.black),
         onPressed: () {
           controller.currentPageViewItemIndicator.value = 0;
           Navigator.pop(context);
@@ -58,9 +55,13 @@ class OfficeFurnitureDetailScreen extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               const FittedBox(
-                child: Text('Price',
-                    style: TextStyle(
-                        color: Colors.black45, fontWeight: FontWeight.bold)),
+                child: Text(
+                  'Price',
+                  style: TextStyle(
+                    color: Colors.black45,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
               ),
               const SizedBox(height: 5),
               FittedBox(child: Text("\$${furniture.price}", style: h2Style))
@@ -68,14 +69,13 @@ class OfficeFurnitureDetailScreen extends StatelessWidget {
           ),
           ElevatedButton(
             style: ElevatedButton.styleFrom(
-                backgroundColor: AppColor.lightBlack,
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 40, vertical: 15),
-                shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(10))),
-            onPressed: () {
-              controller.addToCart(furniture);
-            },
+              backgroundColor: AppColor.lightBlack,
+              padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 15),
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(10),
+              ),
+            ),
+            onPressed: () => controller.addToCart(furniture),
             child: const Text("Add to cart"),
           )
         ],
@@ -114,18 +114,18 @@ class OfficeFurnitureDetailScreen extends StatelessWidget {
             child: Obx(
               () {
                 return SmoothIndicator(
-                    effect: const WormEffect(
-                        dotColor: Colors.white38, activeDotColor: Colors.white),
-                    // ),
-                    // offset: selectedPageViewIndex.toDouble(),
-                    offset: controller.currentPageViewItemIndicator.value
-                        .toDouble(),
-                    count: furniture.images.length);
+                  effect: const WormEffect(
+                    dotColor: Colors.white38,
+                    activeDotColor: Colors.white,
+                  ),
+                  offset:
+                      controller.currentPageViewItemIndicator.value.toDouble(),
+                  count: furniture.images.length,
+                );
               },
             ),
           ),
         ],
-        // ).fadeAnimation(0.2),
       ),
     );
   }
@@ -156,20 +156,26 @@ class OfficeFurnitureDetailScreen extends StatelessWidget {
                 ),
                 Padding(
                   padding: const EdgeInsets.only(top: 20, bottom: 10),
-                  child: const Text("Synopsis",
-                          style: h2Style, textAlign: TextAlign.end)
-                      .fadeAnimation(0.6),
+                  child: const Text(
+                    "Synopsis",
+                    style: h2Style,
+                    textAlign: TextAlign.end,
+                  ).fadeAnimation(0.6),
                 ),
-                Text(furniture.description,
-                        maxLines: 5,
-                        overflow: TextOverflow.ellipsis,
-                        style: const TextStyle(color: Colors.black45))
-                    .fadeAnimation(0.8),
+                Text(
+                  furniture.description,
+                  maxLines: 5,
+                  overflow: TextOverflow.ellipsis,
+                  style: const TextStyle(color: Colors.black45),
+                ).fadeAnimation(0.8),
                 const SizedBox(height: 20),
                 Row(
                   children: [
-                    const Text("Color :",
-                        style: h2Style, textAlign: TextAlign.end),
+                    const Text(
+                      "Color :",
+                      style: h2Style,
+                      textAlign: TextAlign.end,
+                    ),
                     Expanded(child: ColorPicker(furniture.colors)),
                     Expanded(child: GetBuilder(
                       builder: (OfficeFurnitureController controller) {

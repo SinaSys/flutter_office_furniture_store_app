@@ -36,11 +36,9 @@ class _ColorPickerState extends State<ColorPicker> {
                     for (var element in widget.colors) {
                       element.isSelected = false;
                     }
-                    setState(
-                      () {
-                        widget.colors[index].isSelected = true;
-                      },
-                    );
+                    setState(() {
+                      widget.colors[index].isSelected = true;
+                    });
                   },
                   child: CircleAvatar(
                     backgroundColor: widget.colors[index].color,

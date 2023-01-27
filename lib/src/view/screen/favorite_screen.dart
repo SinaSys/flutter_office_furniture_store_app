@@ -10,9 +10,7 @@ class FavoriteScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text("Favorites", style: h2Style),
-      ),
+      appBar: AppBar(title: const Text("Favorites", style: h2Style)),
       body: Padding(
         padding: const EdgeInsets.all(15),
         child: SingleChildScrollView(
