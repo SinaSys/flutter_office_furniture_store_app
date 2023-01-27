@@ -45,12 +45,14 @@ extension ListExtension on List<Furniture> {
         furniture = furniture.copyWith(isFavorite: !furniture.isFavorite);
         break;
     }
-    List<Furniture> list = map((element) {
-      if (element.id == furniture.id) {
-        return furniture;
-      }
-      return element;
-    }).toList();
+    List<Furniture> list = map(
+      (element) {
+        if (element.id == furniture.id) {
+          return furniture;
+        }
+        return element;
+      },
+    ).toList();
 
     return list;
   }

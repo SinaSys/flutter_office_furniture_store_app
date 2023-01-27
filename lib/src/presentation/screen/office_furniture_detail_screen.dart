@@ -60,11 +60,13 @@ class OfficeFurnitureDetailScreen extends HookWidget {
             Positioned(
               bottom: 20,
               child: SmoothIndicator(
-                  effect: const WormEffect(
-                      dotColor: Colors.white38, activeDotColor: Colors.white),
-                  // ),
-                  offset: selectedIndex.value.toDouble(),
-                  count: furniture.images.length),
+                effect: const WormEffect(
+                  dotColor: Colors.white38,
+                  activeDotColor: Colors.white,
+                ),
+                offset: selectedIndex.value.toDouble(),
+                count: furniture.images.length,
+              ),
             ),
           ],
         ),
@@ -79,16 +81,12 @@ class OfficeFurnitureDetailScreen extends HookWidget {
             onPressed: () =>
                 context.read<FurnitureCubit>().addToFavorite(items[index]),
             icon: items[index].isFavorite
-                // icon: state.
                 ? const Icon(Icons.bookmark, color: Colors.black)
                 : const Icon(Icons.bookmark_border, color: Colors.black),
           )
         ],
         leading: IconButton(
-          icon: const Icon(
-            FontAwesomeIcons.arrowLeft,
-            color: Colors.black,
-          ),
+          icon: const Icon(FontAwesomeIcons.arrowLeft, color: Colors.black),
           onPressed: () {
             Navigator.pop(context);
           },
@@ -108,9 +106,13 @@ class OfficeFurnitureDetailScreen extends HookWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 const FittedBox(
-                  child: Text('Price',
-                      style: TextStyle(
-                          color: Colors.black45, fontWeight: FontWeight.bold)),
+                  child: Text(
+                    'Price',
+                    style: TextStyle(
+                      color: Colors.black45,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
                 ),
                 const SizedBox(height: 5),
                 FittedBox(child: Text("${furniture.price}", style: h2Style))
@@ -118,11 +120,13 @@ class OfficeFurnitureDetailScreen extends HookWidget {
             ),
             ElevatedButton(
               style: ElevatedButton.styleFrom(
-                  backgroundColor: AppColor.lightBlack,
-                  padding:
-                      const EdgeInsets.symmetric(horizontal: 40, vertical: 15),
-                  shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(10))),
+                backgroundColor: AppColor.lightBlack,
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 40, vertical: 15),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(10),
+                ),
+              ),
               onPressed: () {
                 context.read<FurnitureCubit>().addToCart(items[index]);
               },
@@ -155,20 +159,26 @@ class OfficeFurnitureDetailScreen extends HookWidget {
                 ),
                 Padding(
                   padding: const EdgeInsets.only(top: 20, bottom: 10),
-                  child: const Text("Synopsis",
-                          style: h2Style, textAlign: TextAlign.end)
-                      .fadeAnimation(0.6),
+                  child: const Text(
+                    "Synopsis",
+                    style: h2Style,
+                    textAlign: TextAlign.end,
+                  ).fadeAnimation(0.6),
                 ),
-                Text(furniture.description,
-                        maxLines: 5,
-                        overflow: TextOverflow.ellipsis,
-                        style: const TextStyle(color: Colors.black45))
-                    .fadeAnimation(0.8),
+                Text(
+                  furniture.description,
+                  maxLines: 5,
+                  overflow: TextOverflow.ellipsis,
+                  style: const TextStyle(color: Colors.black45),
+                ).fadeAnimation(0.8),
                 const SizedBox(height: 20),
                 Row(
                   children: [
-                    const Text("Color :",
-                        style: h2Style, textAlign: TextAlign.end),
+                    const Text(
+                      "Color :",
+                      style: h2Style,
+                      textAlign: TextAlign.end,
+                    ),
                     Expanded(child: ColorPicker(colors: furniture.colors)),
                     Expanded(
                       child: CounterButton(

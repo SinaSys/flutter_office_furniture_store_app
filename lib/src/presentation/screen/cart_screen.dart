@@ -14,8 +14,7 @@ class CartScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final List<Furniture> cartList =
-        context.watch<FurnitureCubit>().getCartList;
+    final List<Furniture> cartList = context.watch<FurnitureCubit>().getCartList;
 
     final totalPrice = context.watch<FurnitureCubit>().state.totalPrice;
 
@@ -28,10 +27,7 @@ class CartScreen extends StatelessWidget {
             onPressed: () {
               context.read<FurnitureCubit>().clearCart();
             },
-            icon: const Icon(
-              Icons.delete,
-              color: AppColor.lightBlack,
-            ),
+            icon: const Icon(Icons.delete, color: AppColor.lightBlack),
           )
         ],
       );
@@ -52,18 +48,19 @@ class CartScreen extends StatelessWidget {
                 furnitureItems: cartList,
                 counterButton: (furniture, index) {
                   return CounterButton(
-                      orientation: Axis.vertical,
-                      onIncrementSelected: () {
-                        context
-                            .read<FurnitureCubit>()
-                            .increaseQuantity(cartList[index]);
-                      },
-                      onDecrementSelected: () {
-                        context
-                            .read<FurnitureCubit>()
-                            .decreaseQuantity(cartList[index]);
-                      },
-                      label: furniture.quantity);
+                    orientation: Axis.vertical,
+                    onIncrementSelected: () {
+                      context
+                          .read<FurnitureCubit>()
+                          .increaseQuantity(cartList[index]);
+                    },
+                    onDecrementSelected: () {
+                      context
+                          .read<FurnitureCubit>()
+                          .decreaseQuantity(cartList[index]);
+                    },
+                    label: furniture.quantity,
+                  );
                 },
               )
             : const EmptyWidget(title: "Empty cart"),

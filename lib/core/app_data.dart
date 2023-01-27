@@ -6,8 +6,7 @@ class AppData {
 
   static const List<BottomNavigationItem> bottomNavigationItems = [
     BottomNavigationItem(Icon(Icons.home), 'Home'),
-    BottomNavigationItem(
-        Icon(Icons.add_shopping_cart_rounded), 'Shopping cart'),
+    BottomNavigationItem(Icon(Icons.add_shopping_cart_rounded), 'Shopping cart'),
     BottomNavigationItem(Icon(Icons.bookmark), 'Favorite'),
     BottomNavigationItem(Icon(Icons.person), 'Profile')
   ];

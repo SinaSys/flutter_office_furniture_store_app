@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:office_furniture_store/core/app_extension.dart';
 import 'package:office_furniture_store/core/app_style.dart';
+import 'package:office_furniture_store/core/app_extension.dart';
 import 'package:office_furniture_store/src/data/model/furniture.dart';
 
 class CartListView extends StatelessWidget {
@@ -25,9 +25,7 @@ class CartListView extends StatelessWidget {
               Expanded(
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(15.0),
-                  child: Image.asset(
-                    furniture.images[0],
-                  ),
+                  child: Image.asset(furniture.images[0]),
                 ),
               ),
               const SizedBox(width: 5),
@@ -58,12 +56,13 @@ class CartListView extends StatelessWidget {
                   )
                 ],
               ),
+              // Spacer(),
               counterButton(furniture, index)
             ],
           ).fadeAnimation(0.4 * index),
         );
       },
-      separatorBuilder: (BuildContext context, int index) {
+      separatorBuilder: (_, __) {
         return const Padding(padding: EdgeInsets.only(bottom: 15));
       },
     );

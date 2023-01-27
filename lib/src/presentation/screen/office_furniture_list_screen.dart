@@ -41,12 +41,13 @@ class OfficeFurnitureListScreen extends StatelessWidget {
       padding: const EdgeInsets.only(bottom: 15),
       child: TextField(
         decoration: InputDecoration(
-            hintText: 'Search',
-            prefixIcon: const Icon(Icons.search, color: Colors.grey),
-            suffixIcon: const Icon(Icons.menu, color: Colors.grey),
-            contentPadding: const EdgeInsets.all(20),
-            border: textFieldStyle,
-            focusedBorder: textFieldStyle),
+          hintText: 'Search',
+          prefixIcon: const Icon(Icons.search, color: Colors.grey),
+          suffixIcon: const Icon(Icons.menu, color: Colors.grey),
+          contentPadding: const EdgeInsets.all(20),
+          border: textFieldStyle,
+          focusedBorder: textFieldStyle,
+        ),
       ),
     );
   }
