@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'dart:ui' show PointerDeviceKind;
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:office_furniture_store/core/app_theme.dart';
 import 'package:office_furniture_store/src/data/repository/repository.dart';
@@ -15,9 +16,15 @@ class MyApp extends StatelessWidget {
     return RepositoryProvider<Repository>(
       create: (context) => Repository(),
       child: BlocProvider<FurnitureBloc>(
-        create: (context) =>
-            FurnitureBloc(repository: context.read<Repository>()),
+        create: (context) => FurnitureBloc(repository: context.read<Repository>()),
         child: MaterialApp(
+          // Enable horizontal scroll on flutter web
+          scrollBehavior: const MaterialScrollBehavior().copyWith(
+            dragDevices: {
+              PointerDeviceKind.mouse,
+              PointerDeviceKind.touch,
+            },
+          ),
           debugShowCheckedModeBanner: false,
           home: const IntroScreen(),
           theme: AppTheme.lightTheme,
