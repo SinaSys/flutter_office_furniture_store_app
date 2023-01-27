@@ -14,9 +14,7 @@ class FavoriteScreen extends ConsumerWidget {
     final List<Furniture> favoriteList = ref.watch(favoriteListProvider);
 
     return Scaffold(
-      appBar: AppBar(
-        title: const Text("Favorites", style: h2Style),
-      ),
+      appBar: AppBar(title: const Text("Favorites", style: h2Style)),
       body: Padding(
         padding: const EdgeInsets.all(15),
         child: SingleChildScrollView(
@@ -29,7 +27,9 @@ class FavoriteScreen extends ConsumerWidget {
                       furnitureList: favoriteList,
                     )
                   : const EmptyWidget(
-                      type: EmptyWidgetType.favorite, title: "Empty favorite")
+                      type: EmptyWidgetType.favorite,
+                      title: "Empty favorite",
+                    )
             ],
           ),
         ),
