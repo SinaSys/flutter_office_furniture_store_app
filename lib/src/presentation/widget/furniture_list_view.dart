@@ -9,12 +9,12 @@ class FurnitureListView extends StatelessWidget {
   final Function(Furniture furniture, int index)? onTap;
   final List<Furniture> furnitureList;
 
-  const FurnitureListView(
-      {Key? key,
-      this.isHorizontal = true,
-      this.onTap,
-      required this.furnitureList})
-      : super(key: key);
+  const FurnitureListView({
+    Key? key,
+    this.isHorizontal = true,
+    this.onTap,
+    required this.furnitureList,
+  }) : super(key: key);
 
   Widget _furnitureScore(Furniture furniture) {
     return Row(
@@ -94,10 +94,8 @@ class FurnitureListView extends StatelessWidget {
                 Furniture furniture = furnitureList[index];
                 return _listViewItem(furniture, index);
               },
-              separatorBuilder: (BuildContext context, int index) {
-                return const Padding(
-                  padding: EdgeInsets.only(left: 15),
-                );
+              separatorBuilder: (_, __) {
+                return const Padding(padding: EdgeInsets.only(left: 15));
               },
             ),
           )

@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
-import 'package:office_furniture_store/core/app_style.dart';
 import 'package:office_furniture_store/core/app_color.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:office_furniture_store/core/app_style.dart';
 import 'package:office_furniture_store/core/app_extension.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import 'package:office_furniture_store/src/data/model/furniture.dart';
 import 'package:office_furniture_store/src/presentation/widget/rating_bar.dart';
@@ -60,11 +60,13 @@ class OfficeFurnitureDetailScreen extends HookWidget {
             Positioned(
               bottom: 20,
               child: SmoothIndicator(
-                  effect: const WormEffect(
-                      dotColor: Colors.white38, activeDotColor: Colors.white),
-                  // ),
-                  offset: selectedIndex.value.toDouble(),
-                  count: furniture.images.length),
+                effect: const WormEffect(
+                  dotColor: Colors.white38,
+                  activeDotColor: Colors.white,
+                ),
+                offset: selectedIndex.value.toDouble(),
+                count: furniture.images.length,
+              ),
             ),
           ],
         ),
@@ -84,10 +86,7 @@ class OfficeFurnitureDetailScreen extends HookWidget {
           )
         ],
         leading: IconButton(
-          icon: const Icon(
-            FontAwesomeIcons.arrowLeft,
-            color: Colors.black,
-          ),
+          icon: const Icon(FontAwesomeIcons.arrowLeft, color: Colors.black),
           onPressed: () => Navigator.pop(context),
         ),
         title: Text(furniture.title, style: h2Style),
@@ -108,13 +107,13 @@ class OfficeFurnitureDetailScreen extends HookWidget {
                   child: Text(
                     'Price',
                     style: TextStyle(
-                        color: Colors.black45, fontWeight: FontWeight.bold),
+                      color: Colors.black45,
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
                 ),
                 const SizedBox(height: 5),
-                FittedBox(
-                  child: Text("${furniture.price}", style: h2Style),
-                )
+                FittedBox(child: Text("${furniture.price}", style: h2Style))
               ],
             ),
             ElevatedButton(
@@ -158,20 +157,26 @@ class OfficeFurnitureDetailScreen extends HookWidget {
                 ),
                 Padding(
                   padding: const EdgeInsets.only(top: 20, bottom: 10),
-                  child: const Text("Synopsis",
-                          style: h2Style, textAlign: TextAlign.end)
-                      .fadeAnimation(0.6),
+                  child: const Text(
+                    "Synopsis",
+                    style: h2Style,
+                    textAlign: TextAlign.end,
+                  ).fadeAnimation(0.6),
                 ),
-                Text(furniture.description,
-                        maxLines: 5,
-                        overflow: TextOverflow.ellipsis,
-                        style: const TextStyle(color: Colors.black45))
-                    .fadeAnimation(0.8),
+                Text(
+                  furniture.description,
+                  maxLines: 5,
+                  overflow: TextOverflow.ellipsis,
+                  style: const TextStyle(color: Colors.black45),
+                ).fadeAnimation(0.8),
                 const SizedBox(height: 20),
                 Row(
                   children: [
-                    const Text("Color :",
-                        style: h2Style, textAlign: TextAlign.end),
+                    const Text(
+                      "Color :",
+                      style: h2Style,
+                      textAlign: TextAlign.end,
+                    ),
                     Expanded(child: ColorPicker(colors: furniture.colors)),
                     Expanded(
                       child: CounterButton(

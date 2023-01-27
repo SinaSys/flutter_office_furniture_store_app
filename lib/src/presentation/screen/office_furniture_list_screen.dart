@@ -25,10 +25,7 @@ class OfficeFurnitureListScreen extends StatelessWidget {
                   Text("Buy Your favorite desk", style: h3Style),
                 ],
               ),
-              IconButton(
-                onPressed: () {},
-                icon: const Icon(Icons.menu),
-              )
+              IconButton(onPressed: () {}, icon: const Icon(Icons.menu))
             ],
           ),
         ),
@@ -41,12 +38,13 @@ class OfficeFurnitureListScreen extends StatelessWidget {
       padding: const EdgeInsets.only(bottom: 15),
       child: TextField(
         decoration: InputDecoration(
-            hintText: 'Search',
-            prefixIcon: const Icon(Icons.search, color: Colors.grey),
-            suffixIcon: const Icon(Icons.menu, color: Colors.grey),
-            contentPadding: const EdgeInsets.all(20),
-            border: textFieldStyle,
-            focusedBorder: textFieldStyle),
+          hintText: 'Search',
+          prefixIcon: const Icon(Icons.search, color: Colors.grey),
+          suffixIcon: const Icon(Icons.menu, color: Colors.grey),
+          contentPadding: const EdgeInsets.all(20),
+          border: textFieldStyle,
+          focusedBorder: textFieldStyle,
+        ),
       ),
     );
   }
@@ -61,7 +59,7 @@ class OfficeFurnitureListScreen extends StatelessWidget {
         context,
         PageRouteBuilder(
           transitionDuration: const Duration(seconds: 1),
-          pageBuilder: (furnitureContext, __, ___) =>
+          pageBuilder: (_, __, ___) =>
               ChangeNotifierProvider.value(
             value: context.read<FurnitureProvider>(),
             child:

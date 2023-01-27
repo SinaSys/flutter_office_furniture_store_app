@@ -7,13 +7,13 @@ class BottomBar extends StatelessWidget {
   final String priceValue;
   final String buttonLabel;
 
-  const BottomBar(
-      {Key? key,
-      this.onTap,
-      this.priceLabel = "Price",
-      required this.priceValue,
-      this.buttonLabel = "Add to cart"})
-      : super(key: key);
+  const BottomBar({
+    Key? key,
+    this.onTap,
+    this.priceLabel = "Price",
+    required this.priceValue,
+    this.buttonLabel = "Add to cart",
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -30,19 +30,16 @@ class BottomBar extends StatelessWidget {
                 child: Text(
                   priceLabel,
                   style: const TextStyle(
-                      color: Colors.black45, fontWeight: FontWeight.bold),
+                    color: Colors.black45,
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
               ),
               const SizedBox(height: 5),
-              FittedBox(
-                child: Text(priceValue, style: h2Style),
-              )
+              FittedBox(child: Text(priceValue, style: h2Style))
             ],
           ),
-          ElevatedButton(
-            onPressed: onTap,
-            child: Text(buttonLabel),
-          )
+          ElevatedButton(onPressed: onTap, child: Text(buttonLabel))
         ],
       ),
     );

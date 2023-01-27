@@ -53,7 +53,7 @@ class CartScreen extends StatelessWidget {
                     onIncrementSelected: () {
                       context
                           .read<FurnitureProvider>()
-                          .increaseQuantity(cartList[index]);
+                          .increaseQuantity(cartList[index],);
                     },
                     onDecrementSelected: () {
                       context
