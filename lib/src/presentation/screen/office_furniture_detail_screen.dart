@@ -26,7 +26,7 @@ class OfficeFurnitureDetailScreen extends HookWidget {
         context.watch<FurnitureBloc>().state.mainItems;
     double height = MediaQuery.of(context).size.height;
 
-    final _selectedIndex = useState(0);
+    final selectedIndex = useState(0);
 
     Widget furnitureImageSlider(double height) {
       return Container(
@@ -37,7 +37,7 @@ class OfficeFurnitureDetailScreen extends HookWidget {
           children: [
             PageView.builder(
               onPageChanged: (int index) {
-                _selectedIndex.value = index;
+                selectedIndex.value = index;
               },
               itemCount: furniture.images.length,
               itemBuilder: (_, index) {
@@ -62,7 +62,7 @@ class OfficeFurnitureDetailScreen extends HookWidget {
                   effect: const WormEffect(
                       dotColor: Colors.white38, activeDotColor: Colors.white),
                   // ),
-                  offset: _selectedIndex.value.toDouble(),
+                  offset: selectedIndex.value.toDouble(),
                   count: furniture.images.length),
             ),
           ],
@@ -70,7 +70,7 @@ class OfficeFurnitureDetailScreen extends HookWidget {
       );
     }
 
-    PreferredSizeWidget _appBar(BuildContext context) {
+    PreferredSizeWidget appBar(BuildContext context) {
       return AppBar(
         actions: [
           IconButton(
@@ -142,7 +142,7 @@ class OfficeFurnitureDetailScreen extends HookWidget {
       },
       child: Scaffold(
         bottomNavigationBar: bottomBar(),
-        appBar: _appBar(context),
+        appBar: appBar(context),
         body: SingleChildScrollView(
           child: Padding(
             padding: const EdgeInsets.all(15),

@@ -1,6 +1,6 @@
-import 'package:bloc/bloc.dart';
-import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
+import 'package:equatable/equatable.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:office_furniture_store/core/app_extension.dart';
 import 'package:office_furniture_store/src/data/model/furniture.dart';
 import 'package:office_furniture_store/src/data/repository/repository.dart';

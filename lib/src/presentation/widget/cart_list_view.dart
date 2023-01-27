@@ -42,6 +42,7 @@ class CartListView extends StatelessWidget {
                     children: [
                       const Text("Color : ", style: h4Style),
                       CircleAvatar(
+                        radius: 15,
                         child: Container(
                           decoration: BoxDecoration(
                               color: furniture.colors
@@ -51,7 +52,6 @@ class CartListView extends StatelessWidget {
                                   .color,
                               shape: BoxShape.circle),
                         ),
-                        radius: 15,
                       )
                     ],
                   )

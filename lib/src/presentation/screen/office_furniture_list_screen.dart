@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:office_furniture_store/core/app_style.dart';
-import 'package:office_furniture_store/src/business_logic/bloc/furniture/furniture_bloc.dart';
 import 'package:office_furniture_store/src/data/model/furniture.dart';
-import 'package:office_furniture_store/src/presentation/screen/office_furniture_detail_screen.dart';
 import 'package:office_furniture_store/src/presentation/widget/furniture_list_view.dart';
+import 'package:office_furniture_store/src/business_logic/bloc/furniture/furniture_bloc.dart';
+import 'package:office_furniture_store/src/presentation/screen/office_furniture_detail_screen.dart';
 
 class OfficeFurnitureListScreen extends StatelessWidget {
   const OfficeFurnitureListScreen({Key? key}) : super(key: key);
@@ -56,7 +56,7 @@ class OfficeFurnitureListScreen extends StatelessWidget {
     final List<Furniture> items =
         context.watch<FurnitureBloc>().state.mainItems;
 
-    Future<Widget?> _navigate(Furniture furniture, int index) {
+    Future<Widget?> navigate(Furniture furniture, int index) {
       return Navigator.push(
         context,
         PageRouteBuilder(
@@ -76,13 +76,13 @@ class OfficeFurnitureListScreen extends StatelessWidget {
             _searchBar(),
             FurnitureListView(
               furnitureList: items,
-              onTap: _navigate,
+              onTap: navigate,
             ),
             const Text("Popular", style: h2Style),
             FurnitureListView(
               furnitureList: items,
               isHorizontal: false,
-              onTap: _navigate,
+              onTap: navigate,
             ),
           ],
         ),
