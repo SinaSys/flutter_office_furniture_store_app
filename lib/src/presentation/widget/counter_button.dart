@@ -30,10 +30,7 @@ class CounterButton extends StatelessWidget {
       button(const Icon(Icons.remove), onDecrementSelected),
       Padding(
         padding: const EdgeInsets.symmetric(horizontal: 10),
-        child: Text(
-          "$label",
-          style: h2Style.copyWith(fontSize: 15),
-        ),
+        child: Text("$label", style: h2Style.copyWith(fontSize: 15)),
       ),
       button(const Icon(Icons.add), onIncrementSelected),
     ];
@@ -43,8 +40,6 @@ class CounterButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return orientation == Axis.horizontal
         ? Row(mainAxisAlignment: MainAxisAlignment.end, children: body())
-        : Column(
-            children: body().reversed.toList(),
-          );
+        : Column(children: body().reversed.toList());
   }
 }

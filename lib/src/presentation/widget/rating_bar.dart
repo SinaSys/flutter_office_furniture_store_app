@@ -21,7 +21,7 @@ class StarRatingBar extends StatelessWidget {
       itemCount: 5,
       glow: false,
       ignoreGestures: true,
-      itemBuilder: (context, _) => const Icon(
+      itemBuilder: (_, __) => const Icon(
         Icons.star,
         size: 2.0,
         color: AppColor.lightOrange,
