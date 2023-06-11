@@ -32,10 +32,10 @@ dependencies:
 
 
   get: ^4.6.5
-  smooth_page_indicator: ^1.0.1
+  smooth_page_indicator: ^1.1.0
   flutter_rating_bar: ^4.0.1
   font_awesome_flutter: ^10.4.0
-  simple_animations: ^5.0.0+3
+  simple_animations: ^5.0.1
 
 
 dev_dependencies:
