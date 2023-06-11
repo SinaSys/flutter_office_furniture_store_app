@@ -113,13 +113,12 @@ class OfficeFurnitureDetailScreen extends StatelessWidget {
             bottom: 20,
             child: Obx(
               () {
-                return SmoothIndicator(
+                return AnimatedSmoothIndicator(
                   effect: const WormEffect(
                     dotColor: Colors.white38,
                     activeDotColor: Colors.white,
                   ),
-                  offset:
-                      controller.currentPageViewItemIndicator.value.toDouble(),
+                  activeIndex: controller.currentPageViewItemIndicator.value,
                   count: furniture.images.length,
                 );
               },
