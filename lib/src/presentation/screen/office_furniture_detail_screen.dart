@@ -59,12 +59,12 @@ class OfficeFurnitureDetailScreen extends HookConsumerWidget {
             ),
             Positioned(
               bottom: 20,
-              child: SmoothIndicator(
+              child: AnimatedSmoothIndicator(
                 effect: const WormEffect(
                   dotColor: Colors.white38,
                   activeDotColor: Colors.white,
                 ),
-                offset: selectedIndex.value.toDouble(),
+                activeIndex: selectedIndex.value,
                 count: furniture.images.length,
               ),
             ),
