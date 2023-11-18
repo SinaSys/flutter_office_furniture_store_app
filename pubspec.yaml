@@ -31,11 +31,11 @@ dependencies:
     sdk: flutter
 
 
-  get: ^4.6.5
+  get: ^4.6.6
   smooth_page_indicator: ^1.1.0
   flutter_rating_bar: ^4.0.1
-  font_awesome_flutter: ^10.4.0
-  simple_animations: ^5.0.1
+  font_awesome_flutter: ^10.6.0
+  simple_animations: ^5.0.2
 
 
 dev_dependencies:
