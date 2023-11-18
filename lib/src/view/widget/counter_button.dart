@@ -8,12 +8,12 @@ class CounterButton extends StatelessWidget {
   final Axis orientation;
 
   const CounterButton({
-    Key? key,
+    super.key,
     required this.onIncrementSelected,
     required this.onDecrementSelected,
     required this.label,
     this.orientation = Axis.horizontal,
-  }) : super(key: key);
+  });
 
   Widget button(Icon icon, Function() onTap) {
     return RawMaterialButton(

@@ -9,10 +9,10 @@ class EmptyWidget extends StatelessWidget {
   final String title;
 
   const EmptyWidget({
-    Key? key,
+    super.key,
     this.type = EmptyWidgetType.cart,
     required this.title,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

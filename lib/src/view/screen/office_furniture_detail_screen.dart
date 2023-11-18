@@ -15,8 +15,10 @@ import 'package:office_furniture_store/src/controller/office_furniture_controlle
 class OfficeFurnitureDetailScreen extends StatelessWidget {
   final Furniture furniture;
 
-  const OfficeFurnitureDetailScreen({Key? key, required this.furniture})
-      : super(key: key);
+  const OfficeFurnitureDetailScreen({
+    super.key,
+    required this.furniture,
+  });
 
   PreferredSizeWidget _appBar(BuildContext context) {
     return AppBar(

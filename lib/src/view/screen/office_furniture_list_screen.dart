@@ -6,7 +6,7 @@ import 'package:office_furniture_store/src/view/widget/furniture_list_view.dart'
 import 'package:office_furniture_store/src/view/screen/office_furniture_detail_screen.dart';
 
 class OfficeFurnitureListScreen extends StatelessWidget {
-  const OfficeFurnitureListScreen({Key? key}) : super(key: key);
+  const OfficeFurnitureListScreen({super.key});
 
   PreferredSize _appBar() {
     return PreferredSize(

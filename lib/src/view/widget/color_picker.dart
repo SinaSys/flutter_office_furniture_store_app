@@ -4,7 +4,7 @@ import 'package:office_furniture_store/src/model/furniture_color.dart';
 class ColorPicker extends StatefulWidget {
   final List<FurnitureColor> colors;
 
-  const ColorPicker(this.colors, {Key? key}) : super(key: key);
+  const ColorPicker(this.colors, {super.key});
 
   @override
   State<ColorPicker> createState() => _ColorPickerState();

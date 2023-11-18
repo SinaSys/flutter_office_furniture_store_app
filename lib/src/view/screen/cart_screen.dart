@@ -10,7 +10,7 @@ import 'package:office_furniture_store/src/view/widget/cart_list_view.dart';
 import 'package:office_furniture_store/src/controller/office_furniture_controller.dart';
 
 class CartScreen extends StatelessWidget {
-  const CartScreen({Key? key}) : super(key: key);
+  const CartScreen({super.key});
 
   PreferredSizeWidget _appBar() {
     return AppBar(

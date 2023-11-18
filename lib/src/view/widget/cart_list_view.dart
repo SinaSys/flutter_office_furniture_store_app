@@ -5,10 +5,10 @@ import 'package:office_furniture_store/src/model/furniture.dart';
 
 class CartListView extends StatelessWidget {
   const CartListView({
-    Key? key,
+    super.key,
     required this.counterButton,
     required this.furnitureItems,
-  }) : super(key: key);
+  });
 
   final Widget Function(Furniture furniture) counterButton;
   final List<Furniture> furnitureItems;

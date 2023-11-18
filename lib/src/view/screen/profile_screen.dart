@@ -1,8 +1,8 @@
-import 'package:office_furniture_store/core/app_asset.dart';
 import 'package:flutter/material.dart';
+import 'package:office_furniture_store/core/app_asset.dart';
 
 class ProfileScreen extends StatelessWidget {
-  const ProfileScreen({Key? key}) : super(key: key);
+  const ProfileScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
