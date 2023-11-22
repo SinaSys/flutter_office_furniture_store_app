@@ -16,9 +16,11 @@ class OfficeFurnitureDetailScreen extends HookWidget {
   final Furniture furniture;
   final int index;
 
-  const OfficeFurnitureDetailScreen(
-      {Key? key, required this.furniture, required this.index})
-      : super(key: key);
+  const OfficeFurnitureDetailScreen({
+    super.key,
+    required this.furniture,
+    required this.index,
+  });
 
   @override
   Widget build(BuildContext context) {

@@ -7,7 +7,7 @@ import 'package:office_furniture_store/src/presentation/widget/furniture_list_vi
 import 'package:office_furniture_store/src/business_logic/bloc/furniture/furniture_bloc.dart';
 
 class FavoriteScreen extends StatelessWidget {
-  const FavoriteScreen({Key? key}) : super(key: key);
+  const FavoriteScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
