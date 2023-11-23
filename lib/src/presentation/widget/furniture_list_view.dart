@@ -10,11 +10,11 @@ class FurnitureListView extends StatelessWidget {
   final List<Furniture> furnitureList;
 
   const FurnitureListView({
-    Key? key,
+    super.key,
     this.isHorizontal = true,
     this.onTap,
     required this.furnitureList,
-  }) : super(key: key);
+  });
 
   Widget _furnitureScore(Furniture furniture) {
     return Row(

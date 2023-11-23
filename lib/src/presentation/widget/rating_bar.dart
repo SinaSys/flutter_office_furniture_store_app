@@ -6,8 +6,11 @@ class StarRatingBar extends StatelessWidget {
   final double score;
   final double itemSize;
 
-  const StarRatingBar({Key? key, required this.score, this.itemSize = 20})
-      : super(key: key);
+  const StarRatingBar({
+    super.key,
+    required this.score,
+    this.itemSize = 20,
+  });
 
   @override
   Widget build(BuildContext context) {

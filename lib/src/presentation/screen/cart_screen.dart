@@ -10,7 +10,7 @@ import 'package:office_furniture_store/src/presentation/widget/counter_button.da
 import 'package:office_furniture_store/src/business_logic/provider/furniture_provider.dart';
 
 class CartScreen extends ConsumerWidget {
-  const CartScreen({Key? key}) : super(key: key);
+  const CartScreen({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
