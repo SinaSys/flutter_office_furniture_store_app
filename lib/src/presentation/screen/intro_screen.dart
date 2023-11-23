@@ -5,7 +5,7 @@ import 'package:office_furniture_store/src/presentation/screen/home_screen.dart'
 import 'package:office_furniture_store/src/business_logic/provider/furniture_provider.dart';
 
 class IntroScreen extends StatelessWidget {
-  const IntroScreen({Key? key}) : super(key: key);
+  const IntroScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
