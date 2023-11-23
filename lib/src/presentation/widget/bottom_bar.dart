@@ -7,13 +7,13 @@ class BottomBar extends StatelessWidget {
   final String priceValue;
   final String buttonLabel;
 
-  const BottomBar(
-      {Key? key,
-      this.onTap,
-      this.priceLabel = "Price",
-      required this.priceValue,
-      this.buttonLabel = "Add to cart"})
-      : super(key: key);
+  const BottomBar({
+    super.key,
+    this.onTap,
+    this.priceLabel = "Price",
+    required this.priceValue,
+    this.buttonLabel = "Add to cart",
+  });
 
   @override
   Widget build(BuildContext context) {

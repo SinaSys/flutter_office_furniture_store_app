@@ -7,13 +7,13 @@ class CounterButton extends StatelessWidget {
   final int label;
   final Axis orientation;
 
-  const CounterButton(
-      {Key? key,
-      required this.onIncrementSelected,
-      required this.onDecrementSelected,
-      required this.label,
-      this.orientation = Axis.horizontal})
-      : super(key: key);
+  const CounterButton({
+    super.key,
+    required this.onIncrementSelected,
+    required this.onDecrementSelected,
+    required this.label,
+    this.orientation = Axis.horizontal,
+  });
 
   Widget button(Icon icon, Function() onTap) {
     return RawMaterialButton(

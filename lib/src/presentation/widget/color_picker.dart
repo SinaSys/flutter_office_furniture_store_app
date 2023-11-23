@@ -6,9 +6,9 @@ class ColorPicker extends HookWidget {
   final List<FurnitureColor> colors;
 
   const ColorPicker({
-    Key? key,
+    super.key,
     required this.colors,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
