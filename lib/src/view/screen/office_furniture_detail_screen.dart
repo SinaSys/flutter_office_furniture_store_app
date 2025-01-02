@@ -134,10 +134,9 @@ class OfficeFurnitureDetailScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     double height = MediaQuery.of(context).size.height;
-    return WillPopScope(
-      onWillPop: () async {
+    return PopScope(
+      onPopInvokedWithResult: (_,__){
         controller.currentPageViewItemIndicator.value = 0;
-        return Future.value(true);
       },
       child: Scaffold(
         bottomNavigationBar: bottomBar(),
