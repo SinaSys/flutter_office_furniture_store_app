@@ -27,7 +27,7 @@ class _ColorPickerState extends State<ColorPicker> {
                 widget.colors[index].isSelected
                     ? CircleAvatar(
                         backgroundColor:
-                            widget.colors[index].color.withOpacity(0.5),
+                            widget.colors[index].color.withValues(alpha: 0.5),
                         radius: 18,
                       )
                     : const IgnorePointer(),
