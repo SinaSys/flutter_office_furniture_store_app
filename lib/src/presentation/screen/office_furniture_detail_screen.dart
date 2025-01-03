@@ -24,15 +24,18 @@ class OfficeFurnitureDetailScreen extends HookWidget {
 
   @override
   Widget build(BuildContext context) {
-    final List<Furniture> items =
-        context.watch<FurnitureBloc>().state.mainItems;
+    final List<Furniture> items = context.watch<FurnitureBloc>().state.mainItems;
     double height = MediaQuery.of(context).size.height;
 
     final selectedIndex = useState(0);
 
     Widget furnitureImageSlider(double height) {
       return Container(
-        padding: const EdgeInsets.only(left: 15, right: 15, bottom: 10),
+        padding: const EdgeInsets.only(
+          left: 15,
+          right: 15,
+          bottom: 10,
+        ),
         height: height * 0.5,
         child: Stack(
           alignment: Alignment.bottomCenter,
@@ -61,11 +64,13 @@ class OfficeFurnitureDetailScreen extends HookWidget {
             Positioned(
               bottom: 20,
               child: AnimatedSmoothIndicator(
-                  effect: const WormEffect(
-                      dotColor: Colors.white38, activeDotColor: Colors.white),
-                  // ),
-                  activeIndex: selectedIndex.value,
-                  count: furniture.images.length),
+                effect: const WormEffect(
+                  dotColor: Colors.white38,
+                  activeDotColor: Colors.white,
+                ),
+                activeIndex: selectedIndex.value,
+                count: furniture.images.length,
+              ),
             ),
           ],
         ),
@@ -78,9 +83,11 @@ class OfficeFurnitureDetailScreen extends HookWidget {
           IconButton(
             splashRadius: 18.0,
             onPressed: () {
-              context
-                  .read<FurnitureBloc>()
-                  .add(AddToFavoriteEvent(furniture: items[index]));
+              context.read<FurnitureBloc>().add(
+                    AddToFavoriteEvent(
+                      furniture: items[index],
+                    ),
+                  );
             },
             icon: items[index].isFavorite
                 ? const Icon(Icons.bookmark, color: Colors.black)
@@ -111,25 +118,35 @@ class OfficeFurnitureDetailScreen extends HookWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 const FittedBox(
-                  child: Text('Price',
-                      style: TextStyle(
-                          color: Colors.black45, fontWeight: FontWeight.bold)),
+                  child: Text(
+                    'Price',
+                    style: TextStyle(
+                      color: Colors.black45,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
                 ),
                 const SizedBox(height: 5),
-                FittedBox(child: Text("${furniture.price}", style: h2Style))
+                FittedBox(
+                  child: Text(
+                    "${furniture.price}",
+                    style: h2Style,
+                  ),
+                )
               ],
             ),
             ElevatedButton(
               style: ElevatedButton.styleFrom(
                   backgroundColor: AppColor.lightBlack,
-                  padding:
-                      const EdgeInsets.symmetric(horizontal: 40, vertical: 15),
-                  shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(10))),
+                  padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 15),
+                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10))),
               onPressed: () {
-                context
-                    .read<FurnitureBloc>()
-                    .add(AddToCartEvent(furniture: items[index], index: index));
+                context.read<FurnitureBloc>().add(
+                      AddToCartEvent(
+                        furniture: items[index],
+                        index: index,
+                      ),
+                    );
               },
               child: const Text("Add to cart"),
             )
@@ -138,59 +155,63 @@ class OfficeFurnitureDetailScreen extends HookWidget {
       ).fadeAnimation(1.3);
     }
 
-    return WillPopScope(
-      onWillPop: () async {
-        return Future.value(true);
-      },
-      child: Scaffold(
-        bottomNavigationBar: bottomBar(),
-        appBar: appBar(context),
-        body: SingleChildScrollView(
-          child: Padding(
-            padding: const EdgeInsets.all(15),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                furnitureImageSlider(height),
-                Center(
-                  child: StarRatingBar(
-                    score: furniture.score,
-                    itemSize: 25,
-                  ).fadeAnimation(0.4),
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(top: 20, bottom: 10),
-                  child: const Text("Synopsis",
-                          style: h2Style, textAlign: TextAlign.end)
-                      .fadeAnimation(0.6),
-                ),
-                Text(furniture.description,
-                        maxLines: 5,
-                        overflow: TextOverflow.ellipsis,
-                        style: const TextStyle(color: Colors.black45))
-                    .fadeAnimation(0.8),
-                const SizedBox(height: 20),
-                Row(
-                  children: [
-                    const Text("Color :",
-                        style: h2Style, textAlign: TextAlign.end),
-                    Expanded(child: ColorPicker(colors: furniture.colors)),
-                    Expanded(
-                      child: CounterButton(
-                          label: items[index].quantity,
-                          onIncrementSelected: () {
-                            context.read<FurnitureBloc>().add(
-                                IncreaseQuantityEvent(furniture: items[index]));
-                          },
-                          onDecrementSelected: () {
-                            context.read<FurnitureBloc>().add(
-                                DecreaseQuantityEvent(furniture: items[index]));
-                          }),
-                    )
-                  ],
-                ).fadeAnimation(1.0)
-              ],
-            ),
+    return Scaffold(
+      bottomNavigationBar: bottomBar(),
+      appBar: appBar(context),
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: const EdgeInsets.all(15),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              furnitureImageSlider(height),
+              Center(
+                child: StarRatingBar(
+                  score: furniture.score,
+                  itemSize: 25,
+                ).fadeAnimation(0.4),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(top: 20, bottom: 10),
+                child: const Text(
+                  "Synopsis",
+                  style: h2Style,
+                  textAlign: TextAlign.end,
+                ).fadeAnimation(0.6),
+              ),
+              Text(
+                furniture.description,
+                maxLines: 5,
+                overflow: TextOverflow.ellipsis,
+                style: const TextStyle(color: Colors.black45),
+              ).fadeAnimation(0.8),
+              const SizedBox(height: 20),
+              Row(
+                children: [
+                  const Text("Color :", style: h2Style, textAlign: TextAlign.end),
+                  Expanded(child: ColorPicker(colors: furniture.colors)),
+                  Expanded(
+                    child: CounterButton(
+                      label: items[index].quantity,
+                      onIncrementSelected: () {
+                        context.read<FurnitureBloc>().add(
+                          IncreaseQuantityEvent(
+                            furniture: items[index],
+                          ),
+                        );
+                      },
+                      onDecrementSelected: () {
+                        context.read<FurnitureBloc>().add(
+                          DecreaseQuantityEvent(
+                            furniture: items[index],
+                          ),
+                        );
+                      },
+                    ),
+                  )
+                ],
+              ).fadeAnimation(1.0)
+            ],
           ),
         ),
       ),
