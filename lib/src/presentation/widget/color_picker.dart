@@ -30,7 +30,7 @@ class ColorPicker extends HookWidget {
                 colorList[index].isSelected
                     ? CircleAvatar(
                         backgroundColor:
-                            colorList[index].color.withOpacity(0.5),
+                            colorList[index].color.withValues(alpha: 0.5),
                         radius: 18,
                       )
                     : const IgnorePointer(),
