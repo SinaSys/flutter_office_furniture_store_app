@@ -22,19 +22,19 @@ class IntroScreen extends StatelessWidget {
               );
             },
             style: ButtonStyle(
-              padding: MaterialStateProperty.all<EdgeInsetsGeometry?>(
+              padding: WidgetStateProperty.all<EdgeInsetsGeometry?>(
                 const EdgeInsets.all(8),
               ),
               backgroundColor:
-                  MaterialStateProperty.all(Colors.white.withOpacity(0.4)),
-              shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+              WidgetStateProperty.all(Colors.white.withValues(alpha: 0.4)),
+              shape: WidgetStateProperty.all<RoundedRectangleBorder>(
                 RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(25.0),
                 ),
               ),
             ),
             icon: CircleAvatar(
-              backgroundColor: Colors.white.withOpacity(0.2),
+              backgroundColor: Colors.white.withValues(alpha: 0.2),
               child: const Icon(Icons.arrow_back, color: Colors.white),
             ),
             label: Text(
