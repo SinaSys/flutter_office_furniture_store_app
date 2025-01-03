@@ -140,68 +140,63 @@ class OfficeFurnitureDetailScreen extends HookConsumerWidget {
       ).fadeAnimation(1.3);
     }
 
-    return WillPopScope(
-      onWillPop: () async {
-        return Future.value(true);
-      },
-      child: Scaffold(
-        bottomNavigationBar: bottomBar(),
-        appBar: appBar(context),
-        body: SingleChildScrollView(
-          child: Padding(
-            padding: const EdgeInsets.all(15),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                furnitureImageSlider(height),
-                Center(
-                  child: StarRatingBar(
-                    score: furniture.score,
-                    itemSize: 25,
-                  ).fadeAnimation(0.4),
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(top: 20, bottom: 10),
-                  child: const Text(
-                    "Synopsis",
+    return Scaffold(
+      bottomNavigationBar: bottomBar(),
+      appBar: appBar(context),
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: const EdgeInsets.all(15),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              furnitureImageSlider(height),
+              Center(
+                child: StarRatingBar(
+                  score: furniture.score,
+                  itemSize: 25,
+                ).fadeAnimation(0.4),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(top: 20, bottom: 10),
+                child: const Text(
+                  "Synopsis",
+                  style: h2Style,
+                  textAlign: TextAlign.end,
+                ).fadeAnimation(0.6),
+              ),
+              Text(
+                furniture.description,
+                maxLines: 5,
+                overflow: TextOverflow.ellipsis,
+                style: const TextStyle(color: Colors.black45),
+              ).fadeAnimation(0.8),
+              const SizedBox(height: 20),
+              Row(
+                children: [
+                  const Text(
+                    "Color :",
                     style: h2Style,
                     textAlign: TextAlign.end,
-                  ).fadeAnimation(0.6),
-                ),
-                Text(
-                  furniture.description,
-                  maxLines: 5,
-                  overflow: TextOverflow.ellipsis,
-                  style: const TextStyle(color: Colors.black45),
-                ).fadeAnimation(0.8),
-                const SizedBox(height: 20),
-                Row(
-                  children: [
-                    const Text(
-                      "Color :",
-                      style: h2Style,
-                      textAlign: TextAlign.end,
+                  ),
+                  Expanded(child: ColorPicker(colors: furniture.colors)),
+                  Expanded(
+                    child: CounterButton(
+                      label: items[index].quantity,
+                      onIncrementSelected: () {
+                        ref
+                            .read(furnitureStateNotifierProvider.notifier)
+                            .increaseQuantity(items[index]);
+                      },
+                      onDecrementSelected: () {
+                        ref
+                            .read(furnitureStateNotifierProvider.notifier)
+                            .decreaseQuantity(items[index]);
+                      },
                     ),
-                    Expanded(child: ColorPicker(colors: furniture.colors)),
-                    Expanded(
-                      child: CounterButton(
-                        label: items[index].quantity,
-                        onIncrementSelected: () {
-                          ref
-                              .read(furnitureStateNotifierProvider.notifier)
-                              .increaseQuantity(items[index]);
-                        },
-                        onDecrementSelected: () {
-                          ref
-                              .read(furnitureStateNotifierProvider.notifier)
-                              .decreaseQuantity(items[index]);
-                        },
-                      ),
-                    )
-                  ],
-                ).fadeAnimation(1.0)
-              ],
-            ),
+                  )
+                ],
+              ).fadeAnimation(1.0)
+            ],
           ),
         ),
       ),
