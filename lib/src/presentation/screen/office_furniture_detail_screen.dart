@@ -24,7 +24,8 @@ class OfficeFurnitureDetailScreen extends HookWidget {
 
   @override
   Widget build(BuildContext context) {
-    final List<Furniture> items = context.watch<FurnitureBloc>().state.mainItems;
+    final List<Furniture> items =
+        context.watch<FurnitureBloc>().state.mainItems;
     double height = MediaQuery.of(context).size.height;
 
     final selectedIndex = useState(0);
@@ -95,7 +96,7 @@ class OfficeFurnitureDetailScreen extends HookWidget {
           )
         ],
         leading: IconButton(
-          icon: const Icon(
+          icon: const FaIcon(
             FontAwesomeIcons.arrowLeft,
             color: Colors.black,
           ),
@@ -138,8 +139,10 @@ class OfficeFurnitureDetailScreen extends HookWidget {
             ElevatedButton(
               style: ElevatedButton.styleFrom(
                   backgroundColor: AppColor.lightBlack,
-                  padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 15),
-                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10))),
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 40, vertical: 15),
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(10))),
               onPressed: () {
                 context.read<FurnitureBloc>().add(
                       AddToCartEvent(
@@ -188,24 +191,25 @@ class OfficeFurnitureDetailScreen extends HookWidget {
               const SizedBox(height: 20),
               Row(
                 children: [
-                  const Text("Color :", style: h2Style, textAlign: TextAlign.end),
+                  const Text("Color :",
+                      style: h2Style, textAlign: TextAlign.end),
                   Expanded(child: ColorPicker(colors: furniture.colors)),
                   Expanded(
                     child: CounterButton(
                       label: items[index].quantity,
                       onIncrementSelected: () {
                         context.read<FurnitureBloc>().add(
-                          IncreaseQuantityEvent(
-                            furniture: items[index],
-                          ),
-                        );
+                              IncreaseQuantityEvent(
+                                furniture: items[index],
+                              ),
+                            );
                       },
                       onDecrementSelected: () {
                         context.read<FurnitureBloc>().add(
-                          DecreaseQuantityEvent(
-                            furniture: items[index],
-                          ),
-                        );
+                              DecreaseQuantityEvent(
+                                furniture: items[index],
+                              ),
+                            );
                       },
                     ),
                   )
