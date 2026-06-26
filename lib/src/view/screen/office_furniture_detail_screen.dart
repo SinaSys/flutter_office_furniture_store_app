@@ -36,7 +36,7 @@ class OfficeFurnitureDetailScreen extends StatelessWidget {
         )
       ],
       leading: IconButton(
-        icon: const Icon(FontAwesomeIcons.arrowLeft, color: Colors.black),
+        icon: const FaIcon(FontAwesomeIcons.arrowLeft, color: Colors.black),
         onPressed: () {
           controller.currentPageViewItemIndicator.value = 0;
           Navigator.pop(context);
@@ -135,7 +135,7 @@ class OfficeFurnitureDetailScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     double height = MediaQuery.of(context).size.height;
     return PopScope(
-      onPopInvokedWithResult: (_,__){
+      onPopInvokedWithResult: (_, __) {
         controller.currentPageViewItemIndicator.value = 0;
       },
       child: Scaffold(
