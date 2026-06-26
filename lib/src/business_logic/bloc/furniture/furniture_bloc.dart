@@ -82,8 +82,8 @@ class FurnitureBloc extends Bloc<FurnitureEvent, FurnitureState> {
     emit(FurnitureState(mainItems: state.mainItems, totalPrice: totalPrice));
   }
 
-  get getCartList => state.mainItems.where((element) => element.cart).toList();
+  List<Furniture> get getCartList => state.mainItems.where((element) => element.cart).toList();
 
-  get getFavoriteList =>
+  List<Furniture> get getFavoriteList =>
       state.mainItems.where((element) => element.isFavorite).toList();
 }
