@@ -19,9 +19,9 @@ extension WidgetExtension on Widget {
 }
 
 extension IntegerExtension on int {
-  get increase => this + 1;
+  int get increase => this + 1;
 
-  get decrease => this - 1;
+  int get decrease => this - 1;
 }
 
 enum Operation { increase, decrease, cart, delete, favorite }

@@ -10,7 +10,7 @@ class FurnitureCubit extends Cubit<FurnitureState> {
 
   final Repository repository;
 
-  increaseQuantity(Furniture furniture) {
+  void increaseQuantity(Furniture furniture) {
     final List<Furniture> mainItems =
         state.mainItems.operator(furniture, Operation.increase);
 
@@ -19,7 +19,7 @@ class FurnitureCubit extends Cubit<FurnitureState> {
     calculateTotalPrice();
   }
 
-  decreaseQuantity(Furniture furniture) {
+  void decreaseQuantity(Furniture furniture) {
     if (furniture.quantity > 1) {
       final List<Furniture> mainItems =
           state.mainItems.operator(furniture, Operation.decrease);
@@ -31,7 +31,7 @@ class FurnitureCubit extends Cubit<FurnitureState> {
     calculateTotalPrice();
   }
 
-  addToCart(Furniture furniture) {
+  void addToCart(Furniture furniture) {
     final List<Furniture> cartItems =
         state.mainItems.operator(furniture, Operation.cart);
 
@@ -40,14 +40,14 @@ class FurnitureCubit extends Cubit<FurnitureState> {
     calculateTotalPrice();
   }
 
-  deleteFromCart(Furniture furniture) {
+  void deleteFromCart(Furniture furniture) {
     final List<Furniture> cartItems =
         state.mainItems.operator(furniture, Operation.delete);
 
     emit(FurnitureState(mainItems: cartItems));
   }
 
-  clearCart() {
+  void clearCart() {
     List<Furniture> mainItems = state.mainItems
         .map((element) => element.copyWith(cart: false))
         .toList();
@@ -55,7 +55,7 @@ class FurnitureCubit extends Cubit<FurnitureState> {
     emit(FurnitureState(mainItems: mainItems));
   }
 
-  calculateTotalPrice() {
+  void calculateTotalPrice() {
     double totalPrice = 0.0;
 
     for (var element in state.mainItems) {
@@ -67,7 +67,7 @@ class FurnitureCubit extends Cubit<FurnitureState> {
     emit(FurnitureState(mainItems: state.mainItems, totalPrice: totalPrice));
   }
 
-  addToFavorite(Furniture furniture) {
+  void addToFavorite(Furniture furniture) {
     final List<Furniture> favoriteItems =
         state.mainItems.operator(furniture, Operation.favorite);
 
@@ -75,8 +75,8 @@ class FurnitureCubit extends Cubit<FurnitureState> {
         FurnitureState(mainItems: favoriteItems, totalPrice: state.totalPrice));
   }
 
-  get getCartList => state.mainItems.where((element) => element.cart).toList();
+  List<Furniture> get getCartList => state.mainItems.where((element) => element.cart).toList();
 
-  get getFavoriteList =>
+  List<Furniture> get getFavoriteList =>
       state.mainItems.where((element) => element.isFavorite).toList();
 }

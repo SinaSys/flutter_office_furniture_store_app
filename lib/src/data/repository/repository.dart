@@ -4,7 +4,7 @@ import 'package:office_furniture_store/src/data/model/furniture.dart';
 import 'package:office_furniture_store/src/data/model/furniture_color.dart';
 
 class Repository {
-  get getFurnitureList {
+  List<Furniture> get getFurnitureList {
     const dummyText =
         """Lorem Ipsum is simply dummy text of the printing and typesetting
        industry. Lorem Ipsum has been the industry's standard dummy text ever

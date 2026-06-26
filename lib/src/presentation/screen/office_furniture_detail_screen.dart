@@ -88,7 +88,10 @@ class OfficeFurnitureDetailScreen extends HookWidget {
           )
         ],
         leading: IconButton(
-          icon: const Icon(FontAwesomeIcons.arrowLeft, color: Colors.black),
+          icon: const FaIcon(
+            FontAwesomeIcons.arrowLeft,
+            color: Colors.black,
+          ),
           onPressed: () {
             Navigator.pop(context);
           },
